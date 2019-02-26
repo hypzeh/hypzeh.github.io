@@ -6,6 +6,7 @@
   "private": true,
   "main": "./src/index.jsx",
   "scripts": {
+    "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
   "keywords": [
@@ -24,6 +25,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }
