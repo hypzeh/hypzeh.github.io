@@ -1,0 +1,20 @@
+{
+  "name": "hypzeh.github.io",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "repository": "https://github.com/hypzeh/hypzeh.github.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hypzeh",
+    "hypzeh.github.io"
+  ],
+  "author": "Nick Smirnoff <nick.smirnoff@live.co.uk> (https://nicksmirnoff.co.uk)",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  }
+}
