@@ -1,0 +1,25 @@
+1.0.0.0	[18/09/2016]
+	Application created with buttons directing to audio clips.
+
+1.0.1.0	[19/09/2016]
+	Updated method of storing and playing audio clips
+	Audio Clips and files are now embeded in the manifest thus only requiring the '.exe' to work.
+		
+1.0.2.0	[20/09/2016]
+	Updated the UI of the Application.
+	Disabled minimize, maximise window buttons and Disabled window re-size.
+	
+1.0.3.0 [23/09/2016]
+	Updated the UI of the Application.
+	Updated the Quality and Volume of the Audio Clips used in the Application.
+
+1.1.0.0 [02/10/2016]
+	Developed a "Hotkey" feature.
+	Mapped each button to appropriate "Hotkey" combos.
+
+1.1.0.1 [03/10/2016]
+	Developed custom Application Window.
+	
+1.1.0.2 [03/10/2016]
+	Fixed Bug: Assigned Hotkeys not responsive on external applications while the SoundBoard was listening for a Key combos.
+	

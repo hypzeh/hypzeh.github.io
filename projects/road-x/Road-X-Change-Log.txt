@@ -1,0 +1,54 @@
+1.0.0	Using the first revision of the Game place player on screen with movement
+1.1.0	Added Scrollable Background which scrolls based on Player input via arrow keys
+1.1.1	Added Boundary to stop the Player from moving out of the desired area of the screen
+1.1.2	Background scrolls based on the character moving forward after hitting the top boundary
+1.2.0	Added Moving Objects (Vehicles)
+1.2.1	Added None Moving Objects (Bushes)
+1.2.2	Added Different Game States (MainMenu, Playing, Paused, GameOver)
+1.2.3	Tweaked Velocity and Speed of Vehicles in the Moving Object category
+1.2.4	Changed the method of which none moving objects are maintained when the game is reset (player went through 'Retry')
+1.2.5	Fixed bug in the method Bushes use to deal with collision which allowed players to get out of the world boundary by pressing combos of movements against bushes
+1.2.6	Added Controls overlay to the Main Menu Game State
+1.3.0	Added High-Score
+1.3.1	High-Score has a read and write function to maintain value outside of the game
+1.3.2	Added Controller support
+1.3.3	Changed Controls Overlay to reflect Controller Support
+1.3.4	Added hidden feature "Crtl + R" will reset High-Score (main purpose for testing but will keep within the game)
+1.4.0	Added Extra Lanes
+1.4.1	Filled extra Lanes with new Vehicle Lanes
+1.4.2	Changed the Graphics of the different vehicles
+1.4.3	Added feature where a lane has a chance of spawning a another type of vehicle
+1.4.4	Tweaked Velocity and Speed of Vehicles in the Moving Object category
+1.5.0	Added sound to the game
+1.5.1	Added Background Music
+1.5.2	Added Skip Background Music feature on Button press (Keyboard & Controller)
+1.5.3	Added Volume Up and Down for the Background Music on Button press (Keyboard & Controller)
+1.5.4	Changed Controls Overlay to reflect the relevant sound feature
+1.6.0	Added a High-Score Submit feature (E-Mail is sent to a dedicated email address containing the submitted High-Score)
+1.6.1	Added a 'Text-Box' feature that allows the Player to type their name before submitting their High-Score
+1.6.2	The Player name is included in the E-Mail sent containing their High-Score
+1.6.2	Added Try Catch method in case the user attempts to submit score without an internet connection or if some external problems come up the user will be notified
+1.6.3	Added Total Time of Game Session to the E-Mail containing Players High-Score
+
+2.0.0	Moved to 'MonoGame' implementation of Micosoft XNA 4 Framework
+2.0.1	Added randomly generating 'Road Lanes' and 'Grass Lanes' to fill screen on launch
+2.0.2	Using last revision; imported 'Bush' and 'Vehicle' assets
+2.0.3	Using last revision; implemented character spawn with a texture variable for future
+2.0.4	Using last revision; added player boundaries for the client window
+2.1.0	Developed random 'Lane' generation past the starting screen and every time the player moves up half way up the screen
+2.1.1	Added randomly spawning 'Bushes' on any 'Grass Lane' that generates
+2.1.2	Developed 'Bush' Collision method
+2.1.3	Added randomly spawning 'Vehicles' on any 'Road Lane' that generates
+2.1.4	Developed spawn and spacing mechanics for the 'Vehicles'
+2.1.5   Using last revision; imported 'Interface' assets
+2.1.6	Using last revision; imported 'Button' Class
+2.2.0   Implemented 'Main Menu' Game State
+2.2.1   Implemented 'Playing' Game State
+2.2.2   Implemented 'Pause' Game State
+2.2.3   Implemented 'Game Over' Game State
+2.2.4	Implemented 'Score' system
+2.2.5   Implemented 'High Score' system with Save & Load
+2.2.6	Implemented 'Profile' system to intergrate with leaaderboard highscores
+2.2.7	Implemented 'Leaderboard' system
+2.3.0	Button User Interface updated
+--Last Update: 24/10/2016--
