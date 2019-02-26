@@ -4,10 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+- master-react
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'win1803'
 
 steps:
 - task: NodeTool@0
