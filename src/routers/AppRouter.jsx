@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import AppHeader from '../components/shared/layout/AppHeader';
+import AppHeader from '../components/layout/AppHeader';
 import HomeContainer from '../components/home/HomeContainer';
 import AboutContainer from '../components/about/AboutContainer';
 import ProjectsContainer from '../components/projects/ProjectsContainer';
