@@ -1,9 +1,13 @@
 import React from 'react';
 
-const ProjectListItem = () => (
+import ProjectListItemTypes from '../../types/projects/projectListItem';
+
+const ProjectListItem = ({ project }) => (
   <React.Fragment>
-    <h1>Test</h1>
+    <h1>{project.title}</h1>
   </React.Fragment>
 );
+
+ProjectListItem.propTypes = ProjectListItemTypes;
 
 export default ProjectListItem;
