@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const HeaderStyle = {
   display: 'flex',
+  background: 'black',
 };
 
 const TitleStyle = {
-  margin: '0rem 1rem',
   width: '100%',
 };
 
@@ -22,9 +22,7 @@ const LinkStyle = {
 
 const AppHeader = () => (
   <header style={HeaderStyle}>
-    <div style={TitleStyle}>
-      <h1>Nick Smirnoff</h1>
-    </div>
+    <h1 style={TitleStyle}>Nick Smirnoff</h1>
     <nav style={NavStyle}>
       <Link style={LinkStyle} to='/'>
         Home
