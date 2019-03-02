@@ -9,7 +9,9 @@
 /coverage
 
 # build
-/dist
+/dist/*
+!/dist/CNAME
+!/dist/404.html
 
 # misc
 .DS_Store

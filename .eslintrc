@@ -6,6 +6,12 @@
     "react": {
       "pragma": "React",
       "version": "latest"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx"]
+      }
     }
   },
   "env": {
