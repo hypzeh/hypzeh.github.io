@@ -1,0 +1,17 @@
+{
+  "name": "hypzeh.web",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "ClientApp/index.jsx",
+  "repository": "https://github.com/hypzeh/hypzeh.github.io",
+  "author": "Nick Smirnoff <nick.smirnoff@live.co.uk>",
+  "license": "MIT",
+  "homepage": "https://hypzeh.github.io",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
+    "deploy": "npm run build && gh-pages -d wwwroot"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
