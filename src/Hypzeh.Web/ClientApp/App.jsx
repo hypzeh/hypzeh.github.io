@@ -1,7 +1,13 @@
 import React from 'react';
 
+import AppRouter from './routers/AppRouter';
+
+import './styles/sass/app.scss';
+
 const App = () => (
-  <h1>Test</h1>
+  <div className="Main">
+    <AppRouter />
+  </div>
 );
 
 export default App;
