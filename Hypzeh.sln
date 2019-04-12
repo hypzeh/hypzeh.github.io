@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1184481C-41B6-49C3-845A-0117D674B6E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypzeh.Web", "src\Hypzeh.Web\Hypzeh.Web.csproj", "{953F9AD2-F728-4751-AFD3-46F8EF18702F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{953F9AD2-F728-4751-AFD3-46F8EF18702F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953F9AD2-F728-4751-AFD3-46F8EF18702F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953F9AD2-F728-4751-AFD3-46F8EF18702F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953F9AD2-F728-4751-AFD3-46F8EF18702F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{953F9AD2-F728-4751-AFD3-46F8EF18702F} = {1184481C-41B6-49C3-845A-0117D674B6E3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57C86000-0571-4928-B34B-613520C53F5C}
+	EndGlobalSection
+EndGlobal
