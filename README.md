@@ -2,4 +2,4 @@
 
 ---
 
-Personal website application build with React and ASP.NET Core.
+Personal website built with React and ASP.NET Core, hosted on GitHub pages.
