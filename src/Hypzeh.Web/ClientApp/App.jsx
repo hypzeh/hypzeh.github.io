@@ -5,7 +5,7 @@ import AppRouter from './routers/AppRouter';
 import './styles/sass/app.scss';
 
 const App = () => (
-  <div className="Main">
+  <div className="App">
     <AppRouter />
   </div>
 );
