@@ -1,14 +1,11 @@
 @import
-  "base/base";
-
-@import
-  "components/app";
+  "vendor/bootstrap";
 
 @import
   "helpers/variables";
 
 @import
-  "layout/main";
+  "base/base";
 
 @import
-  "vendor/bootstrap";
+  "components/app";
