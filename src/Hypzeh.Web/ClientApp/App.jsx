@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AppRouter from './routers/AppRouter';
+import AppRouter from './components/routers/AppRouter';
 
 import './styles/sass/app.scss';
 
