@@ -1,3 +1,8 @@
 .AppHeader {
-  background: $gray-500;
+  background: transparent;
+
+  &__link {
+    text-transform: uppercase;
+    margin: 0 1rem;
+  }
 }
