@@ -5,4 +5,4 @@
 
 Personal website built with React and ASP.NET Core, hosted on GitHub pages.
 
-**GitHub pages builds from the `master` branch.**
+**GitHub Pages site is currently being built from the `master` branch.**
