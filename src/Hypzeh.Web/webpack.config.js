@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: './ClientApp/index.jsx',
@@ -13,54 +15,22 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.(js|jsx)$/, use: ['babel-loader', 'eslint-loader'], exclude: /node_modules/ },
+      { test: /\.html$/, use: [{ loader: 'html-loader' }] },
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
-      },
-      {
-        test: /\.html$/,
+        test: /\.s?css$/,
         use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'postcss-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
       {
         test: /\.svg$/,
         use: [
-          {
-            loader: 'babel-loader',
-          },
-          {
-            loader: 'react-svg-loader',
-            options: {
-              jsx: true,
-            },
-          },
+          { loader: 'babel-loader' },
+          { loader: 'react-svg-loader', options: { jsx: true } },
         ],
       },
     ],
@@ -69,6 +39,17 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'style.bundle.css',
+    }),
+    new OptimizeCSSAssetsPlugin({
+      cssProcessorOptions: {
+        map: {
+          inline: false,
+          annotation: true,
+        },
+      },
+    }),
     new HtmlWebPackPlugin({
       template: './ClientApp/template.html',
       filename: './index.html',
