@@ -1,43 +1,66 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
+  <head>
+    <!-- Common -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick Smirnoff</title>
+    <meta name="description" content="Nick Smirnoff">
+    <meta name="image" content="https://i.imgur.com/Xek033p.png">
+    <meta name="theme-color" content="#212121">
+    <meta name="msapplication-TileColor" content="#212121">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Nick Smirnoff">
+    <meta itemprop="description" content="Nick Smirnoff">
+    <meta itemprop="image" content="https://i.imgur.com/Xek033p.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nick Smirnoff">
+    <meta name="twitter:description" content="Nick Smirnoff">
+    <meta name="twitter:site" content="@Hypzeh">
+    <meta name="twitter:creator" content="@Hypzeh">
+    <meta name="twitter:image:src" content="https://i.imgur.com/Xek033p.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Nick Smirnoff">
+    <meta name="og:description" content="Nick Smirnoff">
+    <meta name="og:image" content="https://i.imgur.com/Xek033p.png">
+    <meta name="og:url" content="https://nicksmirnoff.co.uk/">
+    <meta name="og:site_name" content="Nick Smirnoff">
+    <meta name="fb:admins" content="Hypzeh">
+    <meta name="og:type" content="website">
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
-        // Single Page Apps for GitHub Pages
-        // https://github.com/rafrex/spa-github-pages
-        // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-        // ----------------------------------------------------------------------
-        // This script checks to see if a redirect is present in the query string
-        // and converts it back into the correct url and adds it to the
-        // browser's history using window.history.replaceState(...),
-        // which won't cause the browser to attempt to load the new url.
-        // When the single page app is loaded further down in this file,
-        // the correct url will be waiting in the browser's history for
-        // the single page app to route accordingly.
-        (function(l) {
-            if (l.search) {
-                var q = {};
-                l.search.slice(1).split('&').forEach(function(v) {
-                    var a = v.split('=');
-                    q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-                });
-                if (q.p !== undefined) {
-                    window.history.replaceState(null, null,
-                        l.pathname.slice(0, -1) + (q.p || '') +
-                        (q.q ? ('?' + q.q) : '') +
-                        l.hash
-                    );
-                }
-            }
-        }(window.location))
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafrex/spa-github-pages
+      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+      // ----------------------------------------------------------------------
+      // This script checks to see if a redirect is present in the query string
+      // and converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+          if (l.search) {
+              var q = {};
+              l.search.slice(1).split('&').forEach(function(v) {
+                  var a = v.split('=');
+                  q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+              });
+              if (q.p !== undefined) {
+                  window.history.replaceState(null, null,
+                      l.pathname.slice(0, -1) + (q.p || '') +
+                      (q.q ? ('?' + q.q) : '') +
+                      l.hash
+                  );
+              }
+          }
+      }(window.location))
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
-</head>
-<body>
-    <noscript>Please enable JavaScript</noscript>
-    <div id="root"></div>
-</body>
+  </head>
+  <body>
+    <noscript>This app requires JavaScript.</noscript>
+  </body>
 </html>

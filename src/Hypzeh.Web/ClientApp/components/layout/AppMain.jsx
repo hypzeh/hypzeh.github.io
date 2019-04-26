@@ -1,13 +1,14 @@
 import React from 'react';
 
-import AppMainTypes from '../../types/layout/appMain';
+import { propTypes, defaultProps } from '../../types/layout/appMain';
 
 const AppMain = ({ children }) => (
-  <main className="AppMain">
+  <main>
     {children}
   </main>
 );
 
-AppMain.propTypes = AppMainTypes;
+AppMain.propTypes = propTypes;
+AppMain.defaultProps = defaultProps;
 
 export default AppMain;

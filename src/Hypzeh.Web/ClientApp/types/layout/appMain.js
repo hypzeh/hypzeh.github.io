@@ -1,5 +1,9 @@
 import { node } from 'prop-types';
 
-export default {
+export const propTypes = {
   children: node,
+};
+
+export const defaultProps = {
+  children: null,
 };
