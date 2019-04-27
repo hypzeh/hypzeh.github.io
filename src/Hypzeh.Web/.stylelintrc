@@ -1,6 +1,9 @@
 {
-  "extends": "stylelint-config-recommended-scss",
-  "rules": {
-    "max-nesting-depth": 3
-  }
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components"
+  ]
 }
