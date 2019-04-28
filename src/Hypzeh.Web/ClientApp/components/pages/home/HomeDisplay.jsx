@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { PrimarySection } from '../../shared/styled/sections';
-import Title from '../../shared/Title';
-
 const HomeDisplay = () => (
-  <PrimarySection>
-    <Title />
-  </PrimarySection>
+  <section>
+    <div>Software Engineer</div>
+    <div>Nick Smirnoff</div>
+  </section>
 );
 
 export default HomeDisplay;

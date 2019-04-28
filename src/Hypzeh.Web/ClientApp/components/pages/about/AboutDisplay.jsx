@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { PrimarySection } from '../../shared/styled/sections';
-
 const AboutDisplay = () => (
-  <PrimarySection>
-    <span>About.</span>
-  </PrimarySection>
+  <section>
+    <div>About...</div>
+  </section>
 );
 
 export default AboutDisplay;
