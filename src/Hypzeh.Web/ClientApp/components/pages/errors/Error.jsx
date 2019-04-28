@@ -4,8 +4,7 @@ import { propTypes, defaultProps } from '../../../types/pages/error';
 
 const Error = ({ code, message, goBack }) => (
   <section>
-    <div>{code}</div>
-    <div>{message}</div>
+    <div>{`[${code}] ${message}`}</div>
     {goBack && <button type="button" onClick={goBack}>Back</button>}
   </section>
 );
