@@ -7,6 +7,7 @@ const AppHeader = () => (
     <Navbar>
       <NavBrand to="/">Nick Smirnoff</NavBrand>
       <NavItems>
+        <NavItem to="/error">☠</NavItem>
         <NavItem to="/about">ABOUT</NavItem>
         <NavItem to="/projects">PROJECTS</NavItem>
         <a href="mailto:test@test.test">CONTACT</a>
