@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import AppHeader from '../layout/AppHeader';
 import AppMain from '../layout/AppMain';
+import AppFooter from '../layout/AppFooter';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -16,6 +17,7 @@ const AppRouter = () => (
         <Route path="*" render={() => <h1>NOT FOUND.</h1>} />
       </Switch>
     </AppMain>
+    <AppFooter />
   </BrowserRouter>
 );
 
