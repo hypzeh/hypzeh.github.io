@@ -4,7 +4,12 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import AppHeader from '../layout/AppHeader';
 import AppMain from '../layout/AppMain';
 import AppFooter from '../layout/AppFooter';
-import { HomeDisplay, AboutDisplay, ProjectsDisplay } from '../pages';
+import {
+  HomeDisplay,
+  AboutDisplay,
+  ProjectsDisplay,
+  Error,
+} from '../pages';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -14,7 +19,7 @@ const AppRouter = () => (
         <Route exact path="/" component={HomeDisplay} />
         <Route exact path="/about" component={AboutDisplay} />
         <Route exact path="/projects" component={ProjectsDisplay} />
-        <Route path="*" render={() => <h1>NOT FOUND.</h1>} />
+        <Route path="*" render={({ history }) => <Error code={404} message="Page not found..." goBack={history.goBack} />} />
       </Switch>
     </AppMain>
     <AppFooter />
