@@ -4,28 +4,38 @@ import { NavLink } from 'react-router-dom';
 
 const AppHeader = () => (
   <Header>
-    <div>Nick Smirnoff.</div>
-    <Nav>
-      <NavLink to="/">HOME</NavLink>
-      <NavLink to="/about">ABOUT</NavLink>
-      <NavLink to="/projects">PROJECTS</NavLink>
-      <NavLink to="/contact">CONTACT</NavLink>
-    </Nav>
+    <Navbar>
+      <NavBrand to="/">Nick Smirnoff</NavBrand>
+      <NavItems>
+        <NavItem to="/about">ABOUT</NavItem>
+        <NavItem to="/projects">PROJECTS</NavItem>
+        <a href="mailto:test@test.test">CONTACT</a>
+      </NavItems>
+    </Navbar>
   </Header>
 );
 
 const Header = styled.header`
-  display: flex;
+  height: 100%;
+  background: black;
 `;
 
-const Nav = styled.nav`
-  display:flex;
-  flex-grow: 1;
-  justify-content: flex-end;
+const Navbar = styled.nav`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
 
-  a {
-    margin: 0 .1rem;
-  }
+const NavBrand = styled(NavLink)`
+  padding: .5rem;
+`;
+
+const NavItems = styled.div`
+  margin-left: auto;
+`;
+
+const NavItem = styled(NavLink)`
+  margin: 0 .5rem;
 `;
 
 export default AppHeader;
