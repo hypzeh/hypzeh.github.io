@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { propTypes, defaultProps } from '../../types/layout/appMain';
+import { appHeaderHeight, primaryBackground } from '../../styles/variables';
 
 const AppMain = ({ children }) => (
   <Main>
@@ -10,10 +11,10 @@ const AppMain = ({ children }) => (
 );
 
 const Main = styled.main`
-  min-height: 100vh;
+  min-height: calc(100vh - ${appHeaderHeight});
   position: relative;
   z-index: 1;
-  background: #212121;
+  background: ${primaryBackground};
 `;
 
 AppMain.propTypes = propTypes;
