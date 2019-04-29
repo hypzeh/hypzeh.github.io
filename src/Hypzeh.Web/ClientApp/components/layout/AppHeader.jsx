@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+import { appHeaderHeight } from '../../styles/variables';
+
 const AppHeader = () => (
   <Header>
     <Navbar>
@@ -17,7 +19,7 @@ const AppHeader = () => (
 );
 
 const Header = styled.header`
-  height: 100%;
+  height: ${appHeaderHeight};
   background: black;
 `;
 
