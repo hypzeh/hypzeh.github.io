@@ -12,7 +12,7 @@ const AppHeader = () => (
         <NavItem to="/error"><span role="img" aria-label="skull">💀</span></NavItem>
         <NavItem to="/about">ABOUT</NavItem>
         <NavItem to="/projects">PROJECTS</NavItem>
-        <a href="mailto:test@test.test">CONTACT</a>
+        <NavItem to="/contact">CONTACT</NavItem>
       </NavItems>
     </Navbar>
   </Header>
