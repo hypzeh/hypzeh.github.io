@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { appFooterHeight } from '../../styles/variables';
 const AppFooter = () => (
   <Footer>
     <Top>Top</Top>
@@ -22,7 +23,7 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 20rem;
+  height: ${appFooterHeight};
   position: sticky;
   bottom: 0;
   z-index: -1;
