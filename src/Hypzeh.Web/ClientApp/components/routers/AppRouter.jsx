@@ -8,6 +8,7 @@ import {
   HomeDisplay,
   AboutDisplay,
   ProjectsDisplay,
+  ContactDisplay,
   Error,
 } from '../pages';
 
@@ -19,6 +20,7 @@ const AppRouter = () => (
         <Route exact path="/" component={HomeDisplay} />
         <Route exact path="/about" component={AboutDisplay} />
         <Route exact path="/projects" component={ProjectsDisplay} />
+        <Route exact path="/contact" component={ContactDisplay} />
         <Route exact path="/error" render={({ history }) => <Error goBack={history.goBack} />} />
         <Route path="*" render={({ history }) => <Error code={404} message="Page not found..." goBack={history.goBack} />} />
       </Switch>
