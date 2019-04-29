@@ -2,10 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { appFooterHeight } from '../../styles/variables';
+import media from '../../styles/media';
+
 const AppFooter = () => (
   <Footer>
     <Top>Top</Top>
-    <Middle>Middle</Middle>
+    <Middle>
+      <div>Home</div>
+      <div>About</div>
+      <div>Projects</div>
+      <div>Contact</div>
+    </Middle>
     <Bottom>
       <div>&copy; Nick Smirnoff</div>
       <div>NS</div>
@@ -35,6 +42,21 @@ const Top = styled.div`
 
 const Middle = styled.div`
   border: 1px green solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  ${media.tablet`
+    flex-direction: column;
+    align-items: center;
+  `}
+
+  div {
+    border: 1px solid red;
+    width: 10rem;
+    text-align: center;
+    margin: .5rem;
+  }
 `;
 
 const Bottom = styled.div`
