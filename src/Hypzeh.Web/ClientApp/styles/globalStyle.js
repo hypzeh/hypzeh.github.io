@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Open Sans, Segoe UI, Tahoma, sans-serif !important;
     background: ${primaryBackground};
     color: ${primaryColour};
+    min-width: 275px;
     line-height: 1.8em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
