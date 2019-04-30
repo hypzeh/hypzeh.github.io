@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { appHeaderHeight, primaryBackground } from '../../styles/variables';
+import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
 
 const AppHeader = () => (
   <Header>
     <Navbar>
-      <NavBrand to="/">Nick Smirnoff</NavBrand>
+      <NavBrand exact to="/"><span>NS</span></NavBrand>
       <NavItems>
         <NavItem to="/error"><span role="img" aria-label="skull">💀</span></NavItem>
         <NavItem to="/about">ABOUT</NavItem>
@@ -24,6 +24,32 @@ const Header = styled.header`
 `;
 
 const Navbar = styled.nav`
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 .5rem;
+`;
+
+const NavBrand = styled(NavLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 .5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bolder;
+  border: 1px solid black;
+  color: black;
+`;
+
+const NavItems = styled.div`
+  margin-left: auto;
+  text-transform: uppercase;
+
+  .active {
+    border-bottom-color: ${primaryColour};
+  }
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -47,10 +73,10 @@ const NavItem = styled(NavLink)`
   padding: .25rem;
   border: 1px solid transparent;
   text-decoration: none;
-  color: white;
+  color: ${primaryColour};
 
   :hover {
-    background: white;
+    background: ${primaryColour};
     color: black;
   }
 `;
