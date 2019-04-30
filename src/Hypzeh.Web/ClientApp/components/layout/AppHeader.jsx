@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
-import media from '../../styles/media';
 
 const AppHeader = () => (
   <Header>
