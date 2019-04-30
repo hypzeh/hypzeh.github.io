@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
+import media from '../../styles/media';
 
 const AppHeader = () => (
   <Header>
@@ -50,21 +51,9 @@ const NavItems = styled.div`
   .active {
     border-bottom-color: ${primaryColour};
   }
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
 
-const NavBrand = styled(NavLink)`
-  padding: .5rem;
-`;
-
-const NavItems = styled.div`
-  margin-left: auto;
-  text-transform: uppercase;
-
-  .active {
-    border-bottom-color: white;
+  @media (max-width: 325px) {
+    display: none;
   }
 `;
 
