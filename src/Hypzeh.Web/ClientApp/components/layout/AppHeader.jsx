@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { appHeaderHeight } from '../../styles/variables';
+import { appHeaderHeight, primaryBackground } from '../../styles/variables';
 
 const AppHeader = () => (
   <Header>
@@ -20,7 +20,7 @@ const AppHeader = () => (
 
 const Header = styled.header`
   height: ${appHeaderHeight};
-  background: black;
+  background: ${primaryBackground};
 `;
 
 const Navbar = styled.nav`
@@ -35,10 +35,24 @@ const NavBrand = styled(NavLink)`
 
 const NavItems = styled.div`
   margin-left: auto;
+  text-transform: uppercase;
+
+  .active {
+    border-bottom-color: white;
+  }
 `;
 
 const NavItem = styled(NavLink)`
   margin: 0 .5rem;
+  padding: .25rem;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: white;
+
+  :hover {
+    background: white;
+    color: black;
+  }
 `;
 
 export default AppHeader;
