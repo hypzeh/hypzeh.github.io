@@ -5,14 +5,18 @@ import { Link } from 'react-router-dom';
 import { appFooterHeight } from '../../styles/variables';
 import media from '../../styles/media';
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const AppFooter = () => (
   <Footer>
     <Top>Top</Top>
     <Middle>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <div>Projects</div>
-      <div>Contact</div>
+      <NavItem to="/" onClick={scrollToTop}>Home</NavItem>
+      <NavItem to="/about" onClick={scrollToTop}>About</NavItem>
+      <NavItem to="/projects" onClick={scrollToTop}>Projects</NavItem>
+      <NavItem to="/contact" onClick={scrollToTop}>Contact</NavItem>
     </Middle>
     <Bottom>
       <div>&copy; Nick Smirnoff</div>
@@ -50,23 +54,13 @@ const Middle = styled.div`
     flex-direction: column;
     align-items: center;
   `}
-
-  div {
-    border: 1px solid red;
-    width: 10rem;
-    text-align: center;
-    margin: .5rem;
-
-    :hover {
-      background: red;
-    }
-  }
 `;
 
 const Bottom = styled.div`
   border: 1px green solid;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 
   a {
@@ -79,6 +73,16 @@ const Bottom = styled.div`
     }
   `}
 `;
+
+const NavItem = styled(Link)`
+  border: 1px solid red;
+  width: 10rem;
+  text-align: center;
+  margin: .5rem;
+
+  :hover {
+    background: red;
+  }
 `;
 
 export default AppFooter;
