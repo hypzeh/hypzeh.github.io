@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { appFooterHeight } from '../../styles/variables';
+import { appFooterHeight, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
 
 const scrollToTop = () => {
@@ -13,10 +13,10 @@ const AppFooter = () => (
   <Footer>
     <Top>Top</Top>
     <Middle>
-      <NavItem to="/" onClick={scrollToTop}>Home</NavItem>
-      <NavItem to="/about" onClick={scrollToTop}>About</NavItem>
-      <NavItem to="/projects" onClick={scrollToTop}>Projects</NavItem>
-      <NavItem to="/contact" onClick={scrollToTop}>Contact</NavItem>
+      <NavItem to="/" onClick={scrollToTop}>HOME</NavItem>
+      <NavItem to="/about" onClick={scrollToTop}>ABOUT</NavItem>
+      <NavItem to="/projects" onClick={scrollToTop}>PROJECTS</NavItem>
+      <NavItem to="/contact" onClick={scrollToTop}>CONTACT</NavItem>
     </Middle>
     <Bottom>
       <div>&copy; Nick Smirnoff</div>
@@ -77,6 +77,16 @@ const Bottom = styled.div`
 const NavItem = styled(Link)`
   border: 1px solid red;
   width: 10rem;
+  margin: .5rem;
+  border: 1px solid ${primaryColour};
+  color: ${primaryColour};
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+
+  :hover {
+    background: ${primaryColour};
+    color: black;
   text-align: center;
   margin: .5rem;
 
