@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { appFooterHeight, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
@@ -25,9 +26,15 @@ const AppFooter = () => (
       <div>&copy; Nick Smirnoff</div>
       <div id="logo">NS</div>
       <div>
-        <a href="/">LI</a>
-        <a href="/">TW</a>
-        <a href="/">GH</a>
+        <SocialLink href="https://github.com/hypzeh" aria-label="github">
+          <FontAwesomeIcon icon={['fab', 'github']} />
+        </SocialLink>
+        <SocialLink href="https://uk.linkedin.com/in/nick-smirnoff" aria-label="linkedin">
+          <FontAwesomeIcon icon={['fab', 'linkedin']} />
+        </SocialLink>
+        <SocialLink href="https://twitter.com/hypzeh" aria-label="twitter">
+          <FontAwesomeIcon icon={['fab', 'twitter']} />
+        </SocialLink>
       </div>
     </Bottom>
   </Footer>
@@ -89,6 +96,14 @@ const NavItem = styled(Link)`
   :hover {
     background: ${primaryColour};
     color: black;
+  }
+`;
+
+const SocialLink = styled.a`
+  color: ${primaryColour};
+
+  :hover {
+    color: gray;
   }
 `;
 
