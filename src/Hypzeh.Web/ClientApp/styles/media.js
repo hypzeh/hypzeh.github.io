@@ -1,9 +1,10 @@
 import { css } from 'styled-components';
 
 const sizes = {
-  desktop: 992,
-  tablet: 768,
-  phone: 576,
+  huge: 1440,
+  large: 1170,
+  medium: 768,
+  small: 450,
 };
 
 const media = Object.keys(sizes).reduce((acc, label) => {
