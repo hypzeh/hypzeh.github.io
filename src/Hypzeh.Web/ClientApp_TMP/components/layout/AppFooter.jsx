@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { appFooterHeight } from '../../styles/variables';
 import media from '../../styles/media';
@@ -8,8 +9,8 @@ const AppFooter = () => (
   <Footer>
     <Top>Top</Top>
     <Middle>
-      <div>Home</div>
-      <div>About</div>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
       <div>Projects</div>
       <div>Contact</div>
     </Middle>
@@ -33,7 +34,6 @@ const Footer = styled.footer`
   height: ${appFooterHeight};
   position: sticky;
   bottom: 0;
-  z-index: -1;
 `;
 
 const Top = styled.div`
@@ -56,6 +56,10 @@ const Middle = styled.div`
     width: 10rem;
     text-align: center;
     margin: .5rem;
+
+    :hover {
+      background: red;
+    }
   }
 `;
 
