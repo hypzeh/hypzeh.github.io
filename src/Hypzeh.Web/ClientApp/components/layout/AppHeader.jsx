@@ -8,7 +8,9 @@ import media from '../../styles/media';
 const AppHeader = () => (
   <Header>
     <Navbar>
-      <NavBrand exact to="/"><span>NS</span></NavBrand>
+      <NavBrand exact to="/">
+        <span>NS</span>
+      </NavBrand>
       <NavItems>
         <NavItem to="/error"><span role="img" aria-label="skull">💀</span></NavItem>
         <NavItem to="/about">ABOUT</NavItem>
