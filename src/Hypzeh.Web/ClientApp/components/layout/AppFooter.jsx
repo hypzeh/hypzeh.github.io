@@ -16,7 +16,7 @@ const AppFooter = () => (
     </Middle>
     <Bottom>
       <div>&copy; Nick Smirnoff</div>
-      <div>NS</div>
+      <div id="logo">NS</div>
       <div>
         <a href="/">LI</a>
         <a href="/">TW</a>
@@ -46,7 +46,7 @@ const Middle = styled.div`
   flex-direction: row;
   justify-content: center;
 
-  ${media.tablet`
+  ${media.medium`
     flex-direction: column;
     align-items: center;
   `}
@@ -72,6 +72,13 @@ const Bottom = styled.div`
   a {
     margin: 0 .5rem;
   }
+
+  ${media.small`
+    #logo {
+      display: none;
+    }
+  `}
+`;
 `;
 
 export default AppFooter;

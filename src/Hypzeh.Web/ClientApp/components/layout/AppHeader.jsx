@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
+import media from '../../styles/media';
 
 const AppHeader = () => (
   <Header>
@@ -51,9 +52,9 @@ const NavItems = styled.div`
     border-bottom-color: ${primaryColour};
   }
 
-  @media (max-width: 325px) {
+  ${media.small`
     display: none;
-  }
+  `}
 `;
 
 const NavItem = styled(NavLink)`
