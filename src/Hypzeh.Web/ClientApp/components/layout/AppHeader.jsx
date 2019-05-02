@@ -12,7 +12,6 @@ const AppHeader = () => (
         <span>NS</span>
       </NavBrand>
       <NavItems>
-        <NavItem to="/error"><span role="img" aria-label="skull">💀</span></NavItem>
         <NavItem to="/about">ABOUT</NavItem>
         <NavItem to="/projects">PROJECTS</NavItem>
         <NavItem to="/contact">CONTACT</NavItem>
@@ -48,7 +47,6 @@ const NavBrand = styled(NavLink)`
 
 const NavItems = styled.div`
   margin-left: auto;
-  text-transform: uppercase;
 
   .active {
     border-bottom-color: ${primaryColour};
@@ -63,8 +61,9 @@ const NavItem = styled(NavLink)`
   margin: 0 .5rem;
   padding: .25rem;
   border: 1px solid transparent;
-  text-decoration: none;
   color: ${primaryColour};
+  text-decoration: none;
+  text-transform: uppercase;
 
   :hover {
     background: ${primaryColour};

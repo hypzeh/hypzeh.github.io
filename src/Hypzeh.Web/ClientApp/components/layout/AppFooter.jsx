@@ -17,6 +17,9 @@ const AppFooter = () => (
       <NavItem to="/about" onClick={scrollToTop}>ABOUT</NavItem>
       <NavItem to="/projects" onClick={scrollToTop}>PROJECTS</NavItem>
       <NavItem to="/contact" onClick={scrollToTop}>CONTACT</NavItem>
+      <NavItem to="/error" onClick={scrollToTop}>
+        <span role="img" aria-label="skull">💀</span>
+      </NavItem>
     </Middle>
     <Bottom>
       <div>&copy; Nick Smirnoff</div>
@@ -75,7 +78,6 @@ const Bottom = styled.div`
 `;
 
 const NavItem = styled(Link)`
-  border: 1px solid red;
   width: 10rem;
   margin: .5rem;
   border: 1px solid ${primaryColour};
@@ -87,11 +89,6 @@ const NavItem = styled(Link)`
   :hover {
     background: ${primaryColour};
     color: black;
-  text-align: center;
-  margin: .5rem;
-
-  :hover {
-    background: red;
   }
 `;
 
