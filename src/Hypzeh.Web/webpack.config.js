@@ -12,7 +12,7 @@ module.exports = (env, argv) => {
   const { mode } = argv;
 
   return {
-    entry: './clientApp/index.jsx',
+    entry: './ClientApp/index.jsx',
     output: {
       filename: '[name].[hash].js',
       chunkFilename: '[name].[chunkhash].chunk.js',
@@ -124,9 +124,9 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './clientApp/template.html',
+        template: './ClientApp/template.html',
         filename: './index.html',
-        favicon: './clientApp/assets/img/favicon.png',
+        favicon: './ClientApp/assets/img/favicon.png',
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -165,7 +165,7 @@ module.exports = (env, argv) => {
         background_color: '#212121',
         icons: [
           {
-            src: path.resolve('./clientApp/assets/img/favicon.png'),
+            src: path.resolve('./ClientApp/assets/img/favicon.png'),
             sizes: [36, 48, 72, 96, 144, 192, 512],
             ios: true,
           },
