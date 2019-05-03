@@ -16,7 +16,9 @@ const AppHeader = () => (
         {
           pages
             .filter(({ isHidden }) => !isHidden)
-            .map(({ name, link }) => (<NavItem key={name} to={link}>{name}</NavItem>))
+            .map(({ name, link }) => (
+              <NavItem key={name} to={link}>{name}</NavItem>
+            ))
         }
       </NavItems>
     </Navbar>
