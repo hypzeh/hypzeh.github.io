@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { appFooterHeight, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
+import { pages, social } from '../../lib/navigation';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -14,27 +15,23 @@ const AppFooter = () => (
   <Footer>
     <Top>Top</Top>
     <Middle>
-      <NavItem to="/" onClick={scrollToTop}>HOME</NavItem>
-      <NavItem to="/about" onClick={scrollToTop}>ABOUT</NavItem>
-      <NavItem to="/projects" onClick={scrollToTop}>PROJECTS</NavItem>
-      <NavItem to="/contact" onClick={scrollToTop}>CONTACT</NavItem>
-      <NavItem to="/error" onClick={scrollToTop}>
-        <span role="img" aria-label="skull">💀</span>
-      </NavItem>
+      {
+        pages.map(({ name, link }) => (
+          <NavItem key={link} to={link} onClick={scrollToTop}>{name}</NavItem>
+        ))
+      }
     </Middle>
     <Bottom>
       <div>&copy; Nick Smirnoff</div>
       <div id="logo">NS</div>
       <div>
-        <SocialLink href="https://github.com/hypzeh" aria-label="github">
-          <FontAwesomeIcon icon={['fab', 'github']} />
-        </SocialLink>
-        <SocialLink href="https://uk.linkedin.com/in/nick-smirnoff" aria-label="linkedin">
-          <FontAwesomeIcon icon={['fab', 'linkedin']} />
-        </SocialLink>
-        <SocialLink href="https://twitter.com/hypzeh" aria-label="twitter">
-          <FontAwesomeIcon icon={['fab', 'twitter']} />
-        </SocialLink>
+        {
+          social.map(({ name, link, icon }) => (
+            <SocialLink key={name} href={link} aria-label={name} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={['fab', icon]} />
+            </SocialLink>
+          ))
+        }
       </div>
     </Bottom>
   </Footer>
