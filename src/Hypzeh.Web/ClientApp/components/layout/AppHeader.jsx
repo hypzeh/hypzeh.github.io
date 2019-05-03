@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
+import { pages } from '../../lib/navigation';
 
 const AppHeader = () => (
   <Header>
@@ -12,9 +13,11 @@ const AppHeader = () => (
         <span>NS</span>
       </NavBrand>
       <NavItems>
-        <NavItem to="/about">ABOUT</NavItem>
-        <NavItem to="/projects">PROJECTS</NavItem>
-        <NavItem to="/contact">CONTACT</NavItem>
+        {
+          pages
+            .filter(({ isHidden }) => !isHidden)
+            .map(({ name, link }) => (<NavItem key={name} to={link}>{name}</NavItem>))
+        }
       </NavItems>
     </Navbar>
   </Header>
