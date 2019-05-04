@@ -2,7 +2,6 @@ import React from 'react';
 import { hot } from 'react-hot-loader/root';
 
 import 'modern-normalize/modern-normalize.css';
-import './lib/iconLibrary';
 
 import GlobalStyle from './styles/globalStyle';
 import AppRouter from './components/routers/AppRouter';

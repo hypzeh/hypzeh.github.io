@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { appFooterHeight, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
@@ -28,7 +27,7 @@ const AppFooter = () => (
         {
           social.map(({ name, link, icon }) => (
             <SocialLink key={name} href={link} aria-label={name} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={['fab', icon]} />
+              {icon}
             </SocialLink>
           ))
         }
