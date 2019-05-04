@@ -46,8 +46,8 @@ const NavBrand = styled(NavLink)`
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bolder;
-  border: 1px solid black;
-  color: black;
+  border: 1px solid white;
+  color: white;
 `;
 
 const NavItems = styled.div`
