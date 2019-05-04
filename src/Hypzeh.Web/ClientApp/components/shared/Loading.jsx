@@ -19,11 +19,13 @@ const Section = styled.section`
 `;
 
 const ProgressLine = styled.div`
+  display: flex;
+  position: sticky;
+  top: 0;
   height: .1rem;
   width: 100%;
   margin: 0;
   background: transparent;
-  display: flex;
 
   &:before {
     width: 100%;
