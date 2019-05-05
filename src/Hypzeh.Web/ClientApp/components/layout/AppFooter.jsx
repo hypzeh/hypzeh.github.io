@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { appFooterHeight, primaryColour } from '../../styles/variables';
+import { appFooterHeight, primaryBackground, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages, social } from '../../lib/navigation';
 import Icon from '../shared/Icon';
+import Emoji from '../shared/Emoji';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -13,7 +14,9 @@ const scrollToTop = () => {
 
 const AppFooter = () => (
   <Footer>
-    <Section id="top">Top</Section>
+    <Section id="top">
+      <Emoji enableRoulette />
+    </Section>
     <Section id="middle">
       {
         pages.map(({ name, link }) => (
@@ -22,7 +25,7 @@ const AppFooter = () => (
       }
     </Section>
     <Section id="bottom">
-      <span>&copy; Nick Smirnoff</span>
+      <span>&copy; 2019 Nick Smirnoff</span>
       <div>
         {
           social.map(({ name, link, icon }) => (
@@ -48,13 +51,12 @@ const Footer = styled.footer`
 `;
 
 const Section = styled.section`
-  border: 1px green solid;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
   &#top {
-    background: blue;
+    background: transparent;
   }
 
   &#middle {
@@ -73,6 +75,7 @@ const Section = styled.section`
 const NavItem = styled(Link)`
   width: 10rem;
   margin: .5rem;
+  background: ${primaryBackground};
   border: 1px solid ${primaryColour};
   color: ${primaryColour};
   text-decoration: none;
