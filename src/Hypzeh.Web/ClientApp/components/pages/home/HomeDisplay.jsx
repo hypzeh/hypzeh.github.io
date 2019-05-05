@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 const HomeDisplay = () => (
   <React.Fragment>
     <Helmet>
-      <title>Nick Smirnoff</title>
+      <title>Home</title>
     </Helmet>
     <section>
       <div>Software Engineer</div>
