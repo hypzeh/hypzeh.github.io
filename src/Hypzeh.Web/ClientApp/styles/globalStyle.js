@@ -29,18 +29,18 @@ const GlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
       width: 5px;
     }
-  
+
     ::-webkit-scrollbar-track {
       background: ${primaryBackground}; 
       border: 1px solid black;
     }
-  
+
     ::-webkit-scrollbar-thumb {
       background: gray; 
     }
-  
+
     ::-webkit-scrollbar-thumb:hover {
-      background: darkgray; 
+      background: white; 
     }
   }
 `;
