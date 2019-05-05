@@ -3,6 +3,7 @@ const insert = (emoji, label) => ({ emoji, label });
 export const emojis = [
   // A
   // B
+  insert('👉', 'Backhand Index Pointing Right'),
   // C
   insert('🐤', 'Baby Chick'),
   // D
@@ -20,20 +21,26 @@ export const emojis = [
   // J
   // K
   // L
+  insert('😭', 'Loudly Crying Face'),
   // M
   // N
+  insert('🤓', 'Nerd Face'),
   // O
   // P
   insert('🐧', 'Penguin'),
   insert('💩', 'Pile of Poo'),
+  insert('💜', 'Purple Heart'),
   // Q
   // R
   insert('❤️', 'Red Heart'),
+  insert('🚀', 'Rocket'),
   // S
+  insert('😍', 'Smiling Face With Heart-Eyes'),
   insert('😊', 'Smiling Face With Smiling Eyes'),
   // T
   insert('🤔', 'Thinking Face'),
   insert('👍', 'Thumbs Up'),
+  insert('💕', 'Two Hearts'),
   // U
   // V
   // W
