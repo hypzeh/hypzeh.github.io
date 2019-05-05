@@ -15,7 +15,7 @@ const scrollToTop = () => {
 const AppFooter = () => (
   <Footer>
     <Section id="top">
-      <Emoji enableRoulette />
+      <Emoji size="xx-large" enableRoulette />
     </Section>
     <Section id="middle">
       {
@@ -56,7 +56,7 @@ const Section = styled.section`
   justify-content: center;
 
   &#top {
-    background: transparent;
+    margin-top: 1rem;
   }
 
   &#middle {
