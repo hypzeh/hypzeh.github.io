@@ -88,24 +88,25 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(jpg|png|webp|gif|svg|ico)$/,
+          test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
           use: [
-            'file-loader',
             {
-              loader: 'img-loader',
+              loader: 'url-loader',
               options: {
+                limit: 8192,
+                name: '[name].[ext]',
                 outputPath: 'images/',
-                plugins: [
-                  require('imagemin-mozjpeg')({
-                    progressive: true,
-                  }),
-                  require('imagemin-pngquant')({
-                    floyd: 0.5,
-                    speed: 5,
-                  }),
-                  require('imagemin-webp'),
-                  require('imagemin-svgo'),
-                ],
+              },
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                },
+                pngquant: {
+                  speed: 5,
+                },
               },
             },
           ],
