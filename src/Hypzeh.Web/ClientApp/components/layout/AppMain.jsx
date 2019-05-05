@@ -11,10 +11,10 @@ const AppMain = ({ children }) => (
 );
 
 const Main = styled.main`
-  min-height: ${appMainHeight};
   position: relative;
-  z-index: 1;
+  min-height: ${appMainHeight};
   background: ${primaryBackground};
+  z-index: 1;
 `;
 
 AppMain.propTypes = propTypes;
