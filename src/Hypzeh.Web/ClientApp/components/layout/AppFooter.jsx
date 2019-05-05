@@ -101,7 +101,7 @@ const SocialLink = styled.a`
   }
 
   & + & {
-    margin-left: .5rem;
+    margin-left: 1rem;
   }
 `;
 
