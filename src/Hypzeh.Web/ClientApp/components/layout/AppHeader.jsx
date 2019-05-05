@@ -26,6 +26,10 @@ const AppHeader = () => (
 );
 
 const Header = styled.header`
+  position: relative;
+  height: ${appHeaderHeight};
+  background: ${primaryBackground};
+  z-index: 1;
   height: ${appHeaderHeight};
   background: ${primaryBackground};
 `;

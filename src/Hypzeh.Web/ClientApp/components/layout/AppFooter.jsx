@@ -44,6 +44,7 @@ const Footer = styled.footer`
   height: ${appFooterHeight};
   position: sticky;
   bottom: 0;
+  z-index: 0;
 `;
 
 const Top = styled.div`
