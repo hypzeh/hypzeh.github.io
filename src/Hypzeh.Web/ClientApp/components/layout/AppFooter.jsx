@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { appFooterHeight, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages, social } from '../../lib/navigation';
+import Icon from '../shared/Icon';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -21,13 +22,12 @@ const AppFooter = () => (
       }
     </Middle>
     <Bottom>
-      <div>&copy; Nick Smirnoff</div>
-      <div id="logo">NS</div>
+      <span>&copy; Nick Smirnoff</span>
       <div>
         {
           social.map(({ name, link, icon }) => (
             <SocialLink key={name} href={link} aria-label={name} target="_blank" rel="noopener noreferrer">
-              {icon}
+              <Icon icon={icon} />
             </SocialLink>
           ))
         }
@@ -69,16 +69,7 @@ const Bottom = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  a {
-    margin: 0 .5rem;
-  }
-
-  ${media.small`
-    #logo {
-      display: none;
-    }
-  `}
+  padding: 0 .5rem;
 `;
 
 const NavItem = styled(Link)`
@@ -99,8 +90,18 @@ const NavItem = styled(Link)`
 const SocialLink = styled.a`
   color: ${primaryColour};
 
-  :hover {
-    color: gray;
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: white;
+
+    &:hover {
+      fill: gray;
+    }
+  }
+
+  & + & {
+    margin-left: .5rem;
   }
 `;
 
