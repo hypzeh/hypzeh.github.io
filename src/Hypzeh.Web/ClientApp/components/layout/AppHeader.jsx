@@ -5,13 +5,13 @@ import { NavLink } from 'react-router-dom';
 import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages } from '../../lib/navigation';
-import Logo from '../../assets/svg/ns-logo.svg';
+import Icon from '../shared/Icon';
 
 const AppHeader = () => (
   <Header>
     <Navbar>
       <NavBrand exact to="/">
-        <Logo alt="NS" />
+        <Icon icon="ns-logo" />
         <span>Nick Smirnoff</span>
       </NavBrand>
       <NavItems>
