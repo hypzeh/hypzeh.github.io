@@ -13,15 +13,15 @@ const scrollToTop = () => {
 
 const AppFooter = () => (
   <Footer>
-    <Top>Top</Top>
-    <Middle>
+    <Section id="top">Top</Section>
+    <Section id="middle">
       {
         pages.map(({ name, link }) => (
           <NavItem key={link} to={link} onClick={scrollToTop}>{name}</NavItem>
         ))
       }
-    </Middle>
-    <Bottom>
+    </Section>
+    <Section id="bottom">
       <span>&copy; Nick Smirnoff</span>
       <div>
         {
@@ -32,7 +32,7 @@ const AppFooter = () => (
           ))
         }
       </div>
-    </Bottom>
+    </Section>
   </Footer>
 );
 
@@ -47,29 +47,27 @@ const Footer = styled.footer`
   z-index: 0;
 `;
 
-const Top = styled.div`
-  border: 1px green solid;
-`;
-
-const Middle = styled.div`
+const Section = styled.section`
   border: 1px green solid;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  ${media.medium`
-    flex-direction: column;
-    align-items: center;
-  `}
-`;
+  &#top {
+    background: blue;
+  }
 
-const Bottom = styled.div`
-  border: 1px green solid;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 .5rem;
+  &#middle {
+    ${media.medium`
+      flex-direction: column;
+      align-items: center;
+    `}
+  }
+
+  &#bottom {
+    justify-content: space-between;
+    padding: 0 .5rem;
+  }
 `;
 
 const NavItem = styled(Link)`
@@ -81,7 +79,7 @@ const NavItem = styled(Link)`
   text-transform: uppercase;
   text-align: center;
 
-  :hover {
+  &:hover {
     background: ${primaryColour};
     color: black;
   }
