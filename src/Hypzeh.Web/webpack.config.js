@@ -77,7 +77,10 @@ module.exports = (env, argv) => {
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['react-hot-loader/webpack', 'babel-loader?cacheDirectory=true'],
+          use: [
+            'react-hot-loader/webpack',
+            'babel-loader?cacheDirectory=true',
+          ],
         },
         {
           test: /\.css$/,
@@ -88,7 +91,24 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
+          test: /\.svg$/,
+          use: [
+            'babel-loader',
+            {
+              loader: 'react-svg-loader',
+              options: {
+                jsx: true,
+                svgo: {
+                  plugins: [
+                    { removeStyleElement: false },
+                  ],
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(jpe?g|png|webp|gif|ico)$/i,
           use: [
             {
               loader: 'url-loader',
