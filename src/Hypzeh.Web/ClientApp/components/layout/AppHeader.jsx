@@ -5,12 +5,14 @@ import { NavLink } from 'react-router-dom';
 import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages } from '../../lib/navigation';
+import Logo from '../../assets/svg/ns-logo.svg';
 
 const AppHeader = () => (
   <Header>
     <Navbar>
       <NavBrand exact to="/">
-        <span>NS</span>
+        <Logo alt="NS" />
+        <span>Nick Smirnoff</span>
       </NavBrand>
       <NavItems>
         {
@@ -30,8 +32,6 @@ const Header = styled.header`
   height: ${appHeaderHeight};
   background: ${primaryBackground};
   z-index: 1;
-  height: ${appHeaderHeight};
-  background: ${primaryBackground};
 `;
 
 const Navbar = styled.nav`
@@ -44,14 +44,24 @@ const Navbar = styled.nav`
 
 const NavBrand = styled(NavLink)`
   display: flex;
+  height: 2rem;
   justify-content: center;
   align-items: center;
-  padding: 0 .5rem;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bolder;
-  border: 1px solid white;
-  color: white;
+  color: ${primaryColour};
+  border: 1px solid ${primaryColour};
+
+  svg {
+    height: inherit;
+    width: auto;
+    background: ${primaryColour};
+  }
+
+  span {
+    padding: 0 .5rem;
+  }
 `;
 
 const NavItems = styled.div`
@@ -67,12 +77,15 @@ const NavItems = styled.div`
 `;
 
 const NavItem = styled(NavLink)`
-  margin: 0 .5rem;
   padding: .25rem;
   border: 1px solid transparent;
   color: ${primaryColour};
   text-decoration: none;
   text-transform: uppercase;
+
+  & + & {
+    margin-left: .25rem;
+  }
 
   :hover {
     background: ${primaryColour};
