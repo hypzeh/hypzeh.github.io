@@ -1,7 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-
-import { propTypes, defaultProps } from '../../../types/pages/error';
 
 const Error = ({ code, message, goBack }) => (
   <React.Fragment>
@@ -15,7 +14,15 @@ const Error = ({ code, message, goBack }) => (
   </React.Fragment>
 );
 
-Error.propTypes = propTypes;
-Error.defaultProps = defaultProps;
+Error.propTypes = {
+  code: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  message: PropTypes.string,
+  goBack: PropTypes.func,
+};
+Error.defaultProps = {
+  code: 500,
+  message: 'Oops, something broke!',
+  goBack: undefined,
+};
 
 export default Error;
