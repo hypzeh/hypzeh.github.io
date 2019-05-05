@@ -61,6 +61,10 @@ const NavBrand = styled(NavLink)`
 
   span {
     padding: 0 .5rem;
+
+    @media (max-width: 185px) {
+      display: none;
+    }
   }
 `;
 
