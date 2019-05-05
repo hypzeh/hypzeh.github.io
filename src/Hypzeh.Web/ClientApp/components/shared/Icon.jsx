@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import NSLogo from '../../assets/svg/ns-logo.svg';
 import Github from '../../assets/svg/github.svg';
 import LinkedIn from '../../assets/svg/linkedin.svg';
+import Twitter from '../../assets/svg/twitter.svg';
 
 const Icon = (props) => {
   switch (props.icon.toLowerCase()) {
@@ -12,6 +13,9 @@ const Icon = (props) => {
 
   case 'linkedin':
     return (<LinkedIn {...props} />);
+
+  case 'twitter':
+    return (<Twitter {...props} />);
 
   case 'ns-logo':
   default:
