@@ -25,7 +25,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    Contents: '$(project)/wwwroot/*'
+    Contents: '**/wwwroot/*'
     TargetFolder: '$(build.artifactstagingdirectory)'
   displayName: 'Copy Files from wwwroot to: $(build.artifactstagingdirectory)'
 
