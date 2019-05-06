@@ -22,3 +22,15 @@ steps:
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(build.sourcesdirectory)'
+    Contents: '**\wwwroot\**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  displayName: 'Publish Artifact: drop'
