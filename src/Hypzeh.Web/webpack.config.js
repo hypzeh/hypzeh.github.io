@@ -12,7 +12,7 @@ module.exports = (env, argv) => {
   const { mode } = argv;
 
   return {
-    entry: './clientApp/index.jsx',
+    entry: './ClientApp/index.jsx',
     output: {
       filename: '[name].[hash].js',
       chunkFilename: '[name].[chunkhash].chunk.js',
@@ -77,7 +77,10 @@ module.exports = (env, argv) => {
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['react-hot-loader/webpack', 'babel-loader?cacheDirectory=true'],
+          use: [
+            'react-hot-loader/webpack',
+            'babel-loader?cacheDirectory=true',
+          ],
         },
         {
           test: /\.css$/,
@@ -88,24 +91,42 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(jpg|png|webp|gif|svg|ico)$/,
+          test: /\.svg$/,
           use: [
-            'file-loader',
+            'babel-loader',
             {
-              loader: 'img-loader',
+              loader: 'react-svg-loader',
               options: {
+                jsx: true,
+                svgo: {
+                  plugins: [
+                    { removeStyleElement: false },
+                  ],
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(jpe?g|png|webp|gif|ico)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+                name: '[name].[ext]',
                 outputPath: 'images/',
-                plugins: [
-                  require('imagemin-mozjpeg')({
-                    progressive: true,
-                  }),
-                  require('imagemin-pngquant')({
-                    floyd: 0.5,
-                    speed: 5,
-                  }),
-                  require('imagemin-webp'),
-                  require('imagemin-svgo'),
-                ],
+              },
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                },
+                pngquant: {
+                  speed: 5,
+                },
               },
             },
           ],
@@ -124,9 +145,9 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './clientApp/template.html',
+        template: './ClientApp/template.html',
         filename: './index.html',
-        favicon: './clientApp/assets/img/favicon.png',
+        favicon: './ClientApp/assets/img/favicon.png',
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -165,7 +186,7 @@ module.exports = (env, argv) => {
         background_color: '#212121',
         icons: [
           {
-            src: path.resolve('./clientApp/assets/img/favicon.png'),
+            src: path.resolve('./ClientApp/assets/img/favicon.png'),
             sizes: [36, 48, 72, 96, 144, 192, 512],
             ios: true,
           },

@@ -1,14 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import { propTypes, defaultProps } from '../../types/layout/appMain';
+import { appMainHeight, primaryBackground } from '../../styles/variables';
 
 const AppMain = ({ children }) => (
-  <main>
+  <Main>
     {children}
-  </main>
+  </Main>
 );
 
-AppMain.propTypes = propTypes;
-AppMain.defaultProps = defaultProps;
+const Main = styled.main`
+  position: relative;
+  min-height: ${appMainHeight};
+  background: ${primaryBackground};
+  z-index: 1;
+`;
+
+AppMain.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default AppMain;

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { primaryBackground, primaryColour } from './variables';
 import woff2 from '../assets/fonts/open-sans-v16-latin-regular.woff2';
 import woff from '../assets/fonts/open-sans-v16-latin-regular.woff';
 
@@ -18,12 +19,29 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: Open Sans, Segoe UI, Tahoma, sans-serif !important;
-    background: #212121;
-    color: #fff;
+    background: ${primaryBackground};
+    color: ${primaryColour};
     line-height: 1.8em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
-    word-wrap: break-word
+    word-wrap: break-word;
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${primaryBackground}; 
+      border: 1px solid black;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: gray; 
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: white; 
+    }
   }
 `;
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
+import { Helmet } from 'react-helmet';
 
 import 'modern-normalize/modern-normalize.css';
+
 import GlobalStyle from './styles/globalStyle';
 import AppRouter from './components/routers/AppRouter';
 
@@ -18,6 +20,7 @@ const App = () => {
 
   return (
     <React.Fragment>
+      <Helmet titleTemplate="%s / Nick Smirnoff" defaultTitle="Nick Smirnoff" />
       <GlobalStyle />
       <AppRouter />
     </React.Fragment>
