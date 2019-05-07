@@ -4,40 +4,43 @@ import { Link } from 'react-router-dom';
 
 import { appFooterHeight, primaryBackground, primaryColour } from '../../styles/variables';
 import media from '../../styles/media';
-import { pages, social } from '../../lib/navigation';
+import { pages, socials } from '../../lib/navigation';
 import Icon from '../shared/Icon';
 import Emoji from '../shared/Emoji';
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 
-const AppFooter = () => (
-  <Footer>
-    <Section id="top">
-      <Emoji size="xx-large" enableRoulette />
-    </Section>
-    <Section id="middle">
-      {
-        pages.map(({ name, link }) => (
-          <NavItem key={link} to={link} onClick={scrollToTop}>{name}</NavItem>
-        ))
-      }
-    </Section>
-    <Section id="bottom">
-      <span>&copy; 2019 Nick Smirnoff</span>
-      <div>
+const AppFooter = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <Footer>
+      <Section id="top">
+        <Emoji size="xx-large" enableRoulette />
+      </Section>
+      <Section id="middle">
         {
-          social.map(({ name, link, icon }) => (
-            <SocialLink key={name} href={link} aria-label={name} target="_blank" rel="noopener noreferrer">
-              <Icon icon={icon} />
-            </SocialLink>
+          pages.map(({ name, path }) => (
+            <NavItem key={name} to={path} onClick={scrollToTop}>{name}</NavItem>
           ))
         }
-      </div>
-    </Section>
-  </Footer>
-);
+      </Section>
+      <Section id="bottom">
+        <span>&copy; 2019 Nick Smirnoff</span>
+        <div>
+          {
+            socials.map(({ name, url, icon }) => (
+              <SocialLink key={name} href={url} aria-label={name} target="_blank" rel="noopener noreferrer">
+                <Icon icon={icon} />
+              </SocialLink>
+            ))
+          }
+        </div>
+      </Section>
+    </Footer>
+  );
+};
 
 const Footer = styled.footer`
   background: black;

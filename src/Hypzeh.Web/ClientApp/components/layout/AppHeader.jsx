@@ -18,8 +18,8 @@ const AppHeader = () => (
         {
           pages
             .filter(({ isHidden }) => !isHidden)
-            .map(({ name, link }) => (
-              <NavItem key={name} to={link}>{name}</NavItem>
+            .map(({ name, path }) => (
+              <NavItem key={name} to={path}>{name}</NavItem>
             ))
         }
       </NavItems>
