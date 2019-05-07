@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import withPageMetadata from '../../HOC/withPageMetadata';
+import { withPageMetadata } from '../../shared/PageMetadata';
 
 const metadata = {
   title: 'Error',

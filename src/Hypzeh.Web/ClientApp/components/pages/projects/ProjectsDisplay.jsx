@@ -1,6 +1,6 @@
 import React from 'react';
 
-import withPageMetadata from '../../HOC/withPageMetadata';
+import { withPageMetadata } from '../../shared/PageMetadata';
 
 const metadata = {
   title: 'Projects',
