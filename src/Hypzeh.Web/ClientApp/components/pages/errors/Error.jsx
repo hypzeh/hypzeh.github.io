@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
+
+import withPageMetadata from '../../HOC/withPageMetadata';
+
+const metadata = {
+  title: 'Error',
+  description: '',
+};
 
 const Error = ({ code, message, goBack }) => (
-  <React.Fragment>
-    <Helmet>
-      <title>Error</title>
-    </Helmet>
-    <section>
-      <div>{`[${code}] ${message}`}</div>
-      {goBack && <button type="button" onClick={goBack}>Back</button>}
-    </section>
-  </React.Fragment>
+  <section>
+    <div>{`[${code}] ${message}`}</div>
+    {goBack && <button type="button" onClick={goBack}>Back</button>}
+  </section>
 );
 
 Error.propTypes = {
@@ -25,4 +26,4 @@ Error.defaultProps = {
   goBack: undefined,
 };
 
-export default Error;
+export default withPageMetadata(metadata)(Error);
