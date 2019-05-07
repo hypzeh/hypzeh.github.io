@@ -1,15 +1,16 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+
+import withPageMetadata from '../../HOC/withPageMetadata';
+
+const metadata = {
+  title: 'Contact',
+  description: '',
+};
 
 const ContactDisplay = () => (
-  <React.Fragment>
-    <Helmet>
-      <title>Contact</title>
-    </Helmet>
-    <section>
-      <div>Contact...</div>
-    </section>
-  </React.Fragment>
+  <section>
+    <div>Contact...</div>
+  </section>
 );
 
-export default ContactDisplay;
+export default withPageMetadata(metadata)(ContactDisplay);

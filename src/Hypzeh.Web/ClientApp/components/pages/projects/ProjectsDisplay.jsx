@@ -1,15 +1,16 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+
+import withPageMetadata from '../../HOC/withPageMetadata';
+
+const metadata = {
+  title: 'Projects',
+  description: '',
+};
 
 const ProjectsDisplay = () => (
-  <React.Fragment>
-    <Helmet>
-      <title>Projects</title>
-    </Helmet>
-    <section>
-      <div>Projects...</div>
-    </section>
-  </React.Fragment>
+  <section>
+    <div>Projects...</div>
+  </section>
 );
 
-export default ProjectsDisplay;
+export default withPageMetadata(metadata)(ProjectsDisplay);
