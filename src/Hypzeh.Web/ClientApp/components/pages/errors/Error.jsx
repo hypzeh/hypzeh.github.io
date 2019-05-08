@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { withPageMetadata } from '../../shared/PageMetadata';
-
-const metadata = {
-  title: 'Error',
-  description: '',
-};
+import Page from '../Page';
 
 const Error = ({ code, message, goBack }) => (
-  <section>
-    <div>{`[${code}] ${message}`}</div>
-    {goBack && <button type="button" onClick={goBack}>Back</button>}
-  </section>
+  <Page title="Error">
+    <section>
+      <div>{`[${code}] ${message}`}</div>
+      {goBack && <button type="button" onClick={goBack}>Back</button>}
+    </section>
+  </Page>
 );
 
 Error.propTypes = {
@@ -26,4 +23,4 @@ Error.defaultProps = {
   goBack: undefined,
 };
 
-export default withPageMetadata(metadata)(Error);
+export default Error;

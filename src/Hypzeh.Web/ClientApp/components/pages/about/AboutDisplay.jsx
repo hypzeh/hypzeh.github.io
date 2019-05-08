@@ -1,16 +1,13 @@
 import React from 'react';
 
-import { withPageMetadata } from '../../shared/PageMetadata';
-
-const metadata = {
-  title: 'About',
-  description: '',
-};
+import Page from '../Page';
 
 const AboutDisplay = () => (
-  <section>
-    <div>About...</div>
-  </section>
+  <Page title="About">
+    <section>
+      <div>About...</div>
+    </section>
+  </Page>
 );
 
-export default withPageMetadata(metadata)(AboutDisplay);
+export default AboutDisplay;
