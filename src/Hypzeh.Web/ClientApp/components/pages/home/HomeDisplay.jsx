@@ -22,11 +22,7 @@ const HomeDisplay = () => {
             isTitleTyped && (
               <Typist cursor={{ element: '_' }}>
                 <Typist.Delay ms={1000} />
-                <span>
-                  Software Developer
-                  <Typist.Backspace count={9} delay={1000} />
-                  Engineer.
-                </span>
+                <span>Part-time programmer.</span>
               </Typist>
             )
           }
@@ -58,14 +54,17 @@ const Section = styled.section`
 const Title = styled.h1`
   position: absolute;
   width: 100%;
-  bottom: 10%;
+  bottom: 5%;
   margin: 0;
   line-height: normal;
   font-size: 300%;
 `;
 
 const Content = styled.div`
-  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: normal;
+  font-size: 150%;
 `;
 
 export default HomeDisplay;
