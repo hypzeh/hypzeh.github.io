@@ -12,7 +12,7 @@ const Emoji = ({
 }) => {
   const [state, setState] = useState({ emoji, label });
 
-  const onMouseEnter = () => {
+  const getNewEmoji = () => {
     if (!enableRoulette) return;
 
     setState(randomEmoji());
@@ -24,7 +24,8 @@ const Emoji = ({
       role="img"
       aria-label={state.label || ''}
       aria-hidden={state.label ? 'false' : 'true'}
-      onMouseEnter={onMouseEnter}
+      onMouseEnter={getNewEmoji}
+      onClick={getNewEmoji}
     >
       {state.emoji}
     </Span>
@@ -33,6 +34,7 @@ const Emoji = ({
 
 const Span = styled.span`
   font-size: ${props => props.fontSize};
+  user-select: none;
   cursor: default;
 `;
 
