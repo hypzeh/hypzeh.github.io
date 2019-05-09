@@ -1,6 +1,4 @@
-/**
- * APP SIZES
- */
+// APP SIZE
 const appHeaderHeight = '3rem';
 const appMainHeight = `calc(100vh - ${appHeaderHeight})`;
 const appFooterHeight = '20rem';
@@ -11,9 +9,7 @@ export const APP_SIZE = {
   footer: appFooterHeight,
 };
 
-/**
- * COLOURS
- */
+// COLOURS
 const grey = '#212121';
 const white = '#fff';
 
