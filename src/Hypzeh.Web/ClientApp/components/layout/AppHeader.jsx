@@ -93,7 +93,7 @@ const NavItem = styled(NavLink)`
 
   :hover {
     background: ${PRIMARY.colour};
-    color: ${PRIMARY.background};
+    color: ${PRIMARY.hover};
   }
 `;
 

@@ -19,5 +19,5 @@ export const PRIMARY = {
 export const SECONDARY = {
   background: '#080808',
   colour: '#f5f5f5',
-  hover: '#fff',
+  hover: '#c3c3c3',
 };

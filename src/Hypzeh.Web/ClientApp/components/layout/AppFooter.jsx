@@ -93,7 +93,7 @@ const NavItem = styled(Link)`
 
   &:hover {
     background: ${PRIMARY.colour};
-    color: black;
+    color: ${PRIMARY.hover};
   }
 `;
 
@@ -103,10 +103,10 @@ const SocialLink = styled.a`
   svg {
     width: 1rem;
     height: 1rem;
-    fill: white;
+    fill: ${PRIMARY.colour};
 
     &:hover {
-      fill: gray;
+      fill: ${SECONDARY.hover};
     }
   }
 
