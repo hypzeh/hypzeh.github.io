@@ -10,15 +10,14 @@ export const APP_SIZE = {
 };
 
 // COLOURS
-const grey = '#212121';
-const white = '#fff';
-
 export const PRIMARY = {
-  background: grey,
-  colour: white,
+  background: '#212121',
+  colour: '#fff',
+  hover: '#000',
 };
 
 export const SECONDARY = {
-  background: '',
-  color: '',
+  background: '#080808',
+  colour: '#f5f5f5',
+  hover: '#fff',
 };
