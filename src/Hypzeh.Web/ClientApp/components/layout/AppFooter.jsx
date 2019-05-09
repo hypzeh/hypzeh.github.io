@@ -17,7 +17,7 @@ const AppFooter = () => {
   return (
     <Footer>
       <Section id="top">
-        <Emoji size="xx-large" enableRoulette />
+        <Emoji enableRoulette />
       </Section>
       <Section id="middle">
         {
@@ -59,7 +59,13 @@ const Section = styled.section`
   justify-content: center;
 
   &#top {
-    margin-top: 1rem;
+    margin: 0;
+    line-height: normal;
+    font-size: 5em;
+
+    ${media.medium`
+      font-size: 2em;
+    `}
   }
 
   &#middle {
