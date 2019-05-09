@@ -1,15 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+
+import Page from '../Page';
 
 const AboutDisplay = () => (
-  <React.Fragment>
-    <Helmet>
-      <title>About</title>
-    </Helmet>
+  <Page title="About">
     <section>
       <div>About...</div>
     </section>
-  </React.Fragment>
+  </Page>
 );
 
 export default AboutDisplay;

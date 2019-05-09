@@ -1,15 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+
+import Page from '../Page';
 
 const ProjectsDisplay = () => (
-  <React.Fragment>
-    <Helmet>
-      <title>Projects</title>
-    </Helmet>
+  <Page title="Projects">
     <section>
       <div>Projects...</div>
     </section>
-  </React.Fragment>
+  </Page>
 );
 
 export default ProjectsDisplay;

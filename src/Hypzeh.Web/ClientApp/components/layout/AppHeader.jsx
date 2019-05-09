@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
+import { APP_SIZE, PRIMARY } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages } from '../../lib/navigation';
 import Icon from '../shared/Icon';
@@ -18,8 +18,8 @@ const AppHeader = () => (
         {
           pages
             .filter(({ isHidden }) => !isHidden)
-            .map(({ name, link }) => (
-              <NavItem key={name} to={link}>{name}</NavItem>
+            .map(({ name, path }) => (
+              <NavItem key={name} to={path}>{name}</NavItem>
             ))
         }
       </NavItems>
@@ -29,8 +29,8 @@ const AppHeader = () => (
 
 const Header = styled.header`
   position: relative;
-  height: ${appHeaderHeight};
-  background: ${primaryBackground};
+  height: ${APP_SIZE.header};
+  background: ${PRIMARY.background};
   z-index: 1;
 `;
 
@@ -50,13 +50,13 @@ const NavBrand = styled(NavLink)`
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bolder;
-  color: ${primaryColour};
-  border: 1px solid ${primaryColour};
+  color: ${PRIMARY.colour};
+  border: 1px solid ${PRIMARY.colour};
 
   svg {
     height: inherit;
     width: auto;
-    background: ${primaryColour};
+    background: ${PRIMARY.colour};
   }
 
   span {
@@ -72,7 +72,7 @@ const NavItems = styled.div`
   margin-left: auto;
 
   .active {
-    border-bottom-color: ${primaryColour};
+    border-bottom-color: ${PRIMARY.colour};
   }
 
   ${media.small`
@@ -83,7 +83,7 @@ const NavItems = styled.div`
 const NavItem = styled(NavLink)`
   padding: .25rem;
   border: 1px solid transparent;
-  color: ${primaryColour};
+  color: ${PRIMARY.colour};
   text-decoration: none;
   text-transform: uppercase;
 
@@ -92,8 +92,8 @@ const NavItem = styled(NavLink)`
   }
 
   :hover {
-    background: ${primaryColour};
-    color: black;
+    background: ${PRIMARY.colour};
+    color: ${PRIMARY.hover};
   }
 `;
 

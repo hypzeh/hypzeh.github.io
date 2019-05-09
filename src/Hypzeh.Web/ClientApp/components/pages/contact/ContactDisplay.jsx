@@ -1,15 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+
+import Page from '../Page';
 
 const ContactDisplay = () => (
-  <React.Fragment>
-    <Helmet>
-      <title>Contact</title>
-    </Helmet>
+  <Page title="Contact">
     <section>
       <div>Contact...</div>
     </section>
-  </React.Fragment>
+  </Page>
 );
 
 export default ContactDisplay;

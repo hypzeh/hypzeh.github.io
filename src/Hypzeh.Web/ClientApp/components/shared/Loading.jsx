@@ -27,7 +27,7 @@ const ProgressLine = styled.div`
   margin: 0;
   background: transparent;
 
-  &:before {
+  &::before {
     width: 100%;
     background: white;
     content: '';

@@ -2,49 +2,52 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { appFooterHeight, primaryBackground, primaryColour } from '../../styles/variables';
+import { APP_SIZE, PRIMARY, SECONDARY } from '../../styles/variables';
 import media from '../../styles/media';
-import { pages, social } from '../../lib/navigation';
+import { pages, socials } from '../../lib/navigation';
 import Icon from '../shared/Icon';
 import Emoji from '../shared/Emoji';
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 
-const AppFooter = () => (
-  <Footer>
-    <Section id="top">
-      <Emoji size="xx-large" enableRoulette />
-    </Section>
-    <Section id="middle">
-      {
-        pages.map(({ name, link }) => (
-          <NavItem key={link} to={link} onClick={scrollToTop}>{name}</NavItem>
-        ))
-      }
-    </Section>
-    <Section id="bottom">
-      <span>&copy; 2019 Nick Smirnoff</span>
-      <div>
+const AppFooter = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <Footer>
+      <Section id="top">
+        <Emoji enableRoulette />
+      </Section>
+      <Section id="middle">
         {
-          social.map(({ name, link, icon }) => (
-            <SocialLink key={name} href={link} aria-label={name} target="_blank" rel="noopener noreferrer">
-              <Icon icon={icon} />
-            </SocialLink>
+          pages.map(({ name, path }) => (
+            <NavItem key={name} to={path} onClick={scrollToTop}>{name}</NavItem>
           ))
         }
-      </div>
-    </Section>
-  </Footer>
-);
+      </Section>
+      <Section id="bottom">
+        <span>&copy; 2019 Nick Smirnoff</span>
+        <div>
+          {
+            socials.map(({ name, url, icon }) => (
+              <SocialLink key={name} href={url} aria-label={name} target="_blank" rel="noopener noreferrer">
+                <Icon icon={icon} />
+              </SocialLink>
+            ))
+          }
+        </div>
+      </Section>
+    </Footer>
+  );
+};
 
 const Footer = styled.footer`
-  background: black;
+  background: ${SECONDARY.background};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: ${appFooterHeight};
+  height: ${APP_SIZE.footer};
   position: sticky;
   bottom: 0;
   z-index: 0;
@@ -56,7 +59,13 @@ const Section = styled.section`
   justify-content: center;
 
   &#top {
-    margin-top: 1rem;
+    margin: 0;
+    line-height: normal;
+    font-size: 5em;
+
+    ${media.medium`
+      font-size: 2em;
+    `}
   }
 
   &#middle {
@@ -75,29 +84,29 @@ const Section = styled.section`
 const NavItem = styled(Link)`
   width: 10rem;
   margin: .5rem;
-  background: ${primaryBackground};
-  border: 1px solid ${primaryColour};
-  color: ${primaryColour};
+  background: ${PRIMARY.background};
+  border: 1px solid ${PRIMARY.colour};
+  color: ${PRIMARY.colour};
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
 
   &:hover {
-    background: ${primaryColour};
-    color: black;
+    background: ${PRIMARY.colour};
+    color: ${PRIMARY.hover};
   }
 `;
 
 const SocialLink = styled.a`
-  color: ${primaryColour};
+  color: ${PRIMARY.colour};
 
   svg {
     width: 1rem;
     height: 1rem;
-    fill: white;
+    fill: ${PRIMARY.colour};
 
     &:hover {
-      fill: gray;
+      fill: ${SECONDARY.hover};
     }
   }
 

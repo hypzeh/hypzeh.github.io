@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
+
+import Page from '../Page';
 
 const Error = ({ code, message, goBack }) => (
-  <React.Fragment>
-    <Helmet>
-      <title>Error</title>
-    </Helmet>
+  <Page title="Error">
     <section>
       <div>{`[${code}] ${message}`}</div>
       {goBack && <button type="button" onClick={goBack}>Back</button>}
     </section>
-  </React.Fragment>
+  </Page>
 );
 
 Error.propTypes = {
