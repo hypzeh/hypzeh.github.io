@@ -13,8 +13,14 @@ const AppMain = ({ children }) => (
 const Main = styled.main`
   position: relative;
   min-height: ${appMainHeight};
+  height: auto;
   background: ${primaryBackground};
   z-index: 1;
+
+  section:only-child {
+    min-height: inherit;
+    height: inherit;
+  }
 `;
 
 AppMain.propTypes = {
