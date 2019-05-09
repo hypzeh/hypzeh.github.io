@@ -5,7 +5,7 @@ const appHeaderHeight = '3rem';
 const appMainHeight = `calc(100vh - ${appHeaderHeight})`;
 const appFooterHeight = '20rem';
 
-export const appSize = {
+export const APP_SIZE = {
   header: appHeaderHeight,
   main: appMainHeight,
   footer: appFooterHeight,

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { appSize, primary } from '../../styles/variables';
+import { APP_SIZE, primary } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages } from '../../lib/navigation';
 import Icon from '../shared/Icon';
@@ -29,7 +29,7 @@ const AppHeader = () => (
 
 const Header = styled.header`
   position: relative;
-  height: ${appSize.header};
+  height: ${APP_SIZE.header};
   background: ${primary.background};
   z-index: 1;
 `;

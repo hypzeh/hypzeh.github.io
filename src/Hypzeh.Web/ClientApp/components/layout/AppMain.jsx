@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { appSize, primary } from '../../styles/variables';
+import { APP_SIZE, primary } from '../../styles/variables';
 
 const AppMain = ({ children }) => (
   <Main>
@@ -12,7 +12,7 @@ const AppMain = ({ children }) => (
 
 const Main = styled.main`
   position: relative;
-  min-height: ${appSize.main};
+  min-height: ${APP_SIZE.main};
   height: auto;
   background: ${primary.background};
   z-index: 1;

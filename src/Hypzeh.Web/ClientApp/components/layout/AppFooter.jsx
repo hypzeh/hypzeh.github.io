@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { appSize, primary } from '../../styles/variables';
+import { APP_SIZE, primary } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages, socials } from '../../lib/navigation';
 import Icon from '../shared/Icon';
@@ -47,7 +47,7 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: ${appSize.footer};
+  height: ${APP_SIZE.footer};
   position: sticky;
   bottom: 0;
   z-index: 0;
