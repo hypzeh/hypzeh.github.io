@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { PRIMARY } from './variables';
+import { PRIMARY, SECONDARY } from './variables';
 import woff2 from '../assets/fonts/open-sans-v16-latin-regular.woff2';
 import woff from '../assets/fonts/open-sans-v16-latin-regular.woff';
 
@@ -32,14 +32,15 @@ const GlobalStyle = createGlobalStyle`
 
     ::-webkit-scrollbar-track {
       background: ${PRIMARY.background};
+      border-left: 1px solid ${SECONDARY.background}
     }
 
     ::-webkit-scrollbar-thumb {
-      background: gray;
+      background: ${SECONDARY.colour};
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: white;
+      background: ${SECONDARY.hover};
     }
   }
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { APP_SIZE, PRIMARY } from '../../styles/variables';
+import { APP_SIZE, PRIMARY, SECONDARY } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages, socials } from '../../lib/navigation';
 import Icon from '../shared/Icon';
@@ -43,7 +43,7 @@ const AppFooter = () => {
 };
 
 const Footer = styled.footer`
-  background: black;
+  background: ${SECONDARY.background};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
