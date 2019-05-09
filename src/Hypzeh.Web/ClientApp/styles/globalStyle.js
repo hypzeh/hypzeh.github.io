@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { primary } from './variables';
+import { PRIMARY } from './variables';
 import woff2 from '../assets/fonts/open-sans-v16-latin-regular.woff2';
 import woff from '../assets/fonts/open-sans-v16-latin-regular.woff';
 
@@ -19,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: Open Sans, Segoe UI, Tahoma, sans-serif !important;
-    background: ${primary.background};
-    color: ${primary.colour};
+    background: ${PRIMARY.background};
+    color: ${PRIMARY.colour};
     line-height: 1.8em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     ::-webkit-scrollbar-track {
-      background: ${primary.background};
+      background: ${PRIMARY.background};
     }
 
     ::-webkit-scrollbar-thumb {

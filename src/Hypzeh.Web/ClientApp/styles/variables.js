@@ -17,12 +17,12 @@ export const APP_SIZE = {
 const grey = '#212121';
 const white = '#fff';
 
-export const primary = {
+export const PRIMARY = {
   background: grey,
   colour: white,
 };
 
-export const secondary = {
+export const SECONDARY = {
   background: '',
   color: '',
 };
