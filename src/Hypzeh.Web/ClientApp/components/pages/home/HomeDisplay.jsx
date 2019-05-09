@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Typist from 'react-typist';
+import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 
 import Page from '../Page';
 import media from '../../../styles/media';
+import { PRIMARY } from '../../../styles/variables';
 
 const HomeDisplay = () => {
   const [isTitleTyped, setIsTitleTyped] = useState(false);
@@ -13,17 +15,21 @@ const HomeDisplay = () => {
       <Section>
         <Title>
           <Typist cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 0 }} onTypingDone={() => setIsTitleTyped(true)}>
-            <Typist.Delay ms={1000} />
+            <Typist.Delay ms={500} />
             <span>NICK SMIRNOFF</span>
-            <Typist.Delay ms={1500} />
+            <Typist.Delay ms={600} />
           </Typist>
         </Title>
         <Content>
           {
             isTitleTyped && (
               <Typist cursor={{ element: '_' }}>
-                <Typist.Delay ms={1000} />
-                <span>Part-time programmer.</span>
+                <Typist.Delay ms={600} />
+                <span>Software Engineer.</span>
+                <Typist.Backspace count={18} delay={5000} />
+                <span>Check out my </span>
+                <Link to="/projects">projects</Link>
+                .
               </Typist>
             )
           }
@@ -90,6 +96,10 @@ const Content = styled.div`
   ${media.small`
     font-size: 100%;
   `}
+`;
+
+const Link = styled(NavLink)`
+  color: ${PRIMARY.colour};
 `;
 
 export default HomeDisplay;
