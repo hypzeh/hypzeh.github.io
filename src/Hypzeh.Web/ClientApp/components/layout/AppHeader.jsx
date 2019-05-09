@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { appHeaderHeight, primaryBackground, primaryColour } from '../../styles/variables';
+import { appHeaderHeight, primary } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages } from '../../lib/navigation';
 import Icon from '../shared/Icon';
@@ -30,7 +30,7 @@ const AppHeader = () => (
 const Header = styled.header`
   position: relative;
   height: ${appHeaderHeight};
-  background: ${primaryBackground};
+  background: ${primary.background};
   z-index: 1;
 `;
 
@@ -50,13 +50,13 @@ const NavBrand = styled(NavLink)`
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bolder;
-  color: ${primaryColour};
-  border: 1px solid ${primaryColour};
+  color: ${primary.colour};
+  border: 1px solid ${primary.colour};
 
   svg {
     height: inherit;
     width: auto;
-    background: ${primaryColour};
+    background: ${primary.colour};
   }
 
   span {
@@ -72,7 +72,7 @@ const NavItems = styled.div`
   margin-left: auto;
 
   .active {
-    border-bottom-color: ${primaryColour};
+    border-bottom-color: ${primary.colour};
   }
 
   ${media.small`
@@ -83,7 +83,7 @@ const NavItems = styled.div`
 const NavItem = styled(NavLink)`
   padding: .25rem;
   border: 1px solid transparent;
-  color: ${primaryColour};
+  color: ${primary.colour};
   text-decoration: none;
   text-transform: uppercase;
 
@@ -92,7 +92,7 @@ const NavItem = styled(NavLink)`
   }
 
   :hover {
-    background: ${primaryColour};
+    background: ${primary.colour};
     color: black;
   }
 `;

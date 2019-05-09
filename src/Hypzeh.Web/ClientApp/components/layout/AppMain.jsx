@@ -14,7 +14,7 @@ const Main = styled.main`
   position: relative;
   min-height: ${appMainHeight};
   height: auto;
-  background: ${primaryBackground};
+  background: ${primary.background};
   z-index: 1;
 
   section:only-child {

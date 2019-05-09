@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { appFooterHeight, primaryBackground, primaryColour } from '../../styles/variables';
+import { appFooterHeight, primary } from '../../styles/variables';
 import media from '../../styles/media';
 import { pages, socials } from '../../lib/navigation';
 import Icon from '../shared/Icon';
@@ -84,21 +84,21 @@ const Section = styled.section`
 const NavItem = styled(Link)`
   width: 10rem;
   margin: .5rem;
-  background: ${primaryBackground};
-  border: 1px solid ${primaryColour};
-  color: ${primaryColour};
+  background: ${primary.background};
+  border: 1px solid ${primary.colour};
+  color: ${primary.colour};
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
 
   &:hover {
-    background: ${primaryColour};
+    background: ${primary.colour};
     color: black;
   }
 `;
 
 const SocialLink = styled.a`
-  color: ${primaryColour};
+  color: ${primary.colour};
 
   svg {
     width: 1rem;
