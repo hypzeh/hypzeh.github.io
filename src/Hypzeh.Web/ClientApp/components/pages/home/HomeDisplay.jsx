@@ -3,6 +3,7 @@ import Typist from 'react-typist';
 import styled, { keyframes } from 'styled-components';
 
 import Page from '../Page';
+import media from '../../../styles/media';
 
 const HomeDisplay = () => {
   const [isTitleTyped, setIsTitleTyped] = useState(false);
@@ -57,14 +58,38 @@ const Title = styled.h1`
   bottom: 5%;
   margin: 0;
   line-height: normal;
-  font-size: 300%;
+  font-size: 500%;
+
+  ${media.large`
+    font-size: 400%;
+  `}
+
+  ${media.medium`
+    font-size: 300%;
+  `}
+
+  ${media.small`
+    font-size: 200%;
+  `}
 `;
 
 const Content = styled.div`
   width: 100%;
   text-align: center;
   line-height: normal;
-  font-size: 150%;
+  font-size: 250%;
+
+  ${media.large`
+    font-size: 200%;
+  `}
+
+  ${media.medium`
+    font-size: 150%;
+  `}
+
+  ${media.small`
+    font-size: 100%;
+  `}
 `;
 
 export default HomeDisplay;
