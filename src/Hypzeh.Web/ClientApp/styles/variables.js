@@ -1,9 +1,21 @@
-export const appHeaderHeight = '3rem';
-export const appMainHeight = `calc(100vh - ${appHeaderHeight})`;
-export const appFooterHeight = '20rem';
+/**
+ * APP SIZES
+ */
+const appHeaderHeight = '3rem';
+const appMainHeight = `calc(100vh - ${appHeaderHeight})`;
+const appFooterHeight = '20rem';
 
-export const grey = '#212121';
-export const white = '#fff';
+export const appSize = {
+  header: appHeaderHeight,
+  main: appMainHeight,
+  footer: appFooterHeight,
+};
+
+/**
+ * COLOURS
+ */
+const grey = '#212121';
+const white = '#fff';
 
 export const primary = {
   background: grey,
