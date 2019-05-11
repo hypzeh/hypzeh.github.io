@@ -68,7 +68,7 @@ const NavItem = styled(NavLink)`
 const AppHeader = () => (
   <Header>
     <Navbar>
-      <NavBrand exact to="/">
+      <NavBrand exact to="/" aria-label="nick-smirnoff">
         <Icon icon="ns-logo" />
       </NavBrand>
       <NavItems>
