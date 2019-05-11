@@ -31,20 +31,12 @@ const NavBrand = styled(NavLink)`
   text-decoration: none;
   font-weight: bolder;
   color: ${PRIMARY.colour};
-  border: 1px solid ${PRIMARY.colour};
 
   svg {
     height: inherit;
     width: auto;
     background: ${PRIMARY.colour};
-  }
-
-  span {
-    padding: 0 .5rem;
-
-    @media (max-width: 185px) {
-      display: none;
-    }
+    border-radius: .25rem;
   }
 `;
 
@@ -82,7 +74,6 @@ const AppHeader = () => (
     <Navbar>
       <NavBrand exact to="/">
         <Icon icon="ns-logo" />
-        <span>Nick Smirnoff</span>
       </NavBrand>
       <NavItems>
         {
