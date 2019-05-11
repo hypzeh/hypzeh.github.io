@@ -99,7 +99,7 @@ const AppFooter = () => {
         }
       </Section>
       <Section id="bottom">
-        <span>&copy; 2019 Nick Smirnoff</span>
+        <span>&copy; Nick Smirnoff</span>
         <div>
           {
             socials.map(({ name, url, icon }) => (
