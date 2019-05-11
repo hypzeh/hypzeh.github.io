@@ -4,6 +4,12 @@ import styled from 'styled-components';
 
 import { randomEmoji } from '../../lib/emojis';
 
+const Span = styled.span`
+  font-size: ${props => props.fontSize};
+  user-select: none;
+  cursor: default;
+`;
+
 const Emoji = ({
   emoji,
   label,
@@ -31,12 +37,6 @@ const Emoji = ({
     </Span>
   );
 };
-
-const Span = styled.span`
-  font-size: ${props => props.fontSize};
-  user-select: none;
-  cursor: default;
-`;
 
 Emoji.propTypes = {
   emoji: PropTypes.string,

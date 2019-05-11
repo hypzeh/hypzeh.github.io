@@ -8,40 +8,6 @@ import { pages, socials } from '../../lib/navigation';
 import Icon from '../shared/Icon';
 import Emoji from '../shared/Emoji';
 
-
-const AppFooter = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    <Footer>
-      <Section id="top">
-        <Emoji enableRoulette />
-      </Section>
-      <Section id="middle">
-        {
-          pages.map(({ name, path }) => (
-            <NavItem key={name} to={path} onClick={scrollToTop}>{name}</NavItem>
-          ))
-        }
-      </Section>
-      <Section id="bottom">
-        <span>&copy; 2019 Nick Smirnoff</span>
-        <div>
-          {
-            socials.map(({ name, url, icon }) => (
-              <SocialLink key={name} href={url} aria-label={name} target="_blank" rel="noopener noreferrer">
-                <Icon icon={icon} />
-              </SocialLink>
-            ))
-          }
-        </div>
-      </Section>
-    </Footer>
-  );
-};
-
 const Footer = styled.footer`
   background: ${SECONDARY.background};
   display: flex;
@@ -114,5 +80,38 @@ const SocialLink = styled.a`
     margin-left: 1rem;
   }
 `;
+
+const AppFooter = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <Footer>
+      <Section id="top">
+        <Emoji enableRoulette />
+      </Section>
+      <Section id="middle">
+        {
+          pages.map(({ name, path }) => (
+            <NavItem key={name} to={path} onClick={scrollToTop}>{name}</NavItem>
+          ))
+        }
+      </Section>
+      <Section id="bottom">
+        <span>&copy; 2019 Nick Smirnoff</span>
+        <div>
+          {
+            socials.map(({ name, url, icon }) => (
+              <SocialLink key={name} href={url} aria-label={name} target="_blank" rel="noopener noreferrer">
+                <Icon icon={icon} />
+              </SocialLink>
+            ))
+          }
+        </div>
+      </Section>
+    </Footer>
+  );
+};
 
 export default AppFooter;

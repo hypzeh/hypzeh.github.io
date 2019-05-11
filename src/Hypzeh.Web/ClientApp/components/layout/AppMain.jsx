@@ -4,12 +4,6 @@ import styled from 'styled-components';
 
 import { APP_SIZE, PRIMARY } from '../../styles/variables';
 
-const AppMain = ({ children }) => (
-  <Main>
-    {children}
-  </Main>
-);
-
 const Main = styled.main`
   position: relative;
   min-height: ${APP_SIZE.main};
@@ -22,6 +16,12 @@ const Main = styled.main`
     height: inherit;
   }
 `;
+
+const AppMain = ({ children }) => (
+  <Main>
+    {children}
+  </Main>
+);
 
 AppMain.propTypes = {
   children: PropTypes.node.isRequired,
