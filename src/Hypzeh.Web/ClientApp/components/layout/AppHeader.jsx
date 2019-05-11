@@ -27,10 +27,6 @@ const NavBrand = styled(NavLink)`
   height: 2rem;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bolder;
-  color: ${PRIMARY.colour};
 
   svg {
     height: inherit;
