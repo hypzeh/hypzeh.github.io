@@ -8,7 +8,6 @@ import PageHeader from '../PageHeader';
 import PageContent from '../PageContent';
 import { PRIMARY } from '../../../styles/variables';
 
-
 const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -18,7 +17,7 @@ const Link = styled(NavLink)`
   color: ${PRIMARY.colour};
 `;
 
-const HomeDisplay = () => (
+const Home = () => (
   <Page title="Home">
     <PageHeader>
       <Typist cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 0 }}>
@@ -42,4 +41,4 @@ const HomeDisplay = () => (
   </Page>
 );
 
-export default HomeDisplay;
+export default Home;
