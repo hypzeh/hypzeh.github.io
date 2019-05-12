@@ -1,0 +1,33 @@
+import React from 'react';
+import styled from 'styled-components';
+
+import media from '../../styles/media';
+
+const Content = styled.div`
+  flex-grow: 1;
+  width: 100%;
+  text-align: center;
+  line-height: normal;
+  font-size: 250%;
+  border: 1px solid green;
+
+  ${media.large`
+    font-size: 200%;
+  `}
+
+  ${media.medium`
+    font-size: 150%;
+  `}
+
+  ${media.small`
+    font-size: 100%;
+  `}
+`;
+
+const PageContent = ({ children }) => (
+  <Content>
+    {children}
+  </Content>
+);
+
+export default PageContent;
