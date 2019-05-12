@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import media from '../../styles/media';
@@ -29,5 +30,9 @@ const PageContent = ({ children }) => (
     {children}
   </Content>
 );
+
+PageContent.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default PageContent;
