@@ -20,11 +20,6 @@ const Main = styled.main`
   background: ${PRIMARY.background};
   z-index: 1;
 
-  section:only-child {
-    min-height: inherit;
-    height: inherit;
-  }
-
   .Cursor {
     position: absolute;
     opacity: 1;
