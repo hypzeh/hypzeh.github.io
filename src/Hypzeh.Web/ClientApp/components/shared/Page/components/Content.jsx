@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import media from '../../styles/media';
+import media from '../../../../styles/media';
 
-const Content = styled.div`
+const Wrapper = styled.div`
   flex-grow: 1;
   width: 100%;
   text-align: center;
@@ -33,13 +33,13 @@ const defaultProps = {
   children: null,
 };
 
-const PageContent = ({ children }) => (
-  <Content>
+const Content = ({ children }) => (
+  <Wrapper>
     {children}
-  </Content>
+  </Wrapper>
 );
 
-PageContent.propTypes = propTypes;
-PageContent.defaultProps = defaultProps;
+Content.propTypes = propTypes;
+Content.defaultProps = defaultProps;
 
-export default PageContent;
+export default Content;

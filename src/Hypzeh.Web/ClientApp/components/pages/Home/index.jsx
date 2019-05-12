@@ -1,32 +1,30 @@
 import React from 'react';
+import styled from 'styled-components';
 import Typist from 'react-typist';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
 
-import Page from '../Page';
-import PageHeader from '../PageHeader';
-import PageContent from '../PageContent';
 import { PRIMARY } from '../../../styles/variables';
+import Page from '../../shared/Page';
 
-const Section = styled.section`
+export const Section = styled.section`
   display: flex;
   flex-direction: column;
 `;
 
-const Link = styled(NavLink)`
+export const Link = styled(NavLink)`
   color: ${PRIMARY.colour};
 `;
 
 const Home = () => (
   <Page title="Home">
-    <PageHeader>
+    <Page.Header>
       <Typist cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 0 }}>
         <Typist.Delay ms={500} />
         <span>NICK SMIRNOFF</span>
         <Typist.Delay ms={600} />
       </Typist>
-    </PageHeader>
-    <PageContent>
+    </Page.Header>
+    <Page.Content>
       <Section>
         <Typist cursor={{ element: '_' }}>
           <Typist.Delay ms={600} />
@@ -37,7 +35,10 @@ const Home = () => (
           <span>.</span>
         </Typist>
       </Section>
-    </PageContent>
+    </Page.Content>
+    <Page.Footer>
+      <span>Footer</span>
+    </Page.Footer>
   </Page>
 );
 

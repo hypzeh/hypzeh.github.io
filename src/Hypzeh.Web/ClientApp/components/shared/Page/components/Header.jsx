@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import media from '../../styles/media';
+import media from '../../../../styles/media';
 
-const Header = styled.header`
+const Wrapper = styled.header`
   position: sticky;
   width: 100%;
   margin: 0;
@@ -36,13 +36,13 @@ const defaultProps = {
   children: null,
 };
 
-const PageHeader = ({ children }) => (
-  <Header>
+const Header = ({ children }) => (
+  <Wrapper>
     {children}
-  </Header>
+  </Wrapper>
 );
 
-PageHeader.propTypes = propTypes;
-PageHeader.defaultProps = defaultProps;
+Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
 
-export default PageHeader;
+export default Header;

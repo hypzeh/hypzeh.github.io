@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Page from '../Page';
+import Page from '../../shared/Page';
 
 const propTypes = {
   code: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

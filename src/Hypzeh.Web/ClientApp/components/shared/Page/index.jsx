@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
+import Header from './components/Header';
+import Content from './components/Content';
+import Footer from './components/Footer';
+
 const propTypes = {
   children: PropTypes.node,
   title: PropTypes.string.isRequired,
@@ -10,7 +14,6 @@ const propTypes = {
 const defaultProps = {
   children: null,
 };
-
 
 const Page = ({ children, title }) => (
   <React.Fragment>
@@ -23,5 +26,9 @@ const Page = ({ children, title }) => (
 
 Page.propTypes = propTypes;
 Page.defaultProps = defaultProps;
+
+Page.Header = Header;
+Page.Content = Content;
+Page.Footer = Footer;
 
 export default Page;
