@@ -6,12 +6,12 @@ import { NavLink } from 'react-router-dom';
 import { PRIMARY } from '../../../styles/variables';
 import Page, { PageHeader, PageContent, PageFooter } from '../../shared/Page';
 
-export const Section = styled.section`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
 `;
 
-export const Link = styled(NavLink)`
+const Link = styled(NavLink)`
   color: ${PRIMARY.colour};
 `;
 
