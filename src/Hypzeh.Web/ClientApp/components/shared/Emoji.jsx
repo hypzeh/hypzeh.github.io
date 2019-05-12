@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { randomEmoji } from '../../lib/emojis';
+import emojis from '../../lib/emojis';
 
 const Span = styled.span`
   font-size: ${props => props.fontSize};
@@ -18,7 +18,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  ...randomEmoji(),
+  ...emojis.getRandom(),
   size: 'inherit',
   enableRoulette: false,
 };
@@ -34,7 +34,7 @@ const Emoji = ({
   const getNewEmoji = () => {
     if (!enableRoulette) return;
 
-    setState(randomEmoji());
+    setState(emojis.getRandom());
   };
 
   return (

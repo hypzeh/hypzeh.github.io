@@ -1,6 +1,5 @@
 const insert = (emoji, label) => ({ emoji, label });
-
-export const emojis = [
+const library = [
   // A
   // B
   insert('👉', 'Backhand Index Pointing Right'),
@@ -49,4 +48,9 @@ export const emojis = [
   // Z
 ];
 
-export const randomEmoji = () => (emojis[Math.floor(Math.random() * emojis.length)]);
+const getRandom = () => library[Math.floor(Math.random() * library.length)];
+
+export default {
+  library,
+  getRandom,
+};
