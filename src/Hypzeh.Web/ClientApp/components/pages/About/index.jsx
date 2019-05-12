@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Page, { PageHeader, PageContent } from '../../shared/Page';
+import Page from '../../shared/Page';
 
 const Section = styled.section`
   display: flex;
@@ -25,20 +25,16 @@ const Paragraph = styled.p`
 
 const AboutDisplay = () => (
   <Page title="About">
-    <PageHeader>
-      <span>About</span>
-    </PageHeader>
-    <PageContent>
-      <Section>
-        <Heading>About Nick Smirnoff</Heading>
-        <Paragraph>
-          {'Dedicated, innovative, motivated individual inspired to be part of the mould that will shape the limitless potential of the future through technology.'}
-        </Paragraph>
-        <Paragraph>
-          {'Always looking to gain greater experience and knowledge in a range of settings relating to content creation and development.'}
-        </Paragraph>
-      </Section>
-    </PageContent>
+    <span>About</span>
+    <Section>
+      <Heading>About Nick Smirnoff</Heading>
+      <Paragraph>
+        {'Dedicated, innovative, motivated individual inspired to be part of the mould that will shape the limitless potential of the future through technology.'}
+      </Paragraph>
+      <Paragraph>
+        {'Always looking to gain greater experience and knowledge in a range of settings relating to content creation and development.'}
+      </Paragraph>
+    </Section>
   </Page>
 );
 
