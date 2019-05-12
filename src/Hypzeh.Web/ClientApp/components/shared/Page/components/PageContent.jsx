@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import media from '../../../../styles/media';
 
-const Wrapper = styled.div`
+const Content = styled.div`
   flex-grow: 1;
   width: 100%;
   text-align: center;
@@ -33,13 +33,13 @@ const defaultProps = {
   children: null,
 };
 
-const Content = ({ children }) => (
-  <Wrapper>
+const PageContent = ({ children }) => (
+  <Content>
     {children}
-  </Wrapper>
+  </Content>
 );
 
-Content.propTypes = propTypes;
-Content.defaultProps = defaultProps;
+PageContent.propTypes = propTypes;
+PageContent.defaultProps = defaultProps;
 
-export default Content;
+export default PageContent;

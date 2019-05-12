@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
-import Header from './components/Header';
-import Content from './components/Content';
-import Footer from './components/Footer';
+import PageHeader from './components/PageHeader';
+import PageContent from './components/PageContent';
+import PageFooter from './components/PageFooter';
 
 const propTypes = {
   children: PropTypes.node,
@@ -27,8 +27,9 @@ const Page = ({ children, title }) => (
 Page.propTypes = propTypes;
 Page.defaultProps = defaultProps;
 
-Page.Header = Header;
-Page.Content = Content;
-Page.Footer = Footer;
-
 export default Page;
+export {
+  PageHeader,
+  PageContent,
+  PageFooter,
+};

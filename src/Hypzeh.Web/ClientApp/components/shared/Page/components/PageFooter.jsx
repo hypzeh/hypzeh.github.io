@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import media from '../../../../styles/media';
 
-const Wrapper = styled.footer`
+const Footer = styled.footer`
   width: 100%;
   line-height: normal;
   font-size: 250%;
@@ -31,13 +31,13 @@ const defaultProps = {
   children: null,
 };
 
-const Footer = ({ children }) => (
-  <Wrapper>
+const PageFooter = ({ children }) => (
+  <Footer>
     {children}
-  </Wrapper>
+  </Footer>
 );
 
-Footer.propTypes = propTypes;
-Footer.defaultProps = defaultProps;
+PageFooter.propTypes = propTypes;
+PageFooter.defaultProps = defaultProps;
 
-export default Footer;
+export default PageFooter;

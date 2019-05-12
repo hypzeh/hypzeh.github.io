@@ -4,7 +4,7 @@ import Typist from 'react-typist';
 import { NavLink } from 'react-router-dom';
 
 import { PRIMARY } from '../../../styles/variables';
-import Page from '../../shared/Page';
+import Page, { PageHeader, PageContent, PageFooter } from '../../shared/Page';
 
 export const Section = styled.section`
   display: flex;
@@ -17,14 +17,14 @@ export const Link = styled(NavLink)`
 
 const Home = () => (
   <Page title="Home">
-    <Page.Header>
+    <PageHeader>
       <Typist cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 0 }}>
         <Typist.Delay ms={500} />
         <span>NICK SMIRNOFF</span>
         <Typist.Delay ms={600} />
       </Typist>
-    </Page.Header>
-    <Page.Content>
+    </PageHeader>
+    <PageContent>
       <Section>
         <Typist cursor={{ element: '_' }}>
           <Typist.Delay ms={600} />
@@ -35,10 +35,10 @@ const Home = () => (
           <span>.</span>
         </Typist>
       </Section>
-    </Page.Content>
-    <Page.Footer>
+    </PageContent>
+    <PageFooter>
       <span>Footer</span>
-    </Page.Footer>
+    </PageFooter>
   </Page>
 );
 

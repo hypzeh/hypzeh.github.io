@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import media from '../../../../styles/media';
 
-const Wrapper = styled.header`
+const Header = styled.header`
   position: sticky;
   width: 100%;
   margin: 0;
@@ -36,13 +36,13 @@ const defaultProps = {
   children: null,
 };
 
-const Header = ({ children }) => (
-  <Wrapper>
+const PageHeader = ({ children }) => (
+  <Header>
     {children}
-  </Wrapper>
+  </Header>
 );
 
-Header.propTypes = propTypes;
-Header.defaultProps = defaultProps;
+PageHeader.propTypes = propTypes;
+PageHeader.defaultProps = defaultProps;
 
-export default Header;
+export default PageHeader;
