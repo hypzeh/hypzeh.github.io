@@ -27,14 +27,21 @@ const Main = styled.main`
   }
 `;
 
+const propTypes = {
+  children: PropTypes.node,
+};
+
+const defaultProps = {
+  children: null,
+};
+
 const AppMain = ({ children }) => (
   <Main>
     {children}
   </Main>
 );
 
-AppMain.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+AppMain.propTypes = propTypes;
+AppMain.defaultProps = defaultProps;
 
 export default AppMain;

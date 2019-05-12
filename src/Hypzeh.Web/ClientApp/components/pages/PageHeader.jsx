@@ -28,14 +28,21 @@ const Header = styled.header`
   `}
 `;
 
+const propTypes = {
+  children: PropTypes.node,
+};
+
+const defaultProps = {
+  children: null,
+};
+
 const PageHeader = ({ children }) => (
   <Header>
     {children}
   </Header>
 );
 
-PageHeader.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+PageHeader.propTypes = propTypes;
+PageHeader.defaultProps = defaultProps;
 
 export default PageHeader;

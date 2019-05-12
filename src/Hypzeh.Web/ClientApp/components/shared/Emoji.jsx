@@ -10,6 +10,19 @@ const Span = styled.span`
   cursor: default;
 `;
 
+const propTypes = {
+  emoji: PropTypes.string,
+  label: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  enableRoulette: PropTypes.bool,
+};
+
+const defaultProps = {
+  ...randomEmoji(),
+  size: 'inherit',
+  enableRoulette: false,
+};
+
 const Emoji = ({
   emoji,
   label,
@@ -28,8 +41,8 @@ const Emoji = ({
     <Span
       fontSize={size}
       role="img"
-      aria-label={state.label || ''}
-      aria-hidden={state.label ? 'false' : 'true'}
+      aria-label={state.label || 'emoji'}
+      aria-hidden="false"
       onMouseEnter={getNewEmoji}
       onClick={getNewEmoji}
     >
@@ -38,16 +51,7 @@ const Emoji = ({
   );
 };
 
-Emoji.propTypes = {
-  emoji: PropTypes.string,
-  label: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  enableRoulette: PropTypes.bool,
-};
-Emoji.defaultProps = {
-  ...randomEmoji(),
-  size: 'inherit',
-  enableRoulette: false,
-};
+Emoji.propTypes = propTypes;
+Emoji.defaultProps = defaultProps;
 
 export default Emoji;

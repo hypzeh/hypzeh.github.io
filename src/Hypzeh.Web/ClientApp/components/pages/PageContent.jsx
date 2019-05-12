@@ -25,14 +25,21 @@ const Content = styled.div`
   `}
 `;
 
+const propTypes = {
+  children: PropTypes.node,
+};
+
+const defaultProps = {
+  children: null,
+};
+
 const PageContent = ({ children }) => (
   <Content>
     {children}
   </Content>
 );
 
-PageContent.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+PageContent.propTypes = propTypes;
+PageContent.defaultProps = defaultProps;
 
 export default PageContent;
