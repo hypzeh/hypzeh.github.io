@@ -25,4 +25,8 @@
     <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
   </Target>
 
+  <Target Name="NpmBuildCommand" AfterTargets="Build">
+    <Exec Command="npm run build" />
+  </Target>
+
 </Project>
