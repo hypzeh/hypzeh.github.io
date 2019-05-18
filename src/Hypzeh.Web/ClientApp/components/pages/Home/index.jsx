@@ -13,12 +13,31 @@ const PageHeader = styled.header`
   overflow: hidden;
 `;
 
-const Home = () => (
-  <Page title="Home">
-    <PageHeader>
-      <Title />
-    </PageHeader>
-  </Page>
-);
+const PageSection = styled.section`
+  border: 1px solid blue;
+  flex-grow: 1;
+  z-index: 1;
+`;
+
+const Home = () => {
+  const greetings = [
+    'WELCOME',
+    'HELLO',
+    'HI',
+    'HEY',
+  ];
+  const title = greetings[Math.floor(Math.random() * greetings.length)];
+
+  return (
+    <Page title="Home">
+      <PageHeader>
+        <Title title={title} />
+      </PageHeader>
+      <PageSection>
+        <p>Testing...</p>
+      </PageSection>
+    </Page>
+  );
+};
 
 export default Home;
