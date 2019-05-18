@@ -1,19 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 import Typist from 'react-typist';
 
+import media from '../../../../styles/media';
 import TrackMouse from '../../../shared/TrackMouse';
 
 const Text = styled(animated.h1)`
-  margin: 0;
-  line-height: normal;
+  margin: 0 1rem;
+  line-height: 1;
   text-transform: uppercase;
+  text-align: center;
   font-size: 10em;
   user-select: none;
+
+  ${media.huge`
+    font-size: 10vw;
+  `}
 `;
 
-const Title = () => {
+const propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+const Title = ({ title }) => {
   const [spring, setSpring] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 1, tension: 250, friction: 30 },
@@ -29,7 +40,7 @@ const Title = () => {
         return (
           <Text style={{ transform: spring.xy.interpolate(trans1) }}>
             <Typist cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 500 }}>
-              {'HOME'}
+              {title}
             </Typist>
           </Text>
         );
@@ -37,5 +48,7 @@ const Title = () => {
     </TrackMouse>
   );
 };
+
+Title.propTypes = propTypes;
 
 export default Title;
