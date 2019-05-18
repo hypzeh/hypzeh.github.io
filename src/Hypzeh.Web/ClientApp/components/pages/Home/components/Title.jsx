@@ -35,16 +35,15 @@ const Title = ({ title }) => {
 
   return (
     <TrackMouse>
-      {({ x, y }) => {
-        setSpring({ xy: calc(x, y) });
-        return (
+      {({ x, y }) => setSpring({ xy: calc(x, y) })
+        && (
           <Text style={{ transform: spring.xy.interpolate(trans1) }}>
             <Typist cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 500 }}>
               {title}
             </Typist>
           </Text>
-        );
-      }}
+        )
+      }
     </TrackMouse>
   );
 };
