@@ -31,13 +31,13 @@ const Title = ({ title }) => {
   }));
 
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
-  const trans1 = x => `translateX(${Math.floor(x / 10)}px)`;
+  const translateX = x => `translateX(${x / 10}px)`;
 
   return (
     <TrackMouse>
       {({ x, y }) => setSpring({ xy: calc(x, y) })
         && (
-          <Text style={{ transform: spring.xy.interpolate(trans1) }}>
+          <Text style={{ transform: spring.xy.interpolate(translateX) }}>
             <Typist cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 500 }}>
               {title}
             </Typist>
