@@ -1,18 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Page from '../../shared/Page';
+import Page, { PageHeader } from '../../shared/Page';
 import Title from './components/Title';
 import Content from './components/Content';
-
-const PageHeader = styled.header`
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-`;
 
 const PageSection = styled.section`
   flex-grow: 1;
