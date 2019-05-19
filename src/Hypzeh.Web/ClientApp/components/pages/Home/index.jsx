@@ -1,18 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import Page, { PageHeader } from '../../shared/Page';
+import Page, { PageHeader, PageSection } from '../../shared/Page';
 import Title from './components/Title';
 import Content from './components/Content';
-
-const PageSection = styled.section`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  background: rgba(33,33,33,.95);
-  padding: 0 1rem;
-  z-index: 1;
-`;
 
 const Home = () => {
   const greetings = [
