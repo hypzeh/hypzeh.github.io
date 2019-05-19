@@ -2,7 +2,8 @@ import React from 'react';
 
 import Page, { PageHeader, PageSection } from '../../shared/Page';
 import Title from '../../shared/Title';
-import Content from './components/Content';
+import Introduction from './components/Introduction';
+import Information from './components/Information';
 
 const Home = () => {
   const greetings = [
@@ -19,7 +20,8 @@ const Home = () => {
         <Title title={title} />
       </PageHeader>
       <PageSection>
-        <Content />
+        <Introduction />
+        <Information />
       </PageSection>
     </Page>
   );
