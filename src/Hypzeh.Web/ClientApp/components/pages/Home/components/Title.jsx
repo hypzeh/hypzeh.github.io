@@ -13,11 +13,18 @@ const Text = styled(animated.h1)`
   text-transform: uppercase;
   text-align: center;
   font-size: 10em;
-  user-select: none;
 
   ${media.huge`
     font-size: 10vw;
   `}
+
+  ${media.small`
+    font-size: 2em;
+  `}
+
+  .Cursor {
+    position: absolute;
+  }
 `;
 
 const propTypes = {
@@ -38,7 +45,7 @@ const Title = ({ title }) => {
       {({ x, y }) => setSpring({ xy: calc(x, y) })
         && (
           <Text style={{ transform: spring.xy.interpolate(translateX) }}>
-            <Typist cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 500 }}>
+            <Typist cursor={{ show: false }}>
               {title}
             </Typist>
           </Text>
