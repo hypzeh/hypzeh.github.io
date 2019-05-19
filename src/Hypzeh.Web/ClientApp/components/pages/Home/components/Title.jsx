@@ -21,10 +21,6 @@ const Text = styled(animated.h1)`
   ${media.small`
     font-size: 2em;
   `}
-
-  .Cursor {
-    position: absolute;
-  }
 `;
 
 const propTypes = {
