@@ -2,7 +2,7 @@ import React from 'react';
 
 import Page, { PageHeader, PageSection } from '../../shared/Page';
 import Title from '../../shared/Title';
-import Content from './components/Content';
+import WorkHistory from './components/WorkHistory';
 
 const AboutDisplay = () => (
   <Page title="About">
@@ -10,7 +10,7 @@ const AboutDisplay = () => (
       <Title title="NICK SMIRNOFF" />
     </PageHeader>
     <PageSection>
-      <Content />
+      <WorkHistory />
     </PageSection>
   </Page>
 );
