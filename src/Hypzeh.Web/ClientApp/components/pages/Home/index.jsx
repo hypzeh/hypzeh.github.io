@@ -15,7 +15,6 @@ const PageHeader = styled.header`
 `;
 
 const PageSection = styled.section`
-  border: 0px solid green;
   flex-grow: 1;
   display: flex;
   flex-direction: column;

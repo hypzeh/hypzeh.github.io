@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import media from '../../../../styles/media';
 
 const Introduction = styled.div`
-  border: 0px solid blue;
   line-height: normal;
   text-align: center;
   font-size: 2.5em;
@@ -21,7 +20,6 @@ const Introduction = styled.div`
 `;
 
 const Information = styled.div`
-  border: 0px solid red;
   flex-grow: 1;
   display: flex;
   align-items: center;
