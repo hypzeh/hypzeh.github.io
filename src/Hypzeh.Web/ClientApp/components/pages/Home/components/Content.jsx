@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Typist from 'react-typist';
+import { Link } from 'react-router-dom';
 
 import media from '../../../../styles/media';
 
-const Bio = styled.div`
+const Introduction = styled.div`
   border: 0px solid blue;
   line-height: normal;
   text-align: center;
@@ -19,7 +20,7 @@ const Bio = styled.div`
   `}
 `;
 
-const Info = styled.div`
+const Information = styled.div`
   border: 0px solid red;
   flex-grow: 1;
   display: flex;
@@ -42,45 +43,62 @@ const Info = styled.div`
   }
 `;
 
-const Content = () => {
-  const [showInfoTypist, setShowInfoTypist] = useState(false);
+const NavItem = styled(Link)`
+  text-decoration: underline;
+  color: white;
+  padding: 0 .25rem;
 
-  const resetInfoTypist = () => {
-    setShowInfoTypist(false);
-    setShowInfoTypist(true);
+  &:hover {
+    background: white;
+    color: black;
+  }
+`;
+
+const Content = () => {
+  const [showInformation, setShowInformation] = useState(false);
+
+  const resetInformationTypist = () => {
+    setShowInformation(false);
+    setShowInformation(true);
   };
 
   return (
     <React.Fragment>
-      <Bio>
+      <Introduction>
         <Typist
           cursor={{ element: '_', hideWhenDone: true, hideWhenDoneDelay: 0 }}
           startDelay={500}
-          onTypingDone={() => setShowInfoTypist(true)}
+          onTypingDone={() => setShowInformation(true)}
         >
           {'I\'m '}
           <strong>Nick Smirnoff</strong>
-          {' - a software engineer living in the UK.'}
+          {'...'}
         </Typist>
-      </Bio>
-      <Info>
-        {showInfoTypist && (
-          <Typist cursor={{ element: '_' }} onTypingDone={resetInfoTypist}>
+      </Introduction>
+      <Information>
+        {showInformation && (
+          <Typist cursor={{ element: '_' }} onTypingDone={resetInformationTypist}>
             <Typist.Delay ms={500} />
-            <span>Check out my projects...</span>
-            <Typist.Delay ms={5000} />
-            <Typist.Backspace count={24} />
+            <span>
+              {'Software engineer living in the UK. '}
+              <NavItem to="/about">About me&rarr;</NavItem>
+            </span>
+            <Typist.Backspace count={45} delay={5000} />
             <Typist.Delay ms={500} />
-            <span>More about me...</span>
-            <Typist.Delay ms={5000} />
-            <Typist.Backspace count={16} />
+            <span>
+              {'Check out some of my work. '}
+              <NavItem to="/projects">Projects&rarr;</NavItem>
+            </span>
+            <Typist.Backspace count={36} delay={5000} />
             <Typist.Delay ms={500} />
-            <span>Ways to get in contact...</span>
-            <Typist.Delay ms={5000} />
-            <Typist.Backspace count={25} />
+            <span>
+              {'Want to get in touch? '}
+              <NavItem to="/contact">Contact me&rarr;</NavItem>
+            </span>
+            <Typist.Backspace count={33} delay={5000} />
           </Typist>
         )}
-      </Info>
+      </Information>
     </React.Fragment>
   );
 };
