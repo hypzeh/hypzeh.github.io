@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Page from '../../shared/Page';
 import Title from './components/Title';
+import Content from './components/Content';
 
 const PageHeader = styled.header`
   position: sticky;
@@ -14,8 +15,12 @@ const PageHeader = styled.header`
 `;
 
 const PageSection = styled.section`
-  border: 1px solid blue;
+  border: 0px solid green;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(33,33,33,.95);
+  padding: 0 1rem;
   z-index: 1;
 `;
 
@@ -34,7 +39,7 @@ const Home = () => {
         <Title title={title} />
       </PageHeader>
       <PageSection>
-        <p>Testing...</p>
+        <Content />
       </PageSection>
     </Page>
   );
