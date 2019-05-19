@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Page, { PageHeader, PageSection } from '../../shared/Page';
-import Title from './components/Title';
+import Title from '../../shared/Title';
 import Content from './components/Content';
 
 const Home = () => {

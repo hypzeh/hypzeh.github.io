@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 import Typist from 'react-typist';
 
-import media from '../../../../styles/media';
-import TrackMouse from '../../../shared/TrackMouse';
+import media from '../../styles/media';
+import TrackMouse from './TrackMouse';
 
 const Text = styled(animated.h1)`
   margin: 0 1rem;
