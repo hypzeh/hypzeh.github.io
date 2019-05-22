@@ -1,6 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Moment from 'react-moment';
+
+import { PRIMARY } from '../../../../../../styles/variables';
+
+const Container = styled.div`
+  padding: 10px 40px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: .8rem;
+    border: .25rem solid ${PRIMARY.colour};
+    top: 1.25rem;
+    border-radius: 50%;
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: .15rem;
+    background-color: ${PRIMARY.colour};
+    left: 1rem;
+    top: 3rem;
+    bottom: 0;
+  }
+`;
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -17,23 +44,17 @@ const Position = ({
   location,
   description,
 }) => (
-  <div key={title}>
+  <Container>
     <strong>{title}</strong>
     <br />
-    <span>
-      <Moment date={start} format="MMM YYYY" />
-      {' - '}
-      <Moment date={end} format="MMM YYYY" />
-      {' '}
-      &bull;
-      {' '}
-      <Moment date={end} duration={start} />
-    </span>
+    <Moment date={start} format="MMM YYYY" />
+    {' - '}
+    <Moment date={end} format="MMM YYYY" />
     <br />
     {location}
     <br />
     {description}
-  </div>
+  </Container>
 );
 
 Position.propTypes = propTypes;
