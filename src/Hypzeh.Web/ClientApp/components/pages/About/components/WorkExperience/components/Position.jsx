@@ -6,15 +6,16 @@ import Moment from 'react-moment';
 import { PRIMARY } from '../../../../../../styles/variables';
 
 const Container = styled.div`
-  padding: 10px 40px;
   position: relative;
+  padding-bottom: 1rem;
+  padding-left: 2.5rem;
 
   &::before {
     content: '';
     position: absolute;
     left: .8rem;
     border: .25rem solid ${PRIMARY.colour};
-    top: 1.25rem;
+    top: .75rem;
     border-radius: 50%;
   }
 
@@ -24,9 +25,13 @@ const Container = styled.div`
     width: .15rem;
     background-color: ${PRIMARY.colour};
     left: 1rem;
-    top: 3rem;
+    top: 2rem;
     bottom: 0;
   }
+`;
+
+const Title = styled.h4`
+  margin: 0;
 `;
 
 const propTypes = {
@@ -35,25 +40,26 @@ const propTypes = {
   description: PropTypes.string.isRequired,
   start: PropTypes.shape().isRequired,
   end: PropTypes.shape().isRequired,
+  isPresent: PropTypes.bool.isRequired,
 };
 
 const Position = ({
   title,
   start,
   end,
+  isPresent,
   location,
   description,
 }) => (
   <Container>
-    <strong>{title}</strong>
-    <br />
-    <Moment date={start} format="MMM YYYY" />
-    {' - '}
-    <Moment date={end} format="MMM YYYY" />
-    <br />
-    {location}
-    <br />
-    {description}
+    <Title>{title}</Title>
+    <i>
+      <Moment date={start} format="MMM YYYY" />
+      {' - '}
+      {isPresent ? 'Present' : <Moment date={end} format="MMM YYYY" /> }
+    </i>
+    <div>{location}</div>
+    <p>{description}</p>
   </Container>
 );
 
