@@ -3,7 +3,6 @@ import React from 'react';
 import Page, { Header, Section } from '../../shared/Page';
 import Title from '../../shared/Title';
 import Introduction from './components/Introduction';
-import Information from './components/Information';
 
 const Home = () => {
   const greetings = [
@@ -12,16 +11,14 @@ const Home = () => {
     'HI',
     'HEY',
   ];
-  const title = greetings[Math.floor(Math.random() * greetings.length)];
 
   return (
     <Page title="Home">
       <Header>
-        <Title title={title} />
+        <Title title={greetings[Math.floor(Math.random() * greetings.length)]} />
       </Header>
       <Section>
         <Introduction />
-        <Information />
       </Section>
     </Page>
   );
