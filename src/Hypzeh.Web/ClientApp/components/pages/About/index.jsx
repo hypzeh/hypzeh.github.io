@@ -2,7 +2,7 @@ import React from 'react';
 
 import Page, { Header, Section } from '../../shared/Page';
 import Title from '../../shared/Title';
-import Info from './components/Info';
+import Profile from './components/Profile';
 import Experience from './components/Experience';
 
 const AboutDisplay = () => (
@@ -11,7 +11,7 @@ const AboutDisplay = () => (
       <Title title="NICK SMIRNOFF" />
     </Header>
     <Section>
-      <Info />
+      <Profile />
     </Section>
     <Section>
       <Experience />
