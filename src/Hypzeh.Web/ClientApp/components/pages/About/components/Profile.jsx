@@ -6,42 +6,36 @@ import profile from '../../../../assets/img/profile.jpg';
 
 const Conatiner = styled.div`
   display: flex;
-  flex-direction: row;
-  padding: 1rem 0;
-
-  ${media.medium`
-    flex-direction: column;
-    align-items: center;
-  `}
+  flex-direction: column;
+  align-items: center;
 `;
 
-const Image = styled.img`
-  height: 30rem;
-  object-fit: cover;
-  border-radius: .5rem;
+const Image = styled.div`
+  width: 10rem;
+  height: 10rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  background-color: white;
+  border-radius: 50%;
 
-  ${media.large`
-    height: 40vw;
-  `}
-
-  ${media.small`
-    height: 10rem;
-  `}
+  img {
+    width: inherit;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 2px;
+  }
 `;
 
 const Information = styled.div`
   width: 100%;
   height: 100%;
-  padding-left: 1rem;
-
-  ${media.medium`
-    padding-left: 0;
-  `}
 `;
 
 const Profile = () => (
   <Conatiner>
-    <Image src={profile} alt="Nick Smirnoff" />
+    <Image>
+      <img src={profile} alt="Nick Smirnoff" />
+    </Image>
     <Information>
       <h2>About</h2>
       <p>{'I\'m Nick Smirnoff - a developer from the United Kingdom!'}</p>
