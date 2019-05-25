@@ -8,6 +8,18 @@ const Timeline = styled.div`
   margin: 0;
 `;
 
+const Company = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Logo = styled.img`
+  height: 3.125rem;
+  object-fit: cover;
+  border-radius: .25rem;
+  margin-right: .875rem;
+`;
+
 const Experience = () => (
   <React.Fragment>
     <h2>Experience</h2>
@@ -16,7 +28,10 @@ const Experience = () => (
         <React.Fragment key={item.company}>
           {index === 0 ? '' : <hr />}
           <div>
-            <h3>{item.company}</h3>
+            <Company>
+              <Logo src={item.logo} alt="" />
+              <h3>{item.company}</h3>
+            </Company>
             {item.positions.map(position => (
               <Position key={position.title} {...position} />
             ))}

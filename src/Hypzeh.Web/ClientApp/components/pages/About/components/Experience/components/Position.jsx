@@ -8,12 +8,12 @@ import { PRIMARY } from '../../../../../../styles/variables';
 const Container = styled.div`
   position: relative;
   padding-bottom: 1rem;
-  padding-left: 2.5rem;
+  padding-left: 4rem;
 
   &::before {
     content: '';
     position: absolute;
-    left: .8rem;
+    left: 1.3rem;
     border: .25rem solid ${PRIMARY.colour};
     top: .75rem;
     border-radius: 50%;
@@ -24,7 +24,7 @@ const Container = styled.div`
     position: absolute;
     width: .15rem;
     background-color: ${PRIMARY.colour};
-    left: 1rem;
+    left: 1.5rem;
     top: 2rem;
     bottom: 0;
   }
@@ -36,7 +36,6 @@ const Title = styled.h4`
 
 const propTypes = {
   title: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   start: PropTypes.shape().isRequired,
   end: PropTypes.shape().isRequired,
@@ -48,17 +47,15 @@ const Position = ({
   start,
   end,
   isPresent,
-  location,
   description,
 }) => (
   <Container>
     <Title>{title}</Title>
-    <i>
+    <em>
       <Moment date={start} format="MMM YYYY" />
       {' - '}
       {isPresent ? 'Present' : <Moment date={end} format="MMM YYYY" /> }
-    </i>
-    <div>{location}</div>
+    </em>
     <p>{description}</p>
   </Container>
 );

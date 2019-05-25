@@ -7,7 +7,7 @@ import profile from '../../../../assets/img/profile.jpg';
 const Conatiner = styled.div`
   display: flex;
   flex-direction: row;
-  padding-top: 1rem;
+  padding: 1rem 0;
 
   ${media.medium`
     flex-direction: column;
@@ -29,7 +29,7 @@ const Image = styled.img`
   `}
 `;
 
-const Info = styled.div`
+const Information = styled.div`
   width: 100%;
   height: 100%;
   padding-left: 1rem;
@@ -42,10 +42,10 @@ const Info = styled.div`
 const Profile = () => (
   <Conatiner>
     <Image src={profile} alt="Nick Smirnoff" />
-    <Info>
+    <Information>
       <h2>About</h2>
       <p>{'I\'m Nick Smirnoff - a developer from the United Kingdom!'}</p>
-    </Info>
+    </Information>
   </Conatiner>
 );
 
