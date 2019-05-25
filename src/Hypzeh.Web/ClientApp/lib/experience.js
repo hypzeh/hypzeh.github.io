@@ -7,7 +7,7 @@ const experience = [
       {
         title: 'Software Developer',
         location: 'Southampton, United Kingdom',
-        description: '',
+        description: 'Created microservices',
         start: moment('2018-10'),
         end: moment(),
         isPresent: true,
@@ -20,7 +20,7 @@ const experience = [
       {
         title: 'Software Engineer',
         location: 'Hull, United Kingdom',
-        description: 'Creating secure, intelligent and connected control room and fleet technologies that help organisations protect and preserve society.',
+        description: 'Created secure, intelligent and connected control room and fleet technologies that help organisations protect and preserve society.',
         start: moment('2018-05'),
         end: moment('2018-08'),
         isPresent: false,
@@ -41,7 +41,7 @@ const experience = [
       {
         title: 'Software Engineer (Part-Time)',
         location: 'Hull, United Kingdom',
-        description: 'Collaberated with a client, demonstrating the effects of flooding in the local area through real-time simulation, in a VR environemnt.',
+        description: 'Collaborated with a client, demonstrating the effects of flooding in the local area through real-time simulation, in a VR environment.',
         start: moment('2016-09').startOf('month'),
         end: moment('2017-05').endOf('month'),
         isPresent: false,

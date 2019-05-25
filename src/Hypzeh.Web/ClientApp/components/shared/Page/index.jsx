@@ -7,6 +7,7 @@ const PageHeader = styled.header`
   position: sticky;
   top: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -17,8 +18,14 @@ const PageSection = styled.section`
   display: flex;
   flex-direction: column;
   background: rgba(33,33,33,.95);
+  box-shadow: 0 0 3rem 0 rgba(33, 33, 33, 0.6);
   padding: 0 1rem;
   z-index: 1;
+
+  &:not(:last-child) {
+    content: '';
+    flex-grow: 0;
+  }
 `;
 
 const propTypes = {
