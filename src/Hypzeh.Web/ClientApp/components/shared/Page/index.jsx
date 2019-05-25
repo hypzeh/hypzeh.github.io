@@ -11,14 +11,6 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
-  /* &::after {
-    content: '';
-    position: relative;
-    width: 100%;
-    box-shadow: 0 0 3rem 0 rgba(33, 33, 33, 0.6);
-    border: 1px solid white;
-  } */
 `;
 
 const Section = styled.section`
@@ -30,7 +22,7 @@ const Section = styled.section`
   z-index: 1;
 
   &:first-of-type {
-    box-shadow: 0 0 3rem 0 rgba(33, 33, 33, 0.6);
+    box-shadow: 0 -4rem 3rem -4rem rgba(33,33,33, 0.6);
   }
 
   &:last-of-type {
