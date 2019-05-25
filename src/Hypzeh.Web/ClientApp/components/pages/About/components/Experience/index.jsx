@@ -8,6 +8,10 @@ const Timeline = styled.div`
   margin: 0;
 `;
 
+const Separator = styled.hr`
+  margin-left: 4rem;
+`;
+
 const Company = styled.div`
   display: flex;
   align-items: center;
@@ -26,10 +30,10 @@ const Experience = () => (
     <Timeline>
       {experience.map((item, index) => (
         <React.Fragment key={item.company}>
-          {index === 0 ? '' : <hr />}
+          {index === 0 ? '' : <Separator />}
           <div>
             <Company>
-              <Logo src={item.logo} alt="" />
+              <Logo src={item.logo} alt={item.company} />
               <h3>{item.company}</h3>
             </Company>
             {item.positions.map(position => (
