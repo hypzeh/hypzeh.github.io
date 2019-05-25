@@ -1,18 +1,18 @@
 import React from 'react';
 
-import Page, { PageHeader, PageSection } from '../../shared/Page';
+import Page, { Header, Section } from '../../shared/Page';
 import Title from '../../shared/Title';
 import Experience from './components/Experience';
 
 const AboutDisplay = () => (
   <Page title="About">
-    <PageHeader>
+    <Header>
       <Title title="NICK SMIRNOFF" />
-    </PageHeader>
-    <PageSection>
+    </Header>
+    <Section>
       <h2>Experience</h2>
       <Experience />
-    </PageSection>
+    </Section>
   </Page>
 );
 
