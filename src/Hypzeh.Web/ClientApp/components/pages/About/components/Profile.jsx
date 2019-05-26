@@ -56,9 +56,18 @@ const Profile = () => (
     </Image>
     <Information>
       <h2>About</h2>
-      <p>{'I\'m Nick Smirnoff - a developer from the United Kingdom!'}</p>
-      <p>{'I\'ve performed suspicion in certainty so frankness by attention pretended. Newspaper or in tolerably education enjoyment.'}</p>
-      <p>{'I\'ve Elderly up chicken do at feeling is. Like seen drew no make fond at on rent. Behaviour extremely her explained situation yet september gentleman are who.'}</p>
+      <p>
+        {'I\'m Nick Smirnoff - a developer from the United Kingdom!'}
+      </p>
+      <p>
+        {'Dedicated; seeking to gain greater experience and knowledge in content creation and development.'}
+      </p>
+      <p>
+        {'Innovative; engineering solutions at the forefront of technical advancement.'}
+      </p>
+      <p>
+        {'Motivated; craving to deliver continuous improvement.'}
+      </p>
     </Information>
   </Conatiner>
 );
