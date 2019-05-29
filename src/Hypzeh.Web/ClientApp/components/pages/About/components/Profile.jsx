@@ -55,7 +55,6 @@ const Profile = () => (
       <img src={profile} alt="Nick Smirnoff" />
     </Image>
     <Information>
-      <h2>About</h2>
       <p>
         {'I\'m Nick Smirnoff - a developer from the United Kingdom!'}
       </p>

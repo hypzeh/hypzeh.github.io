@@ -7,7 +7,7 @@ import Profile from './components/Profile';
 const AboutDisplay = () => (
   <Page title="About">
     <Header>
-      <Title title="NICK SMIRNOFF" />
+      <Title title="ABOUT" />
     </Header>
     <Section>
       <Profile />
