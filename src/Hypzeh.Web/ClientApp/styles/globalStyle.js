@@ -32,15 +32,14 @@ const GlobalStyle = createGlobalStyle`
 
     ::-webkit-scrollbar-track {
       background: ${PRIMARY.background};
-      border-left: 1px solid ${SECONDARY.background}
     }
 
     ::-webkit-scrollbar-thumb {
-      background: ${SECONDARY.colour};
+      background: ${SECONDARY.hover};
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: ${SECONDARY.hover};
+      background: ${SECONDARY.colour};
     }
   }
 `;
