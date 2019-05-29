@@ -8,6 +8,7 @@ const Conatiner = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 
   ${media.medium`
     flex-direction: column;
@@ -16,15 +17,15 @@ const Conatiner = styled.div`
 `;
 
 const Image = styled.div`
-  width: 30rem;
-  height: 30rem;
+  width: 20rem;
+  height: 20rem;
   margin: 1rem 1rem 1rem 0;
   background-color: white;
   border-radius: 50%;
 
   ${media.large`
-    width: 40vw;
-    height: 40vw;
+    width: 30vw;
+    height: 30vw;
   `}
 
   ${media.medium`
@@ -45,7 +46,6 @@ const Image = styled.div`
 `;
 
 const Information = styled.div`
-  width: 100%;
   height: 100%;
 `;
 
