@@ -6,6 +6,10 @@ import Github from '../../assets/svg/github.svg';
 import LinkedIn from '../../assets/svg/linkedin.svg';
 import Twitter from '../../assets/svg/twitter.svg';
 
+const propTypes = {
+  icon: PropTypes.string.isRequired,
+};
+
 const Icon = (props) => {
   switch (props.icon.toLowerCase()) {
   case 'github':
@@ -23,8 +27,6 @@ const Icon = (props) => {
   }
 };
 
-Icon.propTypes = {
-  icon: PropTypes.string.isRequired,
-};
+Icon.propTypes = propTypes;
 
 export default Icon;

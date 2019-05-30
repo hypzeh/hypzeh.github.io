@@ -7,26 +7,6 @@ import media from '../../styles/media';
 import { pages } from '../../lib/navigation';
 import Icon from '../shared/Icon';
 
-const AppHeader = () => (
-  <Header>
-    <Navbar>
-      <NavBrand exact to="/">
-        <Icon icon="ns-logo" />
-        <span>Nick Smirnoff</span>
-      </NavBrand>
-      <NavItems>
-        {
-          pages
-            .filter(({ isHidden }) => !isHidden)
-            .map(({ name, path }) => (
-              <NavItem key={name} to={path}>{name}</NavItem>
-            ))
-        }
-      </NavItems>
-    </Navbar>
-  </Header>
-);
-
 const Header = styled.header`
   position: relative;
   height: ${APP_SIZE.header};
@@ -47,24 +27,12 @@ const NavBrand = styled(NavLink)`
   height: 2rem;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bolder;
-  color: ${PRIMARY.colour};
-  border: 1px solid ${PRIMARY.colour};
 
   svg {
     height: inherit;
     width: auto;
     background: ${PRIMARY.colour};
-  }
-
-  span {
-    padding: 0 .5rem;
-
-    @media (max-width: 185px) {
-      display: none;
-    }
+    border-radius: .25rem;
   }
 `;
 
@@ -96,5 +64,24 @@ const NavItem = styled(NavLink)`
     color: ${PRIMARY.hover};
   }
 `;
+
+const AppHeader = () => (
+  <Header>
+    <Navbar>
+      <NavBrand exact to="/" aria-label="nick-smirnoff">
+        <Icon icon="ns-logo" />
+      </NavBrand>
+      <NavItems>
+        {
+          pages
+            .filter(({ isHidden }) => !isHidden)
+            .map(({ name, path }) => (
+              <NavItem key={name} to={path}>{name}</NavItem>
+            ))
+        }
+      </NavItems>
+    </Navbar>
+  </Header>
+);
 
 export default AppHeader;

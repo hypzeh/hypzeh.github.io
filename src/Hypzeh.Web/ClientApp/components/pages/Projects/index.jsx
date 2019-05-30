@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Page from '../Page';
+import Page from '../../shared/Page';
 
-const ProjectsDisplay = () => (
+const Projects = () => (
   <Page title="Projects">
     <section>
       <div>Projects...</div>
@@ -10,4 +10,4 @@ const ProjectsDisplay = () => (
   </Page>
 );
 
-export default ProjectsDisplay;
+export default Projects;

@@ -114,7 +114,7 @@ module.exports = (env, argv) => {
               loader: 'url-loader',
               options: {
                 limit: 8192,
-                name: '[name].[ext]',
+                name: '[name]-[hash:8].[ext]',
                 outputPath: 'images/',
               },
             },
@@ -180,8 +180,8 @@ module.exports = (env, argv) => {
       /* eslint-disable camelcase */
       new WebpackPwaManifest({
         name: 'Nick Smirnoff',
-        short_name: 'Nick Smirnoff',
-        description: 'Nick Smirnoff',
+        short_name: 'NS',
+        description: 'I’m Nick Smirnoff — a developer from the UK, focusing all his efforts on creating useful software products and slaying dragons.',
         theme_color: '#212121',
         background_color: '#212121',
         icons: [

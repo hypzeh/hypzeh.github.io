@@ -1,13 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const Loading = () => (
-  <Section>
-    <ProgressLine />
-  </Section>
-);
-
-const running = keyframes`
+const progress = keyframes`
   0% { margin-left: 0; margin-right: 100%; }
   50% { margin-left: 25%; margin-right: 0; }
   100% { margin-left: 100%; margin-right: 0; }
@@ -15,6 +9,8 @@ const running = keyframes`
 
 const Section = styled.section`
   min-height: inherit;
+  height: 100%;
+  width: 100%;
   text-align: center;
 `;
 
@@ -31,8 +27,14 @@ const ProgressLine = styled.div`
     width: 100%;
     background: white;
     content: '';
-    animation: ${running} 2s infinite;
+    animation: ${progress} 2s infinite;
   }
 `;
+
+const Loading = () => (
+  <Section>
+    <ProgressLine />
+  </Section>
+);
 
 export default Loading;
