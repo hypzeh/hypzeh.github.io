@@ -4,6 +4,7 @@ import Typist from 'react-typist';
 import { Link } from 'react-router-dom';
 
 import media from '../../../../styles/media';
+import { contact } from '../../../../lib/navigation';
 
 const Name = styled.div`
   line-height: normal;
@@ -39,16 +40,16 @@ const Content = styled.div`
   .Cursor {
     position: relative;
   }
-`;
 
-const NavItem = styled(Link)`
-  text-decoration: underline;
-  color: white;
-  padding: 0 .25rem;
+  a {
+    text-decoration: underline;
+    color: white;
+    padding: 0 .25rem;
 
-  &:hover {
-    background: white;
-    color: black;
+    &:hover {
+      background: white;
+      color: black;
+    }
   }
 `;
 
@@ -79,19 +80,19 @@ const Introduction = () => {
             <Typist.Delay ms={500} />
             <span>
               {'Software engineer living in the UK. '}
-              <NavItem to="/about">About me&rarr;</NavItem>
+              <Link to="/about">About me&rarr;</Link>
             </span>
             <Typist.Backspace count={45} delay={5000} />
             <Typist.Delay ms={500} />
             <span>
               {'Check out some of my work. '}
-              <NavItem to="/projects">Projects&rarr;</NavItem>
+              <Link to="/projects">Projects&rarr;</Link>
             </span>
             <Typist.Backspace count={36} delay={5000} />
             <Typist.Delay ms={500} />
             <span>
               {'Want to get in touch? '}
-              <NavItem to="/contact">Contact me&rarr;</NavItem>
+              <a href={`mailto:${contact.email}`}>Contact me&rarr;</a>
             </span>
             <Typist.Backspace count={33} delay={5000} />
           </Typist>
