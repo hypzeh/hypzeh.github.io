@@ -9,7 +9,6 @@ import Loading from '../shared/Loading';
 const Home = lazy(() => import(/* webpackChunkName: "home" */ '../pages/Home'));
 const About = lazy(() => import(/* webpackChunkName: "about" */ '../pages/About'));
 const Projects = lazy(() => import(/* webpackChunkName: "projects" */ '../pages/Projects'));
-const Contact = lazy(() => import(/* webpackChunkName: "contact" */ '../pages/Contact'));
 const Error = lazy(() => import(/* webpackChunkName: "error" */ '../pages/errors/Error'));
 
 const AppRouter = () => (
