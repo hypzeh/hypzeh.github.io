@@ -21,7 +21,6 @@ const AppRouter = () => (
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
-          <Route exact path="/contact" component={Contact} />
           <Route exact path="/error" render={({ history }) => <Error goBack={history.goBack} />} />
           <Route path="*" render={({ history }) => <Error code={404} message="Page not found..." goBack={history.goBack} />} />
         </Switch>
