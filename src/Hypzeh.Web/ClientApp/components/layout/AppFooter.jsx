@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { APP_SIZE, PRIMARY, SECONDARY } from '../../styles/variables';
 import media from '../../styles/media';
-import { pages, socials } from '../../lib/navigation';
+import { pages, socials, contact } from '../../lib/navigation';
 import Icon from '../shared/Icon';
 import Emoji from '../shared/Emoji';
 
@@ -39,27 +39,27 @@ const Section = styled.section`
       flex-direction: column;
       align-items: center;
     `}
+
+    a {
+      width: 10rem;
+      margin: .5rem;
+      background: ${PRIMARY.background};
+      border: 1px solid ${PRIMARY.colour};
+      color: ${PRIMARY.colour};
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+
+      &:hover {
+        background: ${PRIMARY.colour};
+        color: ${PRIMARY.hover};
+      }
+    }
   }
 
   &#bottom {
     justify-content: space-between;
     padding: 0 .5rem;
-  }
-`;
-
-const NavItem = styled(Link)`
-  width: 10rem;
-  margin: .5rem;
-  background: ${PRIMARY.background};
-  border: 1px solid ${PRIMARY.colour};
-  color: ${PRIMARY.colour};
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-
-  &:hover {
-    background: ${PRIMARY.colour};
-    color: ${PRIMARY.hover};
   }
 `;
 
@@ -92,14 +92,19 @@ const AppFooter = () => {
         <Emoji enableRoulette />
       </Section>
       <Section id="middle">
-        {
-          pages.map(({ name, path }) => (
-            <NavItem key={name} to={path} onClick={scrollToTop}>{name}</NavItem>
-          ))
-        }
+        {pages.map(({ name, path }) => (
+          <Link key={name} to={path} onClick={scrollToTop}>{name}</Link>
+        ))}
+        <a href={`mailto:${contact.email}`}>Contact</a>
       </Section>
       <Section id="bottom">
-        <span>&copy; Nick Smirnoff</span>
+        <span>
+          &copy;
+          {' '}
+          {new Date().getFullYear()}
+          {' '}
+          Nick Smirnoff
+        </span>
         <div>
           {
             socials.map(({ name, url, icon }) => (
