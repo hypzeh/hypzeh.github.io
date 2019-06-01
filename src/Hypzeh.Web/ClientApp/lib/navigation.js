@@ -5,7 +5,6 @@ export const pages = [
   insertPage('home', '/', true),
   insertPage('about', '/about', false),
   insertPage('projects', '/projects', false),
-  insertPage('contact', '/contact', false),
   insertPage('error', '/error', true),
 ];
 
@@ -14,3 +13,7 @@ export const socials = [
   insertSocial('linkedin', 'https://uk.linkedin.com/in/nick-smirnoff', 'linkedin'),
   insertSocial('twitter', 'https://twitter.com/hypzeh', 'twitter'),
 ];
+
+export const contact = {
+  email: 'nick.smirnoff@live.co.uk',
+};
