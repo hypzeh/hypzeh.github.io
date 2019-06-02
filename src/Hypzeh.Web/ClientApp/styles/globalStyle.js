@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     word-wrap: break-word;
 
     ::-webkit-scrollbar {
-      width: 5px;
+      width: .5rem;
     }
 
     ::-webkit-scrollbar-track {
