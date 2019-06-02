@@ -32,17 +32,17 @@ const Section = styled.section`
 
 const propTypes = {
   children: PropTypes.node,
-  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
   children: null,
 };
 
-const Page = ({ children, title }) => (
+const Page = ({ children, name }) => (
   <React.Fragment>
     <Helmet>
-      <title>{title}</title>
+      <title>{name}</title>
     </Helmet>
     {children}
   </React.Fragment>
