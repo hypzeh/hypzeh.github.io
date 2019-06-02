@@ -9,7 +9,7 @@ import Loading from '../shared/Loading';
 const Home = lazy(() => import(/* webpackChunkName: "home" */ '../pages/Home'));
 const About = lazy(() => import(/* webpackChunkName: "about" */ '../pages/About'));
 const Projects = lazy(() => import(/* webpackChunkName: "projects" */ '../pages/Projects'));
-const Error = lazy(() => import(/* webpackChunkName: "error" */ '../pages/errors/Error'));
+const Error = lazy(() => import(/* webpackChunkName: "error" */ '../pages/Error'));
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -20,8 +20,18 @@ const AppRouter = () => (
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
-          <Route exact path="/error" render={({ history }) => <Error goBack={history.goBack} />} />
-          <Route path="*" render={({ history }) => <Error code={404} message="Page not found..." goBack={history.goBack} />} />
+          <Route exact path="/error" component={Error} />
+          <Route
+            path="*"
+            render={routeProps => (
+              <Error
+                {...routeProps}
+                code="404"
+                title="Page Not Found"
+                message="The page your are looking for does not exist."
+              />
+            )}
+          />
         </Switch>
       </Suspense>
     </AppMain>

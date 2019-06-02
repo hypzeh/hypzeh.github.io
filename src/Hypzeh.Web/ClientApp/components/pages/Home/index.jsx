@@ -13,7 +13,7 @@ const Home = () => {
   ];
 
   return (
-    <Page title="Home">
+    <Page name="Home">
       <Header>
         <Title title={greetings[Math.floor(Math.random() * greetings.length)]} />
       </Header>
