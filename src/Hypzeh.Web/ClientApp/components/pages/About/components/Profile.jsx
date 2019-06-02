@@ -56,16 +56,21 @@ const Profile = () => (
     </Image>
     <Information>
       <p>
-        {'I\'m Nick Smirnoff - a developer from the United Kingdom!'}
+        {'I\'m '}
+        <strong>Nick Smirnoff</strong>
+        {' - a developer from the United Kingdom!'}
       </p>
       <p>
-        {'Dedicated; seeking to gain greater experience and knowledge in content creation and development.'}
+        <strong>Dedicated</strong>
+        {'; seeking to gain greater experience and knowledge in content creation and development.'}
       </p>
       <p>
-        {'Innovative; engineering solutions at the forefront of technical advancement.'}
+        <strong>Innovative</strong>
+        {'; engineering solutions at the forefront of technical advancement.'}
       </p>
       <p>
-        {'Motivated; craving to deliver continuous improvement.'}
+        <strong>Motivated</strong>
+        {'; craving to deliver continuous improvement.'}
       </p>
     </Information>
   </Conatiner>
