@@ -28,7 +28,7 @@ const AppRouter = () => (
                 {...routeProps}
                 code="404"
                 title="Page Not Found"
-                message="The page your are looking for does not exist."
+                message="The page you are looking for does not exist."
               />
             )}
           />
