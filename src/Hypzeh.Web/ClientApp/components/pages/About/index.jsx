@@ -5,7 +5,7 @@ import Title from '../../shared/Title';
 import Profile from './components/Profile';
 
 const AboutDisplay = () => (
-  <Page title="About">
+  <Page name="About">
     <Header>
       <Title title="ABOUT" />
     </Header>

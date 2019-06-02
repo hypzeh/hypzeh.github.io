@@ -16,7 +16,7 @@ const defaultProps = {
 };
 
 const Error = ({ code, message, goBack }) => (
-  <Page title="Error">
+  <Page name="Error">
     <section>
       <div>{`[${code}] ${message}`}</div>
       {goBack && <button type="button" onClick={goBack}>Back</button>}
