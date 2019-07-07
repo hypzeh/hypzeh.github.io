@@ -68,6 +68,7 @@ module.exports = (env, argv) => {
     },
     devServer: {
       contentBase: path.join(__dirname, 'wwwroot'),
+      historyApiFallback: true,
       compress: true,
       quiet: true,
       hot: true,

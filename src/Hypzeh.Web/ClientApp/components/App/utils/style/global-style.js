@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { PRIMARY, SECONDARY } from './variables';
-import woff2 from '../assets/fonts/open-sans-v16-latin-regular.woff2';
-import woff from '../assets/fonts/open-sans-v16-latin-regular.woff';
+import 'modern-normalize/modern-normalize.css';
+
+import woff2 from '../../assets/fonts/open-sans-v16-latin-regular.woff2';
+import woff from '../../assets/fonts/open-sans-v16-latin-regular.woff';
+import { PRIMARY } from './variables';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -26,20 +28,13 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeSpeed;
     word-wrap: break-word;
 
-    ::-webkit-scrollbar {
-      width: .5rem;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: ${PRIMARY.background};
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: ${SECONDARY.hover};
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: ${SECONDARY.colour};
+    div {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column
     }
   }
 `;

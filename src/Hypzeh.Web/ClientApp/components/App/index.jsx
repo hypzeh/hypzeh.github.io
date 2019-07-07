@@ -1,11 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import { hot } from 'react-hot-loader/root';
 import { Helmet } from 'react-helmet';
+import { BrowserRouter } from 'react-router-dom';
 
-import 'modern-normalize/modern-normalize.css';
+import GlobalStyle from './utils/style/global-style';
 
-import GlobalStyle from './styles/globalStyle';
-import AppRouter from './components/routers/AppRouter';
+const Container = styled.div`
+  border: 1px solid red;
+  position: relative;
+  flex: 1 1 auto;
+`;
 
 const App = () => {
   if ('serviceWorker' in navigator) {
@@ -21,11 +26,11 @@ const App = () => {
   }
 
   return (
-    <React.Fragment>
+    <Container>
       <Helmet titleTemplate="%s / Nick Smirnoff" defaultTitle="Nick Smirnoff" />
       <GlobalStyle />
-      <AppRouter />
-    </React.Fragment>
+      <BrowserRouter />
+    </Container>
   );
 };
 
