@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
       height: 100vh;
       overflow: hidden;
       display: flex;
-      flex-direction: column
+      flex-direction: column;
     }
   }
 `;
