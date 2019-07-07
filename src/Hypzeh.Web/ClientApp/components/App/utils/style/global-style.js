@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeSpeed;
     word-wrap: break-word;
 
-    div {
+    #root {
       position: absolute;
       width: 100vw;
       height: 100vh;

@@ -5,11 +5,22 @@ import { Helmet } from 'react-helmet';
 import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './utils/style/global-style';
+import {
+  Main,
+  Navbar,
+  Page,
+  Panel,
+} from './components/layout';
 
 const Container = styled.div`
   border: 1px solid red;
   position: relative;
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
 `;
 
 const App = () => {
@@ -26,11 +37,17 @@ const App = () => {
   }
 
   return (
-    <Container>
+    <BrowserRouter>
       <Helmet titleTemplate="%s / Nick Smirnoff" defaultTitle="Nick Smirnoff" />
       <GlobalStyle />
-      <BrowserRouter />
-    </Container>
+      <Container>
+        <Navbar />
+        <Main>
+          <Panel />
+          <Page />
+        </Main>
+      </Container>
+    </BrowserRouter>
   );
 };
 
