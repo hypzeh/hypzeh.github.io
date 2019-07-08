@@ -1,32 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Scroller } from '../../shared';
+
 const Container = styled.div`
-  border: 3px solid yellow;
-  overflow: hidden;
+  border: 1px solid yellow;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-`;
-
-const ScrollerWrapper = styled.div`
-  border: 3px solid green;
-  box-sizing: border-box;
-  position: relative;
-  display: flex;
-  height: 100%;
-  flex: 1 1 auto;
-  min-height: 0;
-`;
-
-const Scroller = styled.div`
-  border: 3px solid yellow;
-  user-select: none;
-  padding: 12px 0 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  flex: 1 1 auto;
-  min-height: 0;
+  overflow: hidden;
 `;
 
 const placeholder = [
@@ -37,12 +19,10 @@ const placeholder = [
 
 const Page = () => (
   <Container>
-    <ScrollerWrapper>
-      <Scroller>
-        <h1>Title...</h1>
-        {placeholder.map(text => (<p>{text}</p>))}
-      </Scroller>
-    </ScrollerWrapper>
+    <Scroller>
+      <h1>Title...</h1>
+      {placeholder.map(text => (<p>{text}</p>))}
+    </Scroller>
   </Container>
 );
 

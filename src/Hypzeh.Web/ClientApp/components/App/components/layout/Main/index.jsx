@@ -3,28 +3,15 @@ import styled from 'styled-components';
 
 import types from '../../../types';
 
-const Flex = styled.main`
-  border: 3px solid blue;
+const Container = styled.div`
+  border: 1px solid green;
+  min-height: 0;
   flex: 1 1 auto;
-  margin-left: 0px;
-  margin-right: 0;
-  overflow: hidden;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
   display: flex;
-`;
-
-const AnotherFlex = styled.div`
-  border: 3px solid green;
-  flex: 1 1 auto;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
-  display: flex;
-  min-height: 0;
 `;
 
 const propTypes = {
@@ -36,11 +23,9 @@ const defaultProps = {
 };
 
 const Main = ({ children }) => (
-  <Flex>
-    <AnotherFlex>
-      {children}
-    </AnotherFlex>
-  </Flex>
+  <Container>
+    {children}
+  </Container>
 );
 
 Main.propTypes = propTypes;
