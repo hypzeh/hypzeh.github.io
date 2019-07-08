@@ -3,11 +3,30 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   border: 3px solid yellow;
-  background-color: #36393f;
-  width: 100%;
   overflow: hidden;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+`;
+
+const ScrollerWrapper = styled.div`
+  border: 3px solid green;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+`;
+
+const Scroller = styled.div`
+  border: 3px solid yellow;
+  user-select: none;
+  padding: 12px 0 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  flex: 1 1 auto;
+  min-height: 0;
 `;
 
 const placeholder = [
@@ -18,8 +37,12 @@ const placeholder = [
 
 const Page = () => (
   <Container>
-    <h1>Title...</h1>
-    {/* {placeholder.map(text => (<p>{text}</p>))} */}
+    <ScrollerWrapper>
+      <Scroller>
+        <h1>Title...</h1>
+        {placeholder.map(text => (<p>{text}</p>))}
+      </Scroller>
+    </ScrollerWrapper>
   </Container>
 );
 

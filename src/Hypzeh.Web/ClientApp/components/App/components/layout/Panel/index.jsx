@@ -5,9 +5,9 @@ const Channels = styled.div`
   border: 3px solid yellow;
   background-color: #2f3136;
   width: 15rem;
-  display: flex;
-  flex-direction: column;
   flex-shrink: 0;
+  flex-direction: column;
+  display: flex;
 `;
 
 const Conatiner = styled.div`
@@ -16,7 +16,6 @@ const Conatiner = styled.div`
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  flex: 1 1 auto;
   min-height: 0;
   position: relative;
   background-color: #2f3136;
@@ -46,6 +45,12 @@ const Panel = () => (
     <Conatiner>
       <ScrollerWrapper>
         <Scroller>
+          <h1>1</h1>
+          <h1>1</h1>
+          <h1>1</h1>
+          <h1>1</h1>
+          <h1>1</h1>
+          <h1>1</h1>
           <h1>1</h1>
           <h1>1</h1>
           <h1>1</h1>

@@ -24,6 +24,7 @@ const AnotherFlex = styled.div`
   justify-content: flex-start;
   align-items: stretch;
   display: flex;
+  min-height: 0;
 `;
 
 const propTypes = {
