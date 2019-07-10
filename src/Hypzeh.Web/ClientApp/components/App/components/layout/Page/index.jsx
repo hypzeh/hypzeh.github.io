@@ -21,7 +21,7 @@ const Page = () => (
   <Container>
     <Scroller>
       <h1>Title...</h1>
-      {placeholder.map(text => (<p>{text}</p>))}
+      {placeholder.map(text => (<p key={text.slice(0, 5)}>{text}</p>))}
     </Scroller>
   </Container>
 );
