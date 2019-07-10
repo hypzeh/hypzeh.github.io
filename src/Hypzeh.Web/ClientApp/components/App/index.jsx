@@ -5,11 +5,9 @@ import { Helmet } from 'react-helmet';
 import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './utils/style/global-style';
+import { ViewProvider } from './components/context/view';
 import {
-  Main,
-  Navbar,
-  Page,
-  Panel,
+  Main, Navbar, Panel, Page,
 } from './components/layout';
 
 const Container = styled.div`
@@ -40,13 +38,15 @@ const App = () => {
     <BrowserRouter>
       <Helmet titleTemplate="%s / Nick Smirnoff" defaultTitle="Nick Smirnoff" />
       <GlobalStyle />
-      <Container>
-        <Navbar />
-        <Main>
-          <Panel />
-          <Page />
-        </Main>
-      </Container>
+      <ViewProvider>
+        <Container>
+          <Navbar />
+          <Main>
+            <Panel />
+            <Page />
+          </Main>
+        </Container>
+      </ViewProvider>
     </BrowserRouter>
   );
 };
