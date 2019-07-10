@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import types from '../../types';
 
 const Container = styled.div`
-  border: 1px solid red;
   width: ${props => props.width};
   contain: layout paint style;
   position: relative;
@@ -16,7 +15,6 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  border: 1px solid red;
   overflow-x: hidden;
   overflow-y: scroll;
   flex: 1 1 auto;

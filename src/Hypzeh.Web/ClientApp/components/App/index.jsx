@@ -13,7 +13,6 @@ import {
 } from './components/layout';
 
 const Container = styled.div`
-  border: 1px solid white;
   min-height: 0;
   flex: 1 1 auto;
   display: flex;

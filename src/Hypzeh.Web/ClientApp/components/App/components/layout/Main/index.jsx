@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import types from '../../../types';
 
 const Container = styled.div`
-  border: 1px solid green;
+  border: 5px solid red;
   min-height: 0;
   flex: 1 1 auto;
   display: flex;

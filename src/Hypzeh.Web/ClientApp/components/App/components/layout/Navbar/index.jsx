@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Scroller } from '../../shared';
 
 const Container = styled.nav`
-  border: 1px solid blue;
+  border: 5px solid blue;
   width: 4.5rem;
   flex-shrink: 0;
   position: relative;
