@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
+import { ViewContext, actions } from '../../../contexts/view';
 import { Scroller } from '../../shared';
 
 const Container = styled.nav`
@@ -14,31 +15,22 @@ const Container = styled.nav`
   overflow: hidden;
 `;
 
-const Navbar = () => (
-  <Container>
-    <Scroller width="5.625rem">
-      <h1>1</h1>
-      <h1>2</h1>
-      <h1>3</h1>
-      <h1>4</h1>
-      <h1>5</h1>
-      <h1>6</h1>
-      <h1>7</h1>
-      <h1>8</h1>
-      <h1>9</h1>
-      <h1>10</h1>
-      <h1>11</h1>
-      <h1>12</h1>
-      <h1>13</h1>
-      <h1>14</h1>
-      <h1>15</h1>
-      <h1>16</h1>
-      <h1>17</h1>
-      <h1>18</h1>
-      <h1>19</h1>
-      <h1>20</h1>
-    </Scroller>
-  </Container>
-);
+const Button = styled.button`
+  width: 100%;
+`;
+
+const placeholder = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
+
+const Navbar = () => {
+  const { dispatch } = useContext(ViewContext);
+
+  return (
+    <Container>
+      <Scroller width="5.625rem">
+        {placeholder.map(value => (<Button key={value} type="button" onClick={() => dispatch(actions.openPanel())}>{value}</Button>))}
+      </Scroller>
+    </Container>
+  );
+};
 
 export default Navbar;

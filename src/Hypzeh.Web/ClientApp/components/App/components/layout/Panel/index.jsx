@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import media from '../../../utils/style/media';
+import { ViewConteact, actions, ViewContext } from '../../../contexts/view';
 import { Scroller } from '../../shared';
 
 const Container = styled.div`
@@ -21,29 +22,22 @@ const Container = styled.div`
   `}
 `;
 
-const Panel = () => (
-  <Container>
-    <Scroller width="15rem">
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-      <h1>1</h1>
-    </Scroller>
-  </Container>
-);
+const Button = styled.button`
+  width: 100%;
+`;
+
+const placeholder = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
+
+const Panel = () => {
+  const { dispatch } = useContext(ViewContext);
+
+  return (
+    <Container>
+      <Scroller width="15rem">
+        {placeholder.map(value => (<Button key={value} type="button" onClick={() => dispatch(actions.closePanel())}>{value}</Button>))}
+      </Scroller>
+    </Container>
+  );
+};
 
 export default Panel;
