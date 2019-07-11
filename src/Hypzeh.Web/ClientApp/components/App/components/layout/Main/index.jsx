@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import types from '../../../types';
+import Panel from '../Panel';
 
 const Container = styled.div`
   border: 5px solid red;

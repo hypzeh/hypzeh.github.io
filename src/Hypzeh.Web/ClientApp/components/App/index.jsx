@@ -6,9 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './utils/style/global-style';
 import { ViewProvider } from './contexts/view';
-import {
-  Main, Navbar, Panel, Page,
-} from './components/layout';
+import { Main, Navbar, Page } from './components/layout';
 
 const Container = styled.div`
   min-height: 0;
@@ -42,7 +40,6 @@ const App = () => {
         <Container>
           <Navbar />
           <Main>
-            <Panel />
             <Page />
           </Main>
         </Container>
