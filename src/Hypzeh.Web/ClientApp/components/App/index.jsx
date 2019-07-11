@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './utils/style/global-style';
-import { ViewProvider } from './components/context/view';
+import { ViewProvider } from './contexts/view';
 import {
   Main, Navbar, Panel, Page,
 } from './components/layout';

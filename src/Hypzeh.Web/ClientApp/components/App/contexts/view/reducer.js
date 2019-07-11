@@ -1,7 +1,7 @@
 import { PANEL_CLOSE, PANEL_OPEN } from './types';
 
 export const initialState = {
-  isPanelOpen: true,
+  isPanelOpen: false,
 };
 
 const reducer = (state = initialState, action) => {

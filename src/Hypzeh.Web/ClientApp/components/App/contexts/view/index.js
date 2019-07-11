@@ -1,5 +1,4 @@
-import ViewContext from './Context';
-import ViewProvider from './Provider';
+import { ViewContext, ViewProvider } from './Context';
 import actions from './actions';
 
 export {
