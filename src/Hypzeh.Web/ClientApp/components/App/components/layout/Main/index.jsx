@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import types from '../../../types';
+import { ViewContext, actions } from '../../../contexts/view';
+import { useWindowSize } from '../../../hooks';
 import Panel from '../Panel';
 
 const Container = styled.div`
@@ -23,11 +25,21 @@ const defaultProps = {
   children: null,
 };
 
-const Main = ({ children }) => (
-  <Container>
-    {children}
-  </Container>
-);
+const Main = ({ children }) => {
+  const { view, dispatch } = useContext(ViewContext);
+  const size = useWindowSize();
+
+  if (size.width >= 768 && view.isPanelOpen) {
+    dispatch(actions.closePanel());
+  }
+
+  return (
+    <Container>
+      {(view.isPanelOpen || size.width >= 768) && (<Panel />)}
+      {children}
+    </Container>
+  );
+};
 
 Main.propTypes = propTypes;
 Main.defaultProps = defaultProps;
