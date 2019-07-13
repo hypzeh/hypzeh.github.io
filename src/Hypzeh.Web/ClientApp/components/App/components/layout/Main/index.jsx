@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import types from '../../../types';
+import { breakpoints } from '../../../utils/style/media';
 import { ViewContext, actions } from '../../../contexts/view';
 import { useWindowSize } from '../../../hooks';
 import Panel from '../Panel';
@@ -29,13 +30,13 @@ const Main = ({ children }) => {
   const { view, dispatch } = useContext(ViewContext);
   const size = useWindowSize();
 
-  if (size.width >= 768 && view.isPanelOpen) {
+  if (size.width >= breakpoints.medium && view.isPanelOpen) {
     dispatch(actions.closePanel());
   }
 
   return (
     <Container>
-      {(view.isPanelOpen || size.width >= 768) && (<Panel />)}
+      {(size.width >= breakpoints.medium || view.isPanelOpen) && (<Panel />)}
       {children}
     </Container>
   );

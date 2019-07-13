@@ -1,15 +1,15 @@
 import { css } from 'styled-components';
 
-const sizes = {
+export const breakpoints = {
   huge: 1440,
   large: 1170,
   medium: 768,
   small: 450,
 };
 
-const media = Object.keys(sizes).reduce((acc, label) => {
+const media = Object.keys(breakpoints).reduce((acc, label) => {
   acc[label] = (...args) => css`
-    @media (max-width: ${sizes[label] / 16}em) {
+    @media (max-width: ${breakpoints[label] / 16}em) {
       ${css(...args)}
     }
   `;
