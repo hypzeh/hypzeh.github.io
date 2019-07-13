@@ -5,7 +5,7 @@ import types from '../../../types';
 import { breakpoints } from '../../../utils/style/media';
 import { ViewContext, actions } from '../../../contexts/view';
 import { useWindowSize } from '../../../hooks';
-import Panel from '../Panel';
+import Panel from './components/Panel';
 
 const Container = styled.div`
   border: 5px solid red;

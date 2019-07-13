@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import media from '../../../utils/style/media';
-import { ViewConteact, actions, ViewContext } from '../../../contexts/view';
-import { Scroller } from '../../shared';
+import media from '../../../../utils/style/media';
+import { actions, ViewContext } from '../../../../contexts/view';
+import { Scroller } from '../../../shared';
 
 const Container = styled.div`
   border: 5px solid green;
