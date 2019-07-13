@@ -1,10 +1,6 @@
 import { PANEL_CLOSE, PANEL_OPEN } from './types';
 
-export const initialState = {
-  isPanelOpen: false,
-};
-
-const reducer = (state = initialState, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
   case PANEL_OPEN:
     return { ...state, isPanelOpen: true };

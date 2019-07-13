@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import media from '../../../../utils/style/media';
-import { actions, ViewContext } from '../../../../contexts/view';
-import { Scroller } from '../../../shared';
+import media from '../../../../../utils/style/media';
+import { ViewContext, viewActions } from '../../../../../contexts/view';
+import { Scroller } from '../../../../shared';
 
 const Container = styled.div`
   border: 5px solid green;
@@ -34,7 +34,7 @@ const Panel = () => {
   return (
     <Container>
       <Scroller width="15rem">
-        {placeholder.map(value => (<Button key={value} type="button" onClick={() => dispatch(actions.closePanel())}>{value}</Button>))}
+        {placeholder.map(value => (<Button key={value} type="button" onClick={() => dispatch(viewActions.closePanel())}>{value}</Button>))}
       </Scroller>
     </Container>
   );

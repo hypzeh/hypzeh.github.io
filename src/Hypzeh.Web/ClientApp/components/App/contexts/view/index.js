@@ -1,8 +1,8 @@
-import { ViewContext, ViewProvider } from './Context';
-import actions from './actions';
+import { ViewContext, ViewProvider } from './ViewContext';
+import viewActions from './actions';
 
 export {
   ViewContext,
   ViewProvider,
-  actions,
+  viewActions,
 };

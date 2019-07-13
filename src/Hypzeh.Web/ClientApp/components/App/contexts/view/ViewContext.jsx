@@ -1,7 +1,8 @@
 import React, { useReducer } from 'react';
 
-import types from '../../types';
-import reducer, { initialState } from './reducer';
+import types from '../../propTypes';
+import reducer from './reducer';
+import state from './state';
 
 const propTypes = {
   children: types.children,
@@ -11,10 +12,10 @@ const defaultProps = {
   children: null,
 };
 
-const ViewContext = React.createContext(initialState);
+const ViewContext = React.createContext(state);
 
 const ViewProvider = ({ children }) => {
-  const [view, dispatch] = useReducer(reducer, initialState);
+  const [view, dispatch] = useReducer(reducer, state);
 
   return (
     <ViewContext.Provider value={{ view, dispatch }}>

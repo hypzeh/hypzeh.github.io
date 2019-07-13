@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import { ViewContext, actions } from '../../../contexts/view';
+import { ViewContext, viewActions } from '../../../contexts/view';
 import { Scroller } from '../../shared';
 
 const Container = styled.nav`
@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <Container>
       <Scroller width="5.625rem">
-        {placeholder.map(value => (<Button key={value} type="button" onClick={() => dispatch(actions.openPanel())}>{value}</Button>))}
+        {placeholder.map(value => (<Button key={value} type="button" onClick={() => dispatch(viewActions.openPanel())}>{value}</Button>))}
       </Scroller>
     </Container>
   );

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import types from '../../../types';
+import types from '../../../propTypes';
 import { breakpoints } from '../../../utils/style/media';
-import { ViewContext, actions } from '../../../contexts/view';
+import { ViewContext, viewActions } from '../../../contexts/view';
 import { useWindowSize } from '../../../hooks';
 import Panel from './components/Panel';
 
@@ -31,7 +31,7 @@ const Main = ({ children }) => {
   const size = useWindowSize();
 
   if (size.width >= breakpoints.medium && view.isPanelOpen) {
-    dispatch(actions.closePanel());
+    dispatch(viewActions.closePanel());
   }
 
   return (

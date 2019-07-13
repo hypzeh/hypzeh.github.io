@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import types from '../../types';
+import types from '../../propTypes';
 
 const Container = styled.div`
   width: ${props => props.width};
