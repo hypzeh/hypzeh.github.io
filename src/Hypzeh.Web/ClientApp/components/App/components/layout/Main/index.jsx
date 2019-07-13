@@ -7,7 +7,7 @@ import { ViewContext, viewActions } from '../../../contexts/view';
 import { useWindowSize } from '../../../hooks';
 import Panel from './components/Panel';
 
-const Container = styled.div`
+const Container = styled.main`
   min-height: 0;
   flex: 1 1 auto;
   display: flex;
