@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import types from '../../../propTypes';
+import types from '../../../types';
 import { breakpoints } from '../../../utils/style/media';
 import { ViewContext, viewActions } from '../../../contexts/view';
 import { useWindowSize } from '../../../hooks';

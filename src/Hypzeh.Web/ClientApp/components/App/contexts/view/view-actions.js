@@ -1,4 +1,4 @@
-import { PANEL_CLOSE, PANEL_OPEN } from './types';
+import { PANEL_CLOSE, PANEL_OPEN } from './view-types';
 
 const closePanel = () => ({ type: PANEL_CLOSE });
 

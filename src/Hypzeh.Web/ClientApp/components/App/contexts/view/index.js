@@ -1,5 +1,5 @@
 import { ViewContext, ViewProvider } from './ViewContext';
-import viewActions from './actions';
+import viewActions from './view-actions';
 
 export {
   ViewContext,

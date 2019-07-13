@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
 
-import types from '../../propTypes';
-import reducer from './reducer';
-import state from './state';
+import types from '../../types';
+import reducer from './view-reducer';
+import state from './view-state';
 
 const propTypes = {
   children: types.children,
