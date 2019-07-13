@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './utils/style/global-style';
+import { PRIMARY } from './utils/style/variables';
 import { ViewProvider } from './contexts/view';
 import { Main, Navbar, Page } from './components/layout';
 
@@ -16,7 +17,7 @@ const Container = styled.div`
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
-  background-color: #202225;
+  background-color: ${PRIMARY.background};
 `;
 
 const App = () => {

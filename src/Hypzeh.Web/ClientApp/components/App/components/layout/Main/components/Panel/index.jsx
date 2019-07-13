@@ -2,16 +2,16 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import media from '../../../../../utils/style/media';
+import { TERTIARY } from '../../../../../utils/style/variables';
 import { ViewContext, viewActions } from '../../../../../contexts/view';
 import { Scroller } from '../../../../shared';
 
 const Container = styled.div`
-  border: 5px solid green;
   flex-shrink: 0;
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #2f3136;
+  background-color: ${TERTIARY.background};
   overflow: hidden;
   z-index: 1;
 

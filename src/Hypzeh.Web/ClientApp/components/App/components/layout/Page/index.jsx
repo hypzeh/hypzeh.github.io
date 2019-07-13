@@ -4,11 +4,14 @@ import styled from 'styled-components';
 import { Scroller } from '../../shared';
 
 const Container = styled.div`
-  border: 5px solid yellow;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+`;
+
+const Content = styled.div`
+  margin: .5rem;
 `;
 
 const placeholder = [
@@ -20,8 +23,10 @@ const placeholder = [
 const Page = () => (
   <Container>
     <Scroller>
-      <h1>Title...</h1>
-      {placeholder.map(text => (<p key={text.slice(0, 5)}>{text}</p>))}
+      <Content>
+        <h1>Title...</h1>
+        {placeholder.map(text => (<p key={text.slice(0, 5)}>{text}</p>))}
+      </Content>
     </Scroller>
   </Container>
 );
