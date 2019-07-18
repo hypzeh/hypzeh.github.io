@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import GlobalStyle from './utils/style/global-style';
 import { PRIMARY } from './utils/style/variables';
 import { ViewProvider } from './contexts/view';
+import { NavigationProvider } from './contexts/navigation';
 import { Main, Navbar, Page } from './components/layout';
 
 const Container = styled.div`
@@ -38,12 +39,14 @@ const App = () => {
       <Helmet titleTemplate="%s / Nick Smirnoff" defaultTitle="Nick Smirnoff" />
       <GlobalStyle />
       <ViewProvider>
-        <Container>
-          <Navbar />
-          <Main>
-            <Page />
-          </Main>
-        </Container>
+        <NavigationProvider>
+          <Container>
+            <Navbar />
+            <Main>
+              <Page />
+            </Main>
+          </Container>
+        </NavigationProvider>
       </ViewProvider>
     </BrowserRouter>
   );
