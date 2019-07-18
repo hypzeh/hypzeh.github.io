@@ -5,7 +5,7 @@ import types from '../../../types';
 import { breakpoints } from '../../../utils/style/media';
 import { ViewContext, viewActions } from '../../../contexts/view';
 import { useWindowSize } from '../../../hooks';
-import Panel from './components/Panel';
+import Panel from '../Panel';
 
 const Container = styled.main`
   min-height: 0;
