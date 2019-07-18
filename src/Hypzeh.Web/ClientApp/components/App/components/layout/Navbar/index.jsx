@@ -13,11 +13,11 @@ const Container = styled.nav`
   flex-direction: column;
   background-color: ${SECONDARY.background};
   overflow: hidden;
+`;
 
-  hr {
-    margin-inline-start: .5rem;
-    margin-inline-end: .5rem;
-  }
+const Separator = styled.hr`
+  margin-inline-start: .5rem;
+  margin-inline-end: .5rem;
 `;
 
 const placeholder = [
@@ -40,7 +40,7 @@ const Navbar = () => (
   <Container>
     <Scroller width="5.625rem">
       <NavItem path="/" title="Nick Smirnoff" />
-      <hr />
+      <Separator />
       {placeholder.map(value => (
         <NavItem key={value.title} path={value.path} title={value.title} />
       ))}
