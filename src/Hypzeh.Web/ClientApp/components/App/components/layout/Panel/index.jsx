@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import media from '../../../utils/style/media';
 import { TERTIARY } from '../../../utils/style/variables';
-import { ViewContext, viewActions } from '../../../contexts/view';
+import { NavigationContext } from '../../../contexts/navigation';
 import { Scroller } from '../../shared';
 import InternalLink from './components/InternalLink';
 import ExternalLink from './components/ExternalLink';
@@ -30,43 +30,23 @@ const Content = styled.div`
   justify-content: space-between;
 `;
 
-const internal = [
-  { path: '/', title: 'Home' },
-  { path: '/test', title: 'Test Page' },
-  { path: '/test', title: 'Test Page1' },
-  { path: '/test', title: 'Test Page2' },
-  { path: '/test', title: 'Test Page3' },
-  { path: '/test', title: 'Test Page4' },
-  { path: '/test', title: 'Test Page5' },
-  { path: '/test', title: 'Test Page6' },
-  { path: '/test', title: 'Test Page7' },
-  { path: '/test', title: 'Test Page8' },
-  { path: '/test', title: 'Test Page9' },
-  { path: '/test', title: 'Test Page10' },
-  { path: '/test', title: 'Test Page11' },
-  { path: '/test', title: 'Test Page12' },
-  { path: '/test', title: 'Test Page13' },
-  { path: '/test', title: 'Test Page14' },
-  { path: '/test', title: 'Test Page15' },
-];
-
-const external = [
-  { path: 'http://www.google.co.uk', title: 'Google' },
-];
+const Group = styled.div`
+  position: relative;
+`;
 
 const Panel = () => {
-  const { dispatch } = useContext(ViewContext);
+  const { navigation } = useContext(NavigationContext);
 
   return (
     <Container>
       <Scroller width="15rem">
         <Content>
-          <div>
-            {internal.map(item => (<InternalLink key={item.title} />))}
-          </div>
-          <div>
-            {external.map(item => (<ExternalLink key={item.title} />))}
-          </div>
+          <Group>
+            {navigation.internal.map(item => (<InternalLink key={item.title} />))}
+          </Group>
+          <Group>
+            {navigation.external.map(item => (<ExternalLink key={item.title} />))}
+          </Group>
         </Content>
       </Scroller>
     </Container>
