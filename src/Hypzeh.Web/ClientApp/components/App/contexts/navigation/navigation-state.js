@@ -1,8 +1,7 @@
-import { ns } from '../../utils/navigation';
+import ns from '../../utils/navigation/sections/ns';
 
 const state = {
-  internal: ns.internal,
-  external: ns.external,
+  ...ns,
 };
 
 export default state;

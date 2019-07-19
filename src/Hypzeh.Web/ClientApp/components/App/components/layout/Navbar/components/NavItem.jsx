@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
 import { ViewContext, viewActions } from '../../../../contexts/view';
+import { NavigationContext, navigationActions } from '../../../../contexts/navigation';
 import GithubIcon from './github.svg';
 
 const propTypes = {
@@ -52,14 +53,16 @@ const Text = styled.span`
 `;
 
 const NavItem = ({ path, title }) => {
-  const { dispatch } = useContext(ViewContext);
+  const navigationContext = useContext(NavigationContext);
+  const viewContext = useContext(ViewContext);
 
-  const openPanel = () => {
-    dispatch(viewActions.openPanel());
+  const handleClick = () => {
+    navigationContext.dispatch(navigationActions.setNavigationFromPath(path));
+    viewContext.dispatch(viewActions.openPanel());
   };
 
   return (
-    <Container to={path} onClick={openPanel}>
+    <Container to={path} onClick={handleClick}>
       <GithubIcon height="24px" />
       <Text>{title}</Text>
     </Container>

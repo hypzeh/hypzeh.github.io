@@ -1,9 +1,12 @@
-import { SET_NS } from './navigation-types';
+import { SET_DEFAULT, SET_NAVIGATION } from './navigation-types';
 
 const reducer = (state, action) => {
   switch (action.type) {
-  case SET_NS:
-    return { ...state };
+  case SET_NAVIGATION:
+    return { ...action.payload };
+
+  case SET_DEFAULT:
+    return { ...action.payload };
 
   default:
     return state;

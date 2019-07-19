@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
-export const SET_NS = 'SET_NS';
+export const SET_DEFAULT = 'SET_DEFAULT';
+export const SET_NAVIGATION = 'SET_NAVIGATION';

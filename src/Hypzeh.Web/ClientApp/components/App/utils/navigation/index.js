@@ -1,6 +1,9 @@
 import ns from './sections/ns';
+import smallify from './sections/smallify';
+import reactCoreBoilerplate from './sections/react-core-boilerplate';
 
-export {
-  // eslint-disable-next-line import/prefer-default-export
+export default [
   ns,
-};
+  smallify,
+  reactCoreBoilerplate,
+];

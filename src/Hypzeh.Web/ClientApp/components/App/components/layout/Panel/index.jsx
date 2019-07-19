@@ -36,6 +36,7 @@ const Group = styled.div`
 
 const Panel = () => {
   const { navigation } = useContext(NavigationContext);
+  console.log('navigation', navigation);
 
   return (
     <Container>
