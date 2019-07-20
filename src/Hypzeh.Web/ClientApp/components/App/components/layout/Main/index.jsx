@@ -7,6 +7,14 @@ import { ViewContext, viewActions } from '../../../contexts/view';
 import { useWindowSize } from '../../../hooks';
 import Panel from '../Panel';
 
+const propTypes = {
+  children: types.children,
+};
+
+const defaultProps = {
+  children: null,
+};
+
 const Container = styled.main`
   min-height: 0;
   flex: 1 1 auto;
@@ -16,14 +24,6 @@ const Container = styled.main`
   justify-content: flex-start;
   align-items: stretch;
 `;
-
-const propTypes = {
-  children: types.children,
-};
-
-const defaultProps = {
-  children: null,
-};
 
 const Main = ({ children }) => {
   const { view, dispatch } = useContext(ViewContext);

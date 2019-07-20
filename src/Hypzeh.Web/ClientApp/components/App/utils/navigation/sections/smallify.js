@@ -1,10 +1,9 @@
+import routing, { defaultPath } from '../../../components/sections/smallify/utils/routing';
+
 const smallify = {
   title: 'Smallify',
-  defaultPath: '/smallify',
-  internal: [
-    { path: '/smallify', title: 'Smallify' },
-    { path: '/smallify/screenshots', title: 'Screenshots' },
-  ],
+  defaultPath,
+  internal: routing,
   external: [
     { path: 'https://github.com/hypzeh/smallify', title: 'Github' },
     { path: 'https://github.com/hypzeh/smallify/releases', title: 'Download' },

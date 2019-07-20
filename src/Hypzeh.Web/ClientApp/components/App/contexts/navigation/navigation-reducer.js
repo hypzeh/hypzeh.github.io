@@ -1,4 +1,5 @@
 import { SET_DEFAULT, SET_NAVIGATION } from './navigation-types';
+import defaultState from './navigation-state';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -6,7 +7,7 @@ const reducer = (state, action) => {
     return { ...action.payload };
 
   case SET_DEFAULT:
-    return { ...action.payload };
+    return defaultState;
 
   default:
     return state;

@@ -53,12 +53,17 @@ const Text = styled.span`
 `;
 
 const NavItem = ({ path, title }) => {
-  const navigationContext = useContext(NavigationContext);
-  const viewContext = useContext(ViewContext);
+  const navigationState = useContext(NavigationContext);
+  const viewState = useContext(ViewContext);
 
   const handleClick = () => {
-    navigationContext.dispatch(navigationActions.setNavigationFromPath(path));
-    viewContext.dispatch(viewActions.openPanel());
+    if (navigationState.navigation.defaultPath !== path) {
+      navigationState.dispatch(navigationActions.setNavigationFromPath(path));
+    }
+
+    if (!viewState.view.isPanelOpen) {
+      viewState.dispatch(viewActions.openPanel());
+    }
   };
 
   return (

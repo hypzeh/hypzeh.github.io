@@ -15,6 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   background-color: ${TERTIARY.background};
   overflow: hidden;
+  z-index: 1;
 
   ${media.medium`
     position: absolute;
@@ -36,14 +37,19 @@ const Group = styled.div`
 
 const Panel = () => {
   const { navigation } = useContext(NavigationContext);
-  console.log('navigation', navigation);
 
   return (
     <Container>
       <Scroller width="15rem">
         <Content>
           <Group>
-            {navigation.internal.map(item => (<InternalLink key={item.title} />))}
+            {navigation.internal.map(item => (
+              <InternalLink
+                key={item.path}
+                path={item.path}
+                title={item.title}
+              />
+            ))}
           </Group>
           <Group>
             {navigation.external.map(item => (<ExternalLink key={item.title} />))}

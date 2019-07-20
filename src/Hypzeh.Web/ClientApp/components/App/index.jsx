@@ -8,7 +8,8 @@ import GlobalStyle from './utils/style/global-style';
 import { PRIMARY } from './utils/style/variables';
 import { ViewProvider } from './contexts/view';
 import { NavigationProvider } from './contexts/navigation';
-import { Main, Navbar, Page } from './components/layout';
+import { Main, Navbar } from './components/layout';
+import Router from './components/Router';
 
 const Container = styled.div`
   min-height: 0;
@@ -43,7 +44,7 @@ const App = () => {
           <Container>
             <Navbar />
             <Main>
-              <Page />
+              <Router />
             </Main>
           </Container>
         </NavigationProvider>
