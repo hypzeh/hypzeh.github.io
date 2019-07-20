@@ -23,7 +23,7 @@ const Separator = styled.hr`
 
 const Navbar = () => (
   <Container>
-    <Scroller width="5.625rem">
+    <Scroller width="5.625rem" overflow="scroll">
       <NavItem path="/" title="Nick Smirnoff" />
       <Separator />
       {navigation

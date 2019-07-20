@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: ${props => props.overflow};
   flex: 1 1 auto;
   min-height: 0;
 `;
@@ -24,16 +24,18 @@ const Content = styled.div`
 const propTypes = {
   children: types.children,
   width: PropTypes.string,
+  overflow: PropTypes.string,
 };
 
 const defaultProps = {
   children: null,
   width: 'auto',
+  overflow: 'auto',
 };
 
-const Scroller = ({ children, width }) => (
+const Scroller = ({ children, width, overflow }) => (
   <Container width={width}>
-    <Content>
+    <Content overflow={overflow}>
       {children}
     </Content>
   </Container>
