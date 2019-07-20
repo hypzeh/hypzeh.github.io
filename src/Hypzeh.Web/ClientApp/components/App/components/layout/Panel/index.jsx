@@ -43,16 +43,22 @@ const Panel = () => {
       <Scroller width="15rem">
         <Content>
           <Group>
-            {navigation.internal.map(item => (
+            {navigation.internal.map(({ path, title }) => (
               <InternalLink
-                key={item.path}
-                path={item.path}
-                title={item.title}
+                key={path}
+                path={path}
+                title={title}
               />
             ))}
           </Group>
           <Group>
-            {navigation.external.map(item => (<ExternalLink key={item.title} />))}
+            {navigation.external.map(({ path, title }) => (
+              <ExternalLink
+                key={path}
+                path={path}
+                title={title}
+              />
+            ))}
           </Group>
         </Content>
       </Scroller>

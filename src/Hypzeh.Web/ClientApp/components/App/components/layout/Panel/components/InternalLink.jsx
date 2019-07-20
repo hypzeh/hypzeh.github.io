@@ -9,12 +9,29 @@ const propTypes = {
 };
 
 const Container = styled.div`
-  border: 1px solid red;
+  display: flex;
+`;
+
+const Link = styled(NavLink)`
+  width: 100%;
+  border-radius: .5rem 0 0 .5rem;
+  padding: .5rem;
+  margin-left: .5rem;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #181818;
+  }
+
+  &.active {
+    background-color: #212121;
+  }
 `;
 
 const InternalLink = ({ path, title }) => (
   <Container>
-    <NavLink to={path}>{title}</NavLink>
+    <Link to={path} exact>{title}</Link>
   </Container>
 );
 

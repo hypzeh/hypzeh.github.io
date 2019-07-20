@@ -5,7 +5,10 @@ const ns = {
   defaultPath,
   internal: routing,
   external: [
-    { path: 'http://www.google.co.uk', title: 'Google' },
+    { path: 'https://github.com/Hypzeh', title: 'Github' },
+    { path: 'https://www.linkedin.com/in/nick-smirnoff', title: 'LinkedIn' },
+    { path: 'https://twitter.com/Hypzeh', title: 'Twitter' },
+    { path: 'mailto:nick.smirnoff@live.co.uk', title: 'Email' },
   ],
 };
 

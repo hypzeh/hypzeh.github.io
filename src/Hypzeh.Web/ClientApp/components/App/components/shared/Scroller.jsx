@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   flex: 1 1 auto;
   min-height: 0;
 `;
