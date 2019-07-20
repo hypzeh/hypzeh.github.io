@@ -1,8 +1,3 @@
-import { ViewContext, ViewProvider } from './ViewContext';
-import viewActions from './view-actions';
-
-export {
-  ViewContext,
-  ViewProvider,
-  viewActions,
-};
+export { ViewContext } from './ViewContext';
+export { ViewProvider } from './ViewContext';
+export { default as viewActions } from './view-actions';

@@ -1,8 +1,3 @@
-import { NavigationContext, NavigationProvider } from './NavigationContext';
-import navigationActions from './navigation-actions';
-
-export {
-  NavigationContext,
-  NavigationProvider,
-  navigationActions,
-};
+export { NavigationContext } from './NavigationContext';
+export { NavigationProvider } from './NavigationContext';
+export { default as navigationActions } from './navigation-actions';

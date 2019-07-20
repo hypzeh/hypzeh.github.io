@@ -1,6 +1,2 @@
-import useWindowSize from './useWindowSize';
-
-export {
-  // eslint-disable-next-line import/prefer-default-export
-  useWindowSize,
-};
+// eslint-disable-next-line import/prefer-default-export
+export { default as useWindowSize } from './useWindowSize';

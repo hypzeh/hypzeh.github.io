@@ -1,9 +1,3 @@
-import Main from './Main';
-import Navbar from './Navbar';
-import Page from './Page';
-
-export {
-  Main,
-  Navbar,
-  Page,
-};
+export { default as Main } from './Main';
+export { default as Navbar } from './Navbar';
+export { default as Page } from './Page';
