@@ -10,7 +10,7 @@ const Router = () => (
     <Suspense fallback={<Loader />}>
       <Switch>
         {navigation.map(
-          ({ internal }) => internal.map(
+          ({ routing }) => routing.map(
             ({ path, component }) => (
               <Route
                 key={path}

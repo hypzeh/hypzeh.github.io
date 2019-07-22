@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Page } from '../../layout';
+import { Page } from '../../shared';
 
 const About = () => (
   <Page title="About">

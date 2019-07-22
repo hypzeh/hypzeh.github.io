@@ -61,11 +61,9 @@ const NavItem = ({ path, title }) => {
       navigationState.dispatch(navigationActions.setNavigationFromPath(path));
     }
 
-    if (viewState.view.isPanelOpen) {
-      viewState.dispatch(viewActions.closePanel());
-    } else {
-      viewState.dispatch(viewActions.openPanel());
-    }
+    viewState.dispatch(
+      viewState.view.isPanelOpen ? viewActions.closePanel() : viewActions.openPanel(),
+    );
   };
 
   return (

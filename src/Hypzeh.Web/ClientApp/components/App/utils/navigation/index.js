@@ -1,5 +1,5 @@
-import ns from './sections/ns';
-import smallify from './sections/smallify';
+import ns from './ns';
+import smallify from './smallify';
 
 export default [
   ns,

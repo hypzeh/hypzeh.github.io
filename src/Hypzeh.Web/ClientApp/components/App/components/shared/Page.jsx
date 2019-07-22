@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
-import types from '../../../types';
-import { Scroller } from '../../shared';
+import types from '../../types';
+import Scroller from './Scroller';
 
 const propTypes = {
   children: types.children,

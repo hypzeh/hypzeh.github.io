@@ -43,7 +43,7 @@ const Panel = () => {
       <Scroller width="15rem">
         <Content>
           <Group>
-            {navigation.internal.map(({ path, title }) => (
+            {navigation.routing.map(({ path, title }) => (
               <InternalLink
                 key={path}
                 path={path}

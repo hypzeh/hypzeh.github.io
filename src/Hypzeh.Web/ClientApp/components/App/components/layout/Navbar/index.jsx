@@ -27,9 +27,9 @@ const Navbar = () => (
       <NavItem path="/" title="Nick Smirnoff" />
       <Separator />
       {navigation
-        .filter(section => section.defaultPath !== '/')
-        .map(section => (
-          <NavItem key={section.title} path={section.defaultPath} title={section.title} />
+        .filter(({ defaultPath }) => defaultPath !== '/')
+        .map(({ title, defaultPath }) => (
+          <NavItem key={defaultPath} path={defaultPath} title={title} />
         ))
       }
     </Scroller>
