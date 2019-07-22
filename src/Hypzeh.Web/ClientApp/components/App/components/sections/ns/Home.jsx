@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Page } from '../../shared';
+import { Page, Title } from '../../shared';
 
 const Home = () => (
   <Page title="Home">
-    <h1>Home</h1>
+    <Title>Home</Title>
   </Page>
 );
 
