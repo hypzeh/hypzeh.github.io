@@ -12,8 +12,9 @@ const blink = keyframes`
 `;
 
 const Container = styled.section`
-  border: 1px solid red;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Name = styled.div`
