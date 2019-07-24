@@ -23,17 +23,11 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Content = styled.div`
-  margin: .5rem;
-`;
-
 const Page = ({ children, title }) => (
   <Container>
     <Helmet title={title} />
     <Scroller>
-      <Content>
-        {children}
-      </Content>
+      {children}
     </Scroller>
   </Container>
 );
