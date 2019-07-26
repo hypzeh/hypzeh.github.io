@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Overview = () => (
+const Home = () => (
   <div>
     <h1>Smallify</h1>
   </div>
 );
 
-export default Overview;
+export default Home;

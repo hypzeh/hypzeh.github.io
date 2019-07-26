@@ -1,16 +1,17 @@
-import { SET_DEFAULT, SET_NAVIGATION } from './navigation-types';
-import navigation from '../../utils/navigation';
+import {
+  ADD_SECTION,
+  SET_ACTIVE_SECTION,
+  SET_ACTIVE_SECTION_BY_PATH,
+} from './navigation-types';
 
-const setDefault = () => ({ type: SET_DEFAULT });
+const addSection = section => ({ type: ADD_SECTION, payload: section });
 
-const setNavigationFromPath = (defaultPath) => {
-  const section = navigation.find(item => item.defaultPath === defaultPath);
-  if (!section) return setDefault();
+const setActiveSection = section => ({ type: SET_ACTIVE_SECTION, payload: section });
 
-  return ({ type: SET_NAVIGATION, payload: section });
-};
+const setActiveSectionByPath = path => ({ type: SET_ACTIVE_SECTION_BY_PATH, payload: path });
 
 export default {
-  setDefault,
-  setNavigationFromPath,
+  addSection,
+  setActiveSection,
+  setActiveSectionByPath,
 };

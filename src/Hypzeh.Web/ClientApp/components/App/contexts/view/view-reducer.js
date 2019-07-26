@@ -9,7 +9,7 @@ const reducer = (state, action) => {
     return { ...state, isPanelOpen: false };
 
   default:
-    return state;
+    return { ...state };
   }
 };
 

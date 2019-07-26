@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import { SECONDARY } from '../../../utils/style/variables';
-import navigation from '../../../utils/navigation';
+import { NavigationContext } from '../../../contexts/navigation';
 import { Scroller } from '../../shared';
 import NavItem from './components/NavItem';
 
@@ -21,19 +21,23 @@ const Separator = styled.hr`
   margin-inline-end: .5rem;
 `;
 
-const Navbar = () => (
-  <Container>
-    <Scroller width="5.625rem" overflow="scroll">
-      <NavItem path="/" title="Nick Smirnoff" />
-      <Separator />
-      {navigation
-        .filter(({ defaultPath }) => defaultPath !== '/')
-        .map(({ title, defaultPath }) => (
-          <NavItem key={defaultPath} path={defaultPath} title={title} />
-        ))
-      }
-    </Scroller>
-  </Container>
-);
+const Navbar = () => {
+  const [{ sections }] = useContext(NavigationContext);
+
+  return (
+    <Container>
+      <Scroller width="5.625rem" overflow="scroll">
+        <NavItem path="/" title="Nick Smirnoff" />
+        <Separator />
+        {sections
+          .filter(({ defaultPath }) => defaultPath !== '/')
+          .map(({ title, defaultPath }) => (
+            <NavItem key={defaultPath} path={defaultPath} title={title} />
+          ))
+        }
+      </Scroller>
+    </Container>
+  );
+};
 
 export default Navbar;

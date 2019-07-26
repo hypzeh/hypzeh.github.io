@@ -18,7 +18,7 @@ const ViewProvider = ({ children }) => {
   const [view, dispatch] = useReducer(reducer, state);
 
   return (
-    <ViewContext.Provider value={{ view, dispatch }}>
+    <ViewContext.Provider value={[view, dispatch]}>
       {children}
     </ViewContext.Provider>
   );

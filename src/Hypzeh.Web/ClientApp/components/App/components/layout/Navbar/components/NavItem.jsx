@@ -53,21 +53,21 @@ const Text = styled.span`
 `;
 
 const NavItem = ({ path, title }) => {
-  const navigationState = useContext(NavigationContext);
-  const viewState = useContext(ViewContext);
+  const [{ active }, navigationDispatch] = useContext(NavigationContext);
+  const [{ isPanelOpen }, viewDispatch] = useContext(ViewContext);
 
   const handleClick = () => {
-    if (navigationState.navigation.defaultPath !== path) {
-      navigationState.dispatch(navigationActions.setNavigationFromPath(path));
+    if (active.defaultPath === path) {
+      viewDispatch(isPanelOpen ? viewActions.closePanel() : viewActions.openPanel());
+      return;
     }
 
-    viewState.dispatch(
-      viewState.view.isPanelOpen ? viewActions.closePanel() : viewActions.openPanel(),
-    );
+    navigationDispatch(navigationActions.setActiveSectionByPath(path));
+    viewDispatch(viewActions.openPanel());
   };
 
   return (
-    <Container to={path} onClick={handleClick}>
+    <Container to={path} onClick={handleClick} isActive={() => active.defaultPath === path}>
       <GithubIcon height="24px" />
       <Text>{title}</Text>
     </Container>

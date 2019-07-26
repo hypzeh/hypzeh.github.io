@@ -18,7 +18,7 @@ const NavigationProvider = ({ children }) => {
   const [navigation, dispatch] = useReducer(reducer, state);
 
   return (
-    <NavigationContext.Provider value={{ navigation, dispatch }}>
+    <NavigationContext.Provider value={[navigation, dispatch]}>
       {children}
     </NavigationContext.Provider>
   );

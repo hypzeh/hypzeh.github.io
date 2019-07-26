@@ -1,16 +1,29 @@
-import { SET_DEFAULT, SET_NAVIGATION } from './navigation-types';
-import defaultState from './navigation-state';
+import {
+  ADD_SECTION,
+  SET_ACTIVE_SECTION,
+  SET_ACTIVE_SECTION_BY_PATH,
+} from './navigation-types';
+
+const fetchSectionByPath = (sections, path) => {
+  const section = sections.find(item => item.defaultPath === path);
+  if (!section) return sections[0];
+
+  return section;
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
-  case SET_NAVIGATION:
-    return { ...action.payload };
+  case ADD_SECTION:
+    return { ...state, sections: [...state.sections, action.payload] };
 
-  case SET_DEFAULT:
-    return defaultState;
+  case SET_ACTIVE_SECTION:
+    return { ...state, active: action.payload };
+
+  case SET_ACTIVE_SECTION_BY_PATH:
+    return { ...state, active: fetchSectionByPath(state.sections, action.payload) };
 
   default:
-    return state;
+    return { ...state };
   }
 };
 

@@ -1,29 +1,45 @@
-import React, { Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useEffect, useContext, Suspense } from 'react';
+import PropTypes from 'prop-types';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
-import navigation from '../../utils/navigation';
+import { NavigationContext, navigationActions } from '../../contexts/navigation';
 import { Loader } from '../shared';
 import ErrorBoundary from './components/ErrorBoundary';
 
-const Router = () => (
-  <ErrorBoundary>
-    <Suspense fallback={<Loader />}>
-      <Switch>
-        {navigation.map(
-          ({ routing }) => routing.map(
-            ({ path, component }) => (
-              <Route
-                key={path}
-                path={path}
-                exact
-                component={component}
-              />
-            ),
-          ),
-        )}
-      </Switch>
-    </Suspense>
-  </ErrorBoundary>
-);
+const propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
-export default Router;
+const Router = ({ location }) => {
+  const [{ sections }, dispatch] = useContext(NavigationContext);
+
+  useEffect(() => {
+    const section = sections.find(item => item.defaultPath === `/${location.pathname.split('/', 2)[1]}`);
+    if (!section) return;
+
+    dispatch(navigationActions.setActiveSection(section));
+  }, []);
+
+  return (
+    <ErrorBoundary>
+      <Suspense fallback={<Loader />}>
+        <Switch>
+          <Route
+            path="/smallify"
+            component={React.lazy(() => import(/* webpackChunkName: "smallify" */ '../sections/Smallify'))}
+          />
+          <Route
+            path="/"
+            component={React.lazy(() => import(/* webpackChunkName: "ns" */ '../sections/NS'))}
+          />
+        </Switch>
+      </Suspense>
+    </ErrorBoundary>
+  );
+};
+
+Router.propTypes = propTypes;
+
+export default withRouter(Router);

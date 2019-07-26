@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Page, Title } from '../../../shared';
-import Introduction from './components/Introduction';
+import { Page, Title } from '../../../../shared';
 
 const greetings = [
   'WELCOME',
@@ -14,7 +13,6 @@ const greetings = [
 const Home = () => (
   <Page title="Home">
     <Title text={greetings[Math.floor(Math.random() * greetings.length)]} />
-    <Introduction />
   </Page>
 );
 

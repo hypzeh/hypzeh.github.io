@@ -26,16 +26,16 @@ const Container = styled.main`
 `;
 
 const Main = ({ children }) => {
-  const { view, dispatch } = useContext(ViewContext);
+  const [{ isPanelOpen }, viewDispatch] = useContext(ViewContext);
   const size = useWindowSize();
 
-  if (size.width >= breakpoints.medium && view.isPanelOpen) {
-    dispatch(viewActions.closePanel());
+  if (size.width >= breakpoints.medium && isPanelOpen) {
+    viewDispatch(viewActions.closePanel());
   }
 
   return (
     <Container>
-      {(size.width >= breakpoints.medium || view.isPanelOpen) && (<Panel />)}
+      {(size.width >= breakpoints.medium || isPanelOpen) && (<Panel />)}
       {children}
     </Container>
   );

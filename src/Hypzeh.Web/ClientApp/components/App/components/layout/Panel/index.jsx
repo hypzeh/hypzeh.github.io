@@ -36,14 +36,14 @@ const Group = styled.div`
 `;
 
 const Panel = () => {
-  const { navigation } = useContext(NavigationContext);
+  const [{ active }] = useContext(NavigationContext);
 
   return (
     <Container>
       <Scroller width="15rem">
         <Content>
           <Group>
-            {navigation.routing.map(({ path, title }) => (
+            {active.routing.map(({ path, title }) => (
               <InternalLink
                 key={path}
                 path={path}
@@ -52,7 +52,7 @@ const Panel = () => {
             ))}
           </Group>
           <Group>
-            {navigation.external.map(({ path, title }) => (
+            {active.external.map(({ path, title }) => (
               <ExternalLink
                 key={path}
                 path={path}
