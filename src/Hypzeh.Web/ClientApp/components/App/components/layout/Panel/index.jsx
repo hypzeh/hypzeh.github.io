@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import types from '../../../types';
-import media from '../../../utils/style/media';
+import media, { breakpoints } from '../../../utils/style/media';
 import { TERTIARY } from '../../../utils/style/variables';
+import { ViewContext } from '../../../contexts/view';
+import { useWindowSize } from '../../../hooks';
 import { Scroller } from '../../shared';
 
 const propTypes = {
@@ -30,13 +32,22 @@ const Container = styled.div`
   `}
 `;
 
-const Panel = ({ children }) => (
-  <Container>
-    <Scroller width="15rem">
-      {children}
-    </Scroller>
-  </Container>
-);
+const Panel = ({ children }) => {
+  const [{ isPanelOpen }] = useContext(ViewContext);
+  const size = useWindowSize();
+
+  if (size.width <= breakpoints.medium && !isPanelOpen) {
+    return null;
+  }
+
+  return (
+    <Container>
+      <Scroller width="15rem">
+        {children}
+      </Scroller>
+    </Container>
+  );
+};
 
 Panel.propTypes = propTypes;
 Panel.defaultProps = defaultProps;
