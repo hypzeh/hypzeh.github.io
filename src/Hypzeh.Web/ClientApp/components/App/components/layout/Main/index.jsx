@@ -1,11 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import types from '../../../types';
-import { breakpoints } from '../../../utils/style/media';
-import { ViewContext, viewActions } from '../../../contexts/view';
-import { useWindowSize } from '../../../hooks';
-import Panel from '../Panel';
 
 const propTypes = {
   children: types.children,
@@ -25,21 +21,11 @@ const Container = styled.main`
   align-items: stretch;
 `;
 
-const Main = ({ children }) => {
-  const [{ isPanelOpen }, viewDispatch] = useContext(ViewContext);
-  const size = useWindowSize();
-
-  if (size.width >= breakpoints.medium && isPanelOpen) {
-    viewDispatch(viewActions.closePanel());
-  }
-
-  return (
-    <Container>
-      {(size.width >= breakpoints.medium || isPanelOpen) && (<Panel />)}
-      {children}
-    </Container>
-  );
-};
+const Main = ({ children }) => (
+  <Container>
+    {children}
+  </Container>
+);
 
 Main.propTypes = propTypes;
 Main.defaultProps = defaultProps;

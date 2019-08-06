@@ -1,11 +1,22 @@
-import ns from '../../components/sections/NS/utils/ns';
-import smallify from '../../components/sections/Smallify/utils/smallify';
+import { lazy } from 'react';
+
+const ns = {
+  title: 'Nick Smirnoff',
+  defaultPath: '/',
+  component: lazy(() => import(/* webpackChunkName: "ns" */ '../../components/sections/NS')),
+};
+
+const smallify = {
+  title: 'Smallify',
+  defaultPath: '/smallify',
+  component: lazy(() => import(/* webpackChunkName: "smallify" */ '../../components/sections/Smallify')),
+};
 
 const state = {
   active: ns,
   sections: [
-    ns,
     smallify,
+    ns,
   ],
 };
 

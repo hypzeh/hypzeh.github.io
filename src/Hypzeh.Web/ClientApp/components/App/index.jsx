@@ -8,7 +8,7 @@ import GlobalStyle from './utils/style/global-style';
 import { PRIMARY } from './utils/style/variables';
 import { ViewProvider } from './contexts/view';
 import { NavigationProvider } from './contexts/navigation';
-import { Main, Navbar } from './components/layout';
+import { Navbar } from './components/layout';
 import Router from './components/Router';
 
 const Container = styled.div`
@@ -43,9 +43,7 @@ const App = () => {
         <NavigationProvider>
           <Container>
             <Navbar />
-            <Main>
-              <Router />
-            </Main>
+            <Router />
           </Container>
         </NavigationProvider>
       </ViewProvider>

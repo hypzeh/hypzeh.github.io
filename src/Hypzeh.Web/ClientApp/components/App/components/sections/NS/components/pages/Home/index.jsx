@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Page, Title } from '../../../../shared';
+import { Page } from '../../../../../layout';
+import { Title } from '../../../../../shared';
 
 const greetings = [
   'WELCOME',

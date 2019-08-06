@@ -1,23 +1,16 @@
-import React, { Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from 'react';
 
-import { Loader } from '../../shared';
+import { Main, Panel } from '../../layout';
+import Navigation from './components/Navigation';
+import Router from './components/Router';
 
-const Router = () => (
-  <Suspense fallback={<Loader />}>
-    <Switch>
-      <Route
-        path="/"
-        exact
-        component={React.lazy(() => import(/* webpackChunkName: "ns-home" */ './components/Home'))}
-      />
-      <Route
-        path="/about"
-        exact
-        component={React.lazy(() => import(/* webpackChunkName: "ns-about" */ './components/About'))}
-      />
-    </Switch>
-  </Suspense>
+const NS = () => (
+  <Main>
+    <Panel>
+      <Navigation />
+    </Panel>
+    <Router />
+  </Main>
 );
 
-export default Router;
+export default NS;

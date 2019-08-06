@@ -26,14 +26,13 @@ const Router = ({ location }) => {
     <ErrorBoundary>
       <Suspense fallback={<Loader />}>
         <Switch>
-          <Route
-            path="/smallify"
-            component={React.lazy(() => import(/* webpackChunkName: "smallify" */ '../sections/Smallify'))}
-          />
-          <Route
-            path="/"
-            component={React.lazy(() => import(/* webpackChunkName: "ns" */ '../sections/NS'))}
-          />
+          {sections.map(section => (
+            <Route
+              key={section.defaultPath}
+              path={section.defaultPath}
+              component={section.component}
+            />
+          ))}
         </Switch>
       </Suspense>
     </ErrorBoundary>
