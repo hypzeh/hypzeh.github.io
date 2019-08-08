@@ -6,7 +6,7 @@ const propTypes = {
   pages: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string.isRequired,
-      component: PropTypes.func.isRequired,
+      component: PropTypes.object.isRequired,
     }).isRequired,
   ).isRequired,
 };
