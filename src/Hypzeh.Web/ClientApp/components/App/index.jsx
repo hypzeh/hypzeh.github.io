@@ -9,7 +9,7 @@ import { PRIMARY } from './utils/style/variables';
 import { ViewProvider } from './contexts/view';
 import { NavigationProvider } from './contexts/navigation';
 import { Navbar } from './components/layout';
-import Router from './components/Router';
+import SectionRouter from './components/SectionRouter';
 
 const Container = styled.div`
   min-height: 0;
@@ -43,7 +43,7 @@ const App = () => {
         <NavigationProvider>
           <Container>
             <Navbar />
-            <Router />
+            <SectionRouter />
           </Container>
         </NavigationProvider>
       </ViewProvider>

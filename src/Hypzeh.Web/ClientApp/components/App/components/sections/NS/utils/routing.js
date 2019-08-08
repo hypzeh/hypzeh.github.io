@@ -1,14 +1,16 @@
 import { lazy } from 'react';
 
+const DEFAULT_PATH = '/';
+
 export const internal = [
   {
     name: 'Home',
-    path: '/',
+    path: `${DEFAULT_PATH}`,
     component: lazy(() => import(/* webpackChunkName: "ns-home" */ '../components/pages/Home')),
   },
   {
     name: 'About',
-    path: '/about',
+    path: `${DEFAULT_PATH}about`,
     component: lazy(() => import(/* webpackChunkName: "ns-about" */ '../components/pages/About')),
   },
 ];

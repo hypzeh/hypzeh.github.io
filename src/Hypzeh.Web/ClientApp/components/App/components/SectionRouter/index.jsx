@@ -12,7 +12,7 @@ const propTypes = {
   }).isRequired,
 };
 
-const Router = ({ location }) => {
+const SectionRouter = ({ location }) => {
   const [{ sections }, dispatch] = useContext(NavigationContext);
 
   useEffect(() => {
@@ -39,6 +39,6 @@ const Router = ({ location }) => {
   );
 };
 
-Router.propTypes = propTypes;
+SectionRouter.propTypes = propTypes;
 
-export default withRouter(Router);
+export default withRouter(SectionRouter);
