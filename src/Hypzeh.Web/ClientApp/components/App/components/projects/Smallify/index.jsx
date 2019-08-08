@@ -2,14 +2,14 @@ import React from 'react';
 
 import { Main, Panel } from '../../layout';
 import Navigation from './components/Navigation';
-import Router from './components/Router';
+import PageRouter from './components/PageRouter';
 
 const Smallify = () => (
   <Main>
     <Panel>
       <Navigation />
     </Panel>
-    <Router />
+    <PageRouter />
   </Main>
 );
 

@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import { internal } from '../utils/routing';
 
-const Router = () => (
+const PageRouter = () => (
   <Switch>
     {internal.map(route => (
       <Route
@@ -16,4 +16,4 @@ const Router = () => (
   </Switch>
 );
 
-export default Router;
+export default PageRouter;

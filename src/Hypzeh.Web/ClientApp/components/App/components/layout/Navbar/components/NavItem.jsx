@@ -5,12 +5,13 @@ import { NavLink } from 'react-router-dom';
 
 import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
 import { ViewContext, viewActions } from '../../../../contexts/view';
-import { NavigationContext, navigationActions } from '../../../../contexts/navigation';
 import GithubIcon from './github.svg';
 
 const propTypes = {
-  path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  setAsActivePath: PropTypes.func.isRequired,
 };
 
 const hue = 240;
@@ -52,22 +53,26 @@ const Text = styled.span`
   font-size: x-small;
 `;
 
-const NavItem = ({ path, title }) => {
-  const [{ active }, navigationDispatch] = useContext(NavigationContext);
+const NavItem = ({
+  title,
+  path,
+  isActive,
+  setAsActivePath,
+}) => {
   const [{ isPanelOpen }, viewDispatch] = useContext(ViewContext);
 
   const handleClick = () => {
-    if (active.defaultPath === path) {
+    if (isActive) {
       viewDispatch(isPanelOpen ? viewActions.closePanel() : viewActions.openPanel());
       return;
     }
 
-    navigationDispatch(navigationActions.setActiveSectionByPath(path));
+    setAsActivePath();
     viewDispatch(viewActions.openPanel());
   };
 
   return (
-    <Container to={path} onClick={handleClick} isActive={() => active.defaultPath === path}>
+    <Container to={path} onClick={handleClick} isActive={() => isActive}>
       <GithubIcon height="24px" />
       <Text>{title}</Text>
     </Container>
