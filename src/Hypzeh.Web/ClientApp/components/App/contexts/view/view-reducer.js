@@ -1,4 +1,4 @@
-import { PANEL_CLOSE, PANEL_OPEN } from './view-types';
+import { PANEL_CLOSE, PANEL_OPEN, PANEL_TOGGLE } from './view-types';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -7,6 +7,9 @@ const reducer = (state, action) => {
 
   case PANEL_CLOSE:
     return { ...state, isPanelOpen: false };
+
+  case PANEL_TOGGLE:
+    return { ...state, isPanelOpen: !state.isPanelOpen };
 
   default:
     return { ...state };
