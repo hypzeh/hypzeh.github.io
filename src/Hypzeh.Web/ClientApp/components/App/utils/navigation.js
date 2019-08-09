@@ -15,8 +15,8 @@ const smallify = {
 const navigation = {
   active: ns,
   projects: [
-    smallify,
     ns,
+    smallify,
   ],
 };
 

@@ -47,7 +47,7 @@ const Navbar = ({ location, projects }) => {
   return (
     <Container>
       <Scroller width="5.625rem" overflow="scroll">
-        {[...projects].reverse().map(({ title, defaultPath }) => (
+        {projects.map(({ title, defaultPath }) => (
           <Fragment key={defaultPath}>
             <NavItem
               title={title}

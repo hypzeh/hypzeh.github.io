@@ -18,7 +18,7 @@ const ProjectRouter = ({ projects }) => (
   <ErrorBoundary>
     <Suspense fallback={<Loader />}>
       <Switch>
-        {projects.map(({ defaultPath, component }) => (
+        {[...projects].reverse().map(({ defaultPath, component }) => (
           <Route
             key={defaultPath}
             path={defaultPath}
