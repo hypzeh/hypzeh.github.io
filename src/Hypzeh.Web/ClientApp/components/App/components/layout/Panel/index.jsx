@@ -16,7 +16,7 @@ const defaultProps = {
   children: null,
 };
 
-const Container = styled.aside`
+const Wrapper = styled.aside`
   flex-shrink: 0;
   position: relative;
   display: flex;
@@ -41,11 +41,11 @@ const Panel = ({ children }) => {
   }
 
   return (
-    <Container>
+    <Wrapper>
       <Scroller width="15rem">
         {children}
       </Scroller>
-    </Container>
+    </Wrapper>
   );
 };
 

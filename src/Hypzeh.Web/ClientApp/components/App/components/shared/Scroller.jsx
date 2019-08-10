@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import types from '../../types';
 
-const Container = styled.div`
+const Wrapper = styled.div`
   width: ${props => props.width};
   contain: layout paint style;
   position: relative;
@@ -34,11 +34,11 @@ const defaultProps = {
 };
 
 const Scroller = ({ children, width, overflow }) => (
-  <Container width={width}>
+  <Wrapper width={width}>
     <Content overflow={overflow}>
       {children}
     </Content>
-  </Container>
+  </Wrapper>
 );
 
 Scroller.propTypes = propTypes;

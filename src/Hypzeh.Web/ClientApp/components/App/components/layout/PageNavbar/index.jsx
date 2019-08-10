@@ -24,7 +24,7 @@ const defaultProps = {
   external: [],
 };
 
-const Container = styled.nav`
+const Wrapper = styled.nav`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@ const Separator = styled.hr`
 `;
 
 const PageNavbar = ({ pages, external }) => (
-  <Container>
+  <Wrapper>
     {pages.map(({ name, path }) => (
       <PageLink
         key={path}
@@ -52,7 +52,7 @@ const PageNavbar = ({ pages, external }) => (
         path={path}
       />
     ))}
-  </Container>
+  </Wrapper>
 );
 
 PageNavbar.propTypes = propTypes;

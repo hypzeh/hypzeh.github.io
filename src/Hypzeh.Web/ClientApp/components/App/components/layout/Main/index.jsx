@@ -11,7 +11,7 @@ const defaultProps = {
   children: null,
 };
 
-const Container = styled.main`
+const Wrapper = styled.main`
   min-height: 0;
   flex: 1 1 auto;
   display: flex;
@@ -22,9 +22,9 @@ const Container = styled.main`
 `;
 
 const Main = ({ children }) => (
-  <Container>
+  <Wrapper>
     {children}
-  </Container>
+  </Wrapper>
 );
 
 Main.propTypes = propTypes;

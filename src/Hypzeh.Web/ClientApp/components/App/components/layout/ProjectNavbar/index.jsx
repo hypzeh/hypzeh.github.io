@@ -19,7 +19,7 @@ const propTypes = {
   ).isRequired,
 };
 
-const Container = styled.nav`
+const Wrapper = styled.nav`
   width: 4.5rem;
   flex-shrink: 0;
   position: relative;
@@ -45,7 +45,7 @@ const ProjectNavbar = ({ location, projects }) => {
   }, []);
 
   return (
-    <Container>
+    <Wrapper>
       <Scroller width="5.625rem" overflow="scroll">
         {projects.map(({ title, defaultPath }) => (
           <Fragment key={defaultPath}>
@@ -59,7 +59,7 @@ const ProjectNavbar = ({ location, projects }) => {
           </Fragment>
         ))}
       </Scroller>
-    </Container>
+    </Wrapper>
   );
 };
 

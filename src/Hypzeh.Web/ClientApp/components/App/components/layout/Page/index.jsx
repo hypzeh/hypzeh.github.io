@@ -16,7 +16,7 @@ const defaultProps = {
   title: '',
 };
 
-const Container = styled.div`
+const Wrapper = styled.div`
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -24,12 +24,12 @@ const Container = styled.div`
 `;
 
 const Page = ({ children, title }) => (
-  <Container>
+  <Wrapper>
     <Helmet title={title} />
     <Scroller>
       {children}
     </Scroller>
-  </Container>
+  </Wrapper>
 );
 
 Page.propTypes = propTypes;

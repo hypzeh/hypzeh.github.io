@@ -11,7 +11,7 @@ import { ViewProvider } from './contexts/view';
 import { ProjectNavbar } from './components/layout';
 import { ProjectRouter } from './components/routers';
 
-const Container = styled.div`
+const Wrapper = styled.div`
   min-height: 0;
   flex: 1 1 auto;
   display: flex;
@@ -40,10 +40,10 @@ const App = () => {
       <Helmet titleTemplate="%s / Nick Smirnoff" defaultTitle="Nick Smirnoff" />
       <GlobalStyle />
       <ViewProvider>
-        <Container>
+        <Wrapper>
           <ProjectNavbar projects={navigation.projects} />
           <ProjectRouter projects={navigation.projects} />
-        </Container>
+        </Wrapper>
       </ViewProvider>
     </BrowserRouter>
   );

@@ -15,7 +15,7 @@ const propTypes = {
 };
 
 const hue = 240;
-const Container = styled(NavLink)`
+const Wrapper = styled(NavLink)`
   border-width: 0 5px;
   border-style: solid;
   border-color: transparent;
@@ -67,10 +67,10 @@ const ProjectLink = ({
   };
 
   return (
-    <Container to={path} onClick={handleClick} isActive={() => isActive}>
+    <Wrapper to={path} onClick={handleClick} isActive={() => isActive}>
       <GithubIcon height="24px" />
       <Text>{title}</Text>
-    </Container>
+    </Wrapper>
   );
 };
 

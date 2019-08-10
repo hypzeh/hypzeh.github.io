@@ -9,7 +9,7 @@ const propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-const Container = styled(animated.div)`
+const Wrapper = styled(animated.div)`
   margin: 0 1rem;
   text-transform: uppercase;
   text-align: center;
@@ -30,11 +30,11 @@ const Title = ({ text }) => {
   setSpring({ xy: [x - window.innerWidth / 2] });
 
   return (
-    <Container style={{ transform: spring.xy.interpolate(value => `translateX(${value / 5}px)`) }}>
+    <Wrapper style={{ transform: spring.xy.interpolate(value => `translateX(${value / 5}px)`) }}>
       <Header>
         {text}
       </Header>
-    </Container>
+    </Wrapper>
   );
 };
 
