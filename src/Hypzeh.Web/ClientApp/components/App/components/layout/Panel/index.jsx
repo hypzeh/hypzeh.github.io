@@ -16,7 +16,7 @@ const defaultProps = {
   children: null,
 };
 
-const Container = styled.div`
+const Container = styled.aside`
   flex-shrink: 0;
   position: relative;
   display: flex;
