@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { Page } from '../../../../../layout';
+import { Title } from '../../../../../shared';
+
 const Screenshots = () => (
-  <div>
-    <h1>Smallify</h1>
-    <p>Screenshots</p>
-  </div>
+  <Page title="Smallify - Screenshots">
+    <Title text="Screenshots" />
+  </Page>
 );
 
 export default Screenshots;
