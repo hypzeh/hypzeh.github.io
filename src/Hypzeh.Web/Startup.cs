@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Hypzeh.Web
@@ -14,8 +13,9 @@ namespace Hypzeh.Web
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
+            app.UseHttpsRedirection();
             app.UseDefaultFiles();
             app.UseSpaStaticFiles();
             app.UseSpa(configuration =>
