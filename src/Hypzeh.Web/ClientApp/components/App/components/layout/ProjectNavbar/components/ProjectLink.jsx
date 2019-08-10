@@ -53,22 +53,17 @@ const Text = styled.span`
   font-size: x-small;
 `;
 
-const NavItem = ({
+const ProjectLink = ({
   title,
   path,
   isActive,
   setAsActivePath,
 }) => {
-  const [{ isPanelOpen }, viewDispatch] = useContext(ViewContext);
+  const [, viewDispatch] = useContext(ViewContext);
 
   const handleClick = () => {
-    if (isActive) {
-      viewDispatch(isPanelOpen ? viewActions.closePanel() : viewActions.openPanel());
-      return;
-    }
-
     setAsActivePath();
-    viewDispatch(viewActions.openPanel());
+    viewDispatch(isActive ? viewActions.openPanel() : viewActions.togglePanel());
   };
 
   return (
@@ -79,6 +74,6 @@ const NavItem = ({
   );
 };
 
-NavItem.propTypes = propTypes;
+ProjectLink.propTypes = propTypes;
 
-export default NavItem;
+export default ProjectLink;

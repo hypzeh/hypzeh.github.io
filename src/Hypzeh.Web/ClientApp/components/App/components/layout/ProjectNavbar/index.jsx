@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import { SECONDARY } from '../../../utils/style/variables';
 import { Scroller } from '../../shared';
-import NavItem from './components/NavItem';
+import ProjectLink from './components/ProjectLink';
 
 const propTypes = {
   location: PropTypes.shape({
@@ -34,7 +34,7 @@ const Separator = styled.hr`
   margin-inline-end: .5rem;
 `;
 
-const Navbar = ({ location, projects }) => {
+const ProjectNavbar = ({ location, projects }) => {
   const [activePath, setActivePath] = useState(projects[0]);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Navbar = ({ location, projects }) => {
       <Scroller width="5.625rem" overflow="scroll">
         {projects.map(({ title, defaultPath }) => (
           <Fragment key={defaultPath}>
-            <NavItem
+            <ProjectLink
               title={title}
               path={defaultPath}
               isActive={activePath === defaultPath}
@@ -63,6 +63,6 @@ const Navbar = ({ location, projects }) => {
   );
 };
 
-Navbar.propTypes = propTypes;
+ProjectNavbar.propTypes = propTypes;
 
-export default withRouter(Navbar);
+export default withRouter(ProjectNavbar);
