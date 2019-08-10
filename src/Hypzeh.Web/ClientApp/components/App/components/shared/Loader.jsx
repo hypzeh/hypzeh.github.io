@@ -24,9 +24,9 @@ const ProgressLine = styled.div`
   background: transparent;
 
   &::before {
+    content: '';
     width: 100%;
     background: white;
-    content: '';
     animation: ${progress} 2s infinite;
   }
 `;

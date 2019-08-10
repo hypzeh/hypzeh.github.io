@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Typist from 'react-typist';
 import { useSpring, animated } from 'react-spring';
 
 import { useMousePosition } from '../../hooks';
@@ -32,11 +31,9 @@ const Title = ({ text }) => {
 
   return (
     <Container style={{ transform: spring.xy.interpolate(value => `translateX(${value / 5}px)`) }}>
-      <Typist cursor={{ show: false }}>
-        <Header>
-          {text}
-        </Header>
-      </Typist>
+      <Header>
+        {text}
+      </Header>
     </Container>
   );
 };
