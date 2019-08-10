@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { useSpring, animated } from 'react-spring';
-
-import { useMousePosition } from '../../hooks';
 
 const propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-const Wrapper = styled(animated.div)`
+const Wrapper = styled.div`
   margin: 0 1rem;
   text-transform: uppercase;
   text-align: center;
@@ -21,22 +18,11 @@ const Header = styled.h1`
   font-size: 5em;
 `;
 
-const Title = ({ text }) => {
-  const { x } = useMousePosition();
-  const [spring, setSpring] = useSpring(() => ({
-    xy: [0],
-    config: { mass: 1, tension: 250, friction: 30 },
-  }));
-  setSpring({ xy: [x - window.innerWidth / 2] });
-
-  return (
-    <Wrapper style={{ transform: spring.xy.interpolate(value => `translateX(${value / 5}px)`) }}>
-      <Header>
-        {text}
-      </Header>
-    </Wrapper>
-  );
-};
+const Title = ({ text }) => (
+  <Wrapper>
+    <Header>{text}</Header>
+  </Wrapper>
+);
 
 Title.propTypes = propTypes;
 
