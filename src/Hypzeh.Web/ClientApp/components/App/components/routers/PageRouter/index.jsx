@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
+
+import { Loader } from '../../shared';
 
 const propTypes = {
   pages: PropTypes.arrayOf(
@@ -12,16 +14,18 @@ const propTypes = {
 };
 
 const PageRouter = ({ pages }) => (
-  <Switch>
-    {pages.map(route => (
-      <Route
-        key={route.path}
-        exact
-        path={route.path}
-        component={route.component}
-      />
-    ))}
-  </Switch>
+  <Suspense fallback={<Loader />}>
+    <Switch>
+      {pages.map(route => (
+        <Route
+          key={route.path}
+          exact
+          path={route.path}
+          component={route.component}
+        />
+      ))}
+    </Switch>
+  </Suspense>
 );
 
 PageRouter.propTypes = propTypes;
