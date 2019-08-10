@@ -7,12 +7,6 @@ _Personal website built with ASP.NET Core and React._
 
 ## Getting Started
 
-Node commands are to be executed from the `Hypzeh.Web` project directory.
-
-```shell
-cd ./src/Hypzeh.Web/
-```
-
 ### Prerequisites
 
 - [.NET Core](https://dotnet.microsoft.com/download/dotnet-core/2.2)
