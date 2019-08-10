@@ -30,6 +30,17 @@ const Wrapper = styled.nav`
   flex-direction: column;
 `;
 
+const PageLinks = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ExternalLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const Separator = styled.hr`
   margin-inline-start: .5rem;
   margin-inline-end: .5rem;
@@ -37,21 +48,25 @@ const Separator = styled.hr`
 
 const PageNavbar = ({ pages, external }) => (
   <Wrapper>
-    {pages.map(({ name, path }) => (
-      <PageLink
-        key={path}
-        name={name}
-        path={path}
-      />
-    ))}
+    <PageLinks>
+      {pages.map(({ name, path }) => (
+        <PageLink
+          key={path}
+          name={name}
+          path={path}
+        />
+      ))}
+    </PageLinks>
     <Separator />
-    {external.map(({ name, path }) => (
-      <ExternalLink
-        key={path}
-        name={name}
-        path={path}
-      />
-    ))}
+    <ExternalLinks>
+      {external.map(({ name, path }) => (
+        <ExternalLink
+          key={path}
+          name={name}
+          path={path}
+        />
+      ))}
+    </ExternalLinks>
   </Wrapper>
 );
 
