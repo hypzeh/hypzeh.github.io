@@ -62,12 +62,19 @@ const ProjectLink = ({
   const [, viewDispatch] = useContext(ViewContext);
 
   const handleClick = () => {
-    setAsActivePath();
-    viewDispatch(isActive ? viewActions.openPanel() : viewActions.togglePanel());
+    if (!isActive) {
+      setAsActivePath();
+    }
+
+    viewDispatch(isActive ? viewActions.togglePanel() : viewActions.openPanel());
   };
 
   return (
-    <Wrapper to={path} onClick={handleClick} isActive={() => isActive}>
+    <Wrapper
+      to={isActive ? window.location.pathname : path}
+      onClick={handleClick}
+      isActive={() => isActive}
+    >
       <GithubIcon height="24px" />
       <Text>{title}</Text>
     </Wrapper>

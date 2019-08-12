@@ -27,6 +27,7 @@ const Wrapper = styled.nav`
   flex-direction: column;
   background-color: ${SECONDARY.background};
   overflow: hidden;
+  z-index: 300;
 `;
 
 const Separator = styled.hr`

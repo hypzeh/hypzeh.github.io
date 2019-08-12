@@ -19,6 +19,7 @@ const Wrapper = styled.main`
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
+  z-index: 200;
 `;
 
 const Main = ({ children }) => (

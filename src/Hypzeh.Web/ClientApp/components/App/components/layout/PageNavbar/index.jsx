@@ -28,6 +28,7 @@ const Wrapper = styled.nav`
   height: 100%;
   display: flex;
   flex-direction: column;
+  z-index: 200;
 `;
 
 const PageLinks = styled.div`

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+
+import { ViewContext, viewActions } from '../../../../contexts/view';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -24,9 +26,23 @@ const Link = styled(NavLink)`
   }
 `;
 
-const PageLink = ({ name, path }) => (
-  <Link exact to={path}>{name}</Link>
-);
+const PageLink = ({ name, path }) => {
+  const [, viewDispatch] = useContext(ViewContext);
+
+  const handleLinkClick = () => {
+    viewDispatch(viewActions.closePanel());
+  };
+
+  return (
+    <Link
+      exact
+      to={path}
+      onClick={handleLinkClick}
+    >
+      {name}
+    </Link>
+  );
+};
 
 PageLink.propTypes = propTypes;
 

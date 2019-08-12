@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 100;
 `;
 
 const Page = ({ children, title }) => (
