@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
 import { ViewContext, viewActions } from '../../../../contexts/view';
-import GithubIcon from './github.svg';
+import { NS } from '../../../shared/icons';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -75,7 +75,7 @@ const ProjectLink = ({
       onClick={handleClick}
       isActive={() => isActive}
     >
-      <GithubIcon height="24px" />
+      <NS height="24px" />
       <Text>{title}</Text>
     </Wrapper>
   );
