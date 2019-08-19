@@ -73,6 +73,7 @@ module.exports = (env, argv) => {
       compress: true,
       quiet: true,
       hot: true,
+      port: 8080,
     },
     module: {
       rules: [
@@ -147,10 +148,10 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.join(__dirname, 'ClientApp', 'template.html'),
+        template: path.resolve('ClientApp/template.html'),
         filename: 'index.html',
-        favicon: path.join(__dirname, 'ClientApp/assets/img', 'favicon.png'),
-        output: path.resolve(__dirname, 'wwwroot'),
+        favicon: path.resolve('ClientApp/assets/img/favicon.png'),
+        output: path.resolve('wwwroot'),
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -158,6 +159,7 @@ module.exports = (env, argv) => {
           useShortDoctype: true,
           removeEmptyAttributes: true,
           removeStyleLinkTypeAttributes: true,
+          removeScriptTypeAttributes: true,
           keepClosingSlash: true,
           minifyJS: true,
           minifyCSS: true,
@@ -189,7 +191,7 @@ module.exports = (env, argv) => {
         background_color: '#212121',
         icons: [
           {
-            src: path.join(__dirname, 'ClientApp/assets/img', 'favicon.png'),
+            src: path.resolve('ClientApp/assets/img/favicon.png'),
             sizes: [36, 48, 72, 96, 144, 192, 512],
             ios: true,
           },
