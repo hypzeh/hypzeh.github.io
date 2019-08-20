@@ -2,6 +2,7 @@
 export const PRIMARY = {
   background: '#212121',
   colour: '#fff',
+  highlight: '#eb156c',
 };
 
 export const SECONDARY = {

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { lighten, darken } from 'polished';
 import { NavLink } from 'react-router-dom';
 
 import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
@@ -30,19 +31,19 @@ const Wrapper = styled(NavLink)`
   fill: ${SECONDARY.colour};
 
   &:hover {
-    background-color: hsl(${hue}, 10%, 30%);
+    background-color: ${darken(0.25, PRIMARY.highlight)};
     color: ${PRIMARY.colour};
     fill: ${PRIMARY.colour};
   }
 
   &.active {
-    border-left-color: hsl(${hue}, 50%, 90%);
-    background-color: hsl(${hue}, 20%, 30%);
+    border-left-color: ${lighten(0.15, PRIMARY.highlight)};
+    background-color: ${darken(0.2, PRIMARY.highlight)};
     color: ${PRIMARY.colour};
     fill: ${PRIMARY.colour};
 
     &:hover {
-      background-color: hsl(${hue}, 20%, 40%)
+      background-color: ${darken(0.15, PRIMARY.highlight)};
     }
   }
 `;
