@@ -15,6 +15,7 @@ const propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       defaultPath: PropTypes.string.isRequired,
+      icon: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
 };
@@ -48,11 +49,12 @@ const ProjectNavbar = ({ location, projects }) => {
   return (
     <Wrapper>
       <Scroller width="5.625rem" overflow="scroll">
-        {projects.map(({ title, defaultPath }) => (
+        {projects.map(({ title, defaultPath, icon }) => (
           <Fragment key={defaultPath}>
             <ProjectLink
               title={title}
               path={defaultPath}
+              icon={icon}
               isActive={activePath === defaultPath}
               setAsActivePath={() => setActivePath(defaultPath)}
             />

@@ -6,41 +6,38 @@ import { NavLink } from 'react-router-dom';
 
 import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
 import { ViewContext, viewActions } from '../../../../contexts/view';
-import { NS } from '../../../shared/icons';
+import { Icon } from '../../../shared';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
   isActive: PropTypes.bool.isRequired,
   setAsActivePath: PropTypes.func.isRequired,
 };
 
-const hue = 240;
 const Wrapper = styled(NavLink)`
   border-width: 0 5px;
   border-style: solid;
   border-color: transparent;
-  width: 4.5rem;
-  height: 3.9rem;
+  min-width: 4.5rem;
+  min-height: 3.9rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-decoration: none;
   color: ${SECONDARY.colour};
-  fill: ${SECONDARY.colour};
 
   &:hover {
     background-color: ${darken(0.25, PRIMARY.highlight)};
     color: ${PRIMARY.colour};
-    fill: ${PRIMARY.colour};
   }
 
   &.active {
     border-left-color: ${lighten(0.15, PRIMARY.highlight)};
     background-color: ${darken(0.2, PRIMARY.highlight)};
     color: ${PRIMARY.colour};
-    fill: ${PRIMARY.colour};
 
     &:hover {
       background-color: ${darken(0.15, PRIMARY.highlight)};
@@ -57,6 +54,7 @@ const Text = styled.span`
 const ProjectLink = ({
   title,
   path,
+  icon,
   isActive,
   setAsActivePath,
 }) => {
@@ -76,7 +74,7 @@ const ProjectLink = ({
       onClick={handleClick}
       isActive={() => isActive}
     >
-      <NS height="24px" />
+      <Icon name={icon} height="24px" />
       <Text>{title}</Text>
     </Wrapper>
   );
