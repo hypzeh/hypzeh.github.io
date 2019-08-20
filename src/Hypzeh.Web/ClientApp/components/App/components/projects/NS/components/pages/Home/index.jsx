@@ -1,7 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 
+import { PRIMARY } from '../../../../../../utils/style/variables';
 import { Page } from '../../../../../layout';
 import { Title } from '../../../../../shared';
+
+const Section = styled.section`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Highlight = styled.strong`
+  color: ${PRIMARY.highlight};
+`;
 
 const greetings = [
   'WELCOME',
@@ -14,6 +28,16 @@ const greetings = [
 const Home = () => (
   <Page title="Home">
     <Title text={greetings[Math.floor(Math.random() * greetings.length)]} />
+    <Section>
+      <h1>
+        {'I\'m '}
+        <Highlight>Nick Smirnoff</Highlight>
+        {'.'}
+      </h1>
+      <h1>
+        {'I\'m a full-stack developer.'}
+      </h1>
+    </Section>
   </Page>
 );
 
