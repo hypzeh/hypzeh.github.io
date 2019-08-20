@@ -18,6 +18,8 @@ const Content = styled.div`
   overflow-x: hidden;
   overflow-y: ${props => props.overflow};
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   min-height: 0;
 `;
 
