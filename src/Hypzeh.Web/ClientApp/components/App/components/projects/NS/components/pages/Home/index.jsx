@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { PRIMARY } from '../../../../../../utils/style/variables';
+import random from '../../../../../../utils/random';
 import { Page } from '../../../../../layout';
 import { Title } from '../../../../../shared';
 
@@ -17,17 +18,17 @@ const Highlight = styled.strong`
   color: ${PRIMARY.highlight};
 `;
 
-const greetings = [
+const greeting = random.fromList([
   'WELCOME',
   'HELLO',
   'HI',
   'HEY',
   'HIYA!',
-];
+]);
 
 const Home = () => (
   <Page title="Home">
-    <Title text={greetings[Math.floor(Math.random() * greetings.length)]} />
+    <Title text={greeting} />
     <Section>
       <h1>
         {'I\'m '}

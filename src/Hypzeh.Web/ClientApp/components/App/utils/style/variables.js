@@ -1,8 +1,19 @@
+import random from '../random';
+
+const highlight = random.fromList([
+  '#EB156C',
+  '#D615EB',
+  '#1571EB',
+  '#15E9EB',
+  '#16EB15',
+  '#EBD515',
+]);
+
 // COLOURS
 export const PRIMARY = {
   background: '#212121',
   colour: '#fff',
-  highlight: '#eb156c',
+  highlight,
 };
 
 export const SECONDARY = {
