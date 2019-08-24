@@ -20,7 +20,7 @@ const Wrapper = styled(NavLink)`
   border-width: 0 5px;
   border-style: solid;
   border-color: transparent;
-  min-width: 4.5rem;
+  width: 4.5rem;
   min-height: 3.9rem;
   position: relative;
   display: flex;
