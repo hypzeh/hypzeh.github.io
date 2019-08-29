@@ -1,4 +1,4 @@
-![hypzeh.github.io](./docs/.assets/project-title.png)
+![hypzeh.github.io](docs/.assets/project-title.png)
 [![Build Status](https://nick-smirnoff.visualstudio.com/hypzeh.github.io/_apis/build/status/hypzeh.github.io-CI?branchName=master-react)](https://nick-smirnoff.visualstudio.com/hypzeh.github.io/_build/latest?definitionId=17&branchName=master-react)
 
 ---
@@ -15,6 +15,7 @@ _Personal website built with ASP.NET Core and React._
 ### Quick Start
 
 ```shell
+cd src/Hypzeh.Web/
 npm install
 npm run start
 ```
