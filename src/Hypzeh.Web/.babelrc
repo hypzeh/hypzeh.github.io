@@ -7,7 +7,7 @@
           "esmodules": true
         },
         "corejs": 3,
-        "useBuiltIns": "usage",
+        "useBuiltIns": "usage"
       }
     ],
     "@babel/preset-react",
@@ -18,9 +18,9 @@
       "babel-plugin-styled-components",
       {
         "minify": true,
-        "pure": true,
+        "pure": true
       }
     ],
-    "react-hot-loader/babel",
+    "react-hot-loader/babel"
   ]
 }

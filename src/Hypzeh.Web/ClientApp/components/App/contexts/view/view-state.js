@@ -1,5 +1,5 @@
-const state = {
-  isPanelOpen: false,
-};
+const isPanelOpen = false;
 
-export default state;
+export default {
+  isPanelOpen,
+};

@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
@@ -40,7 +40,7 @@ const ProjectNavbar = ({ location, projects }) => {
   const [activePath, setActivePath] = useState(projects[0]);
 
   useEffect(() => {
-    const project = projects.find(item => item.defaultPath === `/${location.pathname.split('/', 2)[1]}`);
+    const project = projects.find((item) => item.defaultPath === `/${location.pathname.split('/', 2)[1]}`);
     if (!project) return;
 
     setActivePath(project.defaultPath);
@@ -50,7 +50,7 @@ const ProjectNavbar = ({ location, projects }) => {
     <Wrapper>
       <Scroller width="5.625rem" overflow="scroll">
         {projects.map(({ title, defaultPath, icon }) => (
-          <Fragment key={defaultPath}>
+          <React.Fragment key={defaultPath}>
             <ProjectLink
               title={title}
               path={defaultPath}
@@ -59,7 +59,7 @@ const ProjectNavbar = ({ location, projects }) => {
               setAsActivePath={() => setActivePath(defaultPath)}
             />
             {defaultPath === '/' && (<Separator />)}
-          </Fragment>
+          </React.Fragment>
         ))}
       </Scroller>
     </Wrapper>

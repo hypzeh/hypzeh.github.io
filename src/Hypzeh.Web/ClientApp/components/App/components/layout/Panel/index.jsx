@@ -54,7 +54,7 @@ const Panel = ({ children }) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <Wrapper>
         <Scroller width="15rem">
           {children}
@@ -63,7 +63,7 @@ const Panel = ({ children }) => {
       {size.width <= breakpoints.medium && (
         <Backdrop onClick={handleBackdropClick} />
       )}
-    </React.Fragment>
+    </>
   );
 };
 
