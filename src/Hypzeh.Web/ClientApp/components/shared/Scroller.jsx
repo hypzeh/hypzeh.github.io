@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import types from '../../types';
 
 const Wrapper = styled.div`
-  width: ${props => props.width};
+  width: ${(props) => props.width};
   contain: layout paint style;
   position: relative;
   display: flex;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   overflow-x: hidden;
-  overflow-y: ${props => props.overflow};
+  overflow-y: ${(props) => props.overflow};
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
