@@ -1,17 +1,17 @@
-import { lazy } from 'react';
+import { Overview, Screenshots } from '../pages';
 
 const DEFAULT_PATH = '/smallify';
 
 export const internal = [
   {
-    name: 'Home',
+    name: 'Overview',
     path: `${DEFAULT_PATH}`,
-    component: lazy(() => import(/* webpackChunkName: "smallify-home" */ '../components/pages/Home')),
+    component: Overview,
   },
   {
     name: 'Screenshots',
     path: `${DEFAULT_PATH}/screenshots`,
-    component: lazy(() => import(/* webpackChunkName: "smallify-screenshots" */ '../components/pages/Screenshots')),
+    component: Screenshots,
   },
 ];
 

@@ -37,7 +37,7 @@ const Separator = styled.hr`
 `;
 
 const ProjectNavbar = ({ location, projects }) => {
-  const [activePath, setActivePath] = useState(projects[0]);
+  const [activePath, setActivePath] = useState('/');
 
   useEffect(() => {
     const project = projects.find((item) => item.defaultPath === `/${location.pathname.split('/', 2)[1]}`);
@@ -49,17 +49,23 @@ const ProjectNavbar = ({ location, projects }) => {
   return (
     <Wrapper>
       <Scroller width="5.625rem" overflow="scroll">
+        <ProjectLink
+          title="Nick Smirnoff"
+          path="/"
+          icon="ns"
+          isActive={activePath === '/'}
+          setAsActivePath={() => setActivePath('/')}
+        />
+        <Separator />
         {projects.map(({ title, defaultPath, icon }) => (
-          <React.Fragment key={defaultPath}>
-            <ProjectLink
-              title={title}
-              path={defaultPath}
-              icon={icon}
-              isActive={activePath === defaultPath}
-              setAsActivePath={() => setActivePath(defaultPath)}
-            />
-            {defaultPath === '/' && (<Separator />)}
-          </React.Fragment>
+          <ProjectLink
+            key={defaultPath}
+            title={title}
+            path={defaultPath}
+            icon={icon}
+            isActive={activePath === defaultPath}
+            setAsActivePath={() => setActivePath(defaultPath)}
+          />
         ))}
       </Scroller>
     </Wrapper>

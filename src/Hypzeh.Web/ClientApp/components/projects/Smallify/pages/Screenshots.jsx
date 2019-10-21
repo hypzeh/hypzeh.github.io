@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Page } from '../../../../../layout';
-import { Title } from '../../../../../shared';
+import { Page } from '../../../layout';
+import { Title } from '../../../shared';
 
 const Screenshots = () => (
   <Page title="Smallify - Screenshots">

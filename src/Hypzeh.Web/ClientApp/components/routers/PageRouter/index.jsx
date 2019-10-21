@@ -8,7 +8,10 @@ const propTypes = {
   pages: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string.isRequired,
-      component: PropTypes.object.isRequired,
+      component: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.func,
+      ]).isRequired,
     }).isRequired,
   ).isRequired,
 };
@@ -16,7 +19,7 @@ const propTypes = {
 const PageRouter = ({ pages }) => (
   <Suspense fallback={<Loader />}>
     <Switch>
-      {pages.map(route => (
+      {pages.map((route) => (
         <Route
           key={route.path}
           exact

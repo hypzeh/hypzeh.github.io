@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
@@ -18,13 +18,14 @@ const ProjectRouter = ({ projects }) => (
   <ErrorBoundary>
     <Suspense fallback={<Loader />}>
       <Switch>
-        {[...projects].reverse().map(({ defaultPath, component }) => (
+        {projects.map(({ defaultPath, component }) => (
           <Route
             key={defaultPath}
             path={defaultPath}
             component={component}
           />
         ))}
+        <Route path="/" component={lazy(() => import(/* webpackChunkName: "ns" */ '../../projects/NS'))} />
       </Switch>
     </Suspense>
   </ErrorBoundary>

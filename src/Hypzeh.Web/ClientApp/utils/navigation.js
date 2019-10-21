@@ -14,12 +14,10 @@ const smallify = {
   component: lazy(() => import(/* webpackChunkName: "smallify" */ '../components/projects/Smallify')),
 };
 
-const navigation = {
+export default {
   active: ns,
+  home: ns,
   projects: [
-    ns,
     smallify,
   ],
 };
-
-export default navigation;
