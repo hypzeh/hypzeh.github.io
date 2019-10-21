@@ -1,4 +1,4 @@
-const fromList = list => list[Math.floor(Math.random() * list.length)];
+const fromList = (list) => list[Math.floor(Math.random() * list.length)];
 
 export default {
   fromList,
