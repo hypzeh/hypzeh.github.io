@@ -33,7 +33,7 @@ const Home = () => (
       <h1>
         {'I\'m '}
         <Highlight>Nick Smirnoff</Highlight>
-        {'.'}
+        .
       </h1>
       <h1>
         {'I\'m a full-stack developer.'}
