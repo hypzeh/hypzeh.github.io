@@ -9,7 +9,6 @@ import { ViewContext, viewActions } from '../../../../contexts/view';
 import { Icon } from '../../../shared';
 
 const propTypes = {
-  title: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   isActive: PropTypes.bool.isRequired,
@@ -21,7 +20,7 @@ const Wrapper = styled(NavLink)`
   border-style: solid;
   border-color: transparent;
   width: 4.5rem;
-  min-height: 3.9rem;
+  min-height: 4rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -45,14 +44,7 @@ const Wrapper = styled(NavLink)`
   }
 `;
 
-const Text = styled.span`
-  text-align: center;
-  line-height: initial;
-  font-size: x-small;
-`;
-
 const ProjectLink = ({
-  title,
   path,
   icon,
   isActive,
@@ -74,8 +66,7 @@ const ProjectLink = ({
       onClick={handleClick}
       isActive={() => isActive}
     >
-      <Icon name={icon} height="24px" />
-      <Text>{title}</Text>
+      <Icon name={icon} height="2.5rem" />
     </Wrapper>
   );
 };
