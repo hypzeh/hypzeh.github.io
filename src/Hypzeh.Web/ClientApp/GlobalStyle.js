@@ -29,13 +29,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
 
-    #root {
-      position: absolute;
+    & > div#app {
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
       display: flex;
-      flex-direction: column;
     }
   }
 `;

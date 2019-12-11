@@ -11,13 +11,13 @@ const propTypes = {
 
 const Icon = ({ name, ...styles }) => {
   switch (name.toLowerCase()) {
-  case 'github':
-    return (<Github {...styles} />);
-  case 'smallify':
-    return (<Smallify {...styles} />);
-  case 'ns':
-  default:
-    return (<NS {...styles} />);
+    case 'github':
+      return (<Github {...styles} />);
+    case 'smallify':
+      return (<Smallify {...styles} />);
+    case 'ns':
+    default:
+      return (<NS {...styles} />);
   }
 };
 

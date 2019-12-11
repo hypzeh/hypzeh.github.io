@@ -1,18 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { lighten, darken } from 'polished';
 import { NavLink } from 'react-router-dom';
 
-import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
-import { ViewContext, viewActions } from '../../../../contexts/view';
-import { Icon } from '../../../shared';
+import { PRIMARY, SECONDARY } from '../../../utils/style/variables';
+import NSLogo from './ns.svg';
 
 const propTypes = {
-  path: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
   isActive: PropTypes.bool.isRequired,
-  setAsActivePath: PropTypes.func.isRequired,
+  onActive: PropTypes.func.isRequired,
 };
 
 const Wrapper = styled(NavLink)`
@@ -20,11 +18,12 @@ const Wrapper = styled(NavLink)`
   border-style: solid;
   border-color: transparent;
   width: 4.5rem;
-  min-height: 4rem;
+  height: 4rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   text-decoration: none;
   color: ${SECONDARY.colour};
 
@@ -44,29 +43,21 @@ const Wrapper = styled(NavLink)`
   }
 `;
 
-const ProjectLink = ({
-  path,
-  icon,
-  isActive,
-  setAsActivePath,
-}) => {
-  const [, viewDispatch] = useContext(ViewContext);
+const Icon = styled.img`
+  width: 4rem;
+  height: 3.5rem;
+`;
 
+const ProjectLink = ({ to, isActive, onActive }) => {
   const handleClick = () => {
     if (!isActive) {
-      setAsActivePath();
+      onActive();
     }
-
-    viewDispatch(isActive ? viewActions.togglePanel() : viewActions.openPanel());
   };
 
   return (
-    <Wrapper
-      to={isActive ? window.location.pathname : path}
-      onClick={handleClick}
-      isActive={() => isActive}
-    >
-      <Icon name={icon} height="2.5rem" />
+    <Wrapper to={to} onClick={handleClick} isActive={() => isActive}>
+      <Icon src={NSLogo} alt="" />
     </Wrapper>
   );
 };
