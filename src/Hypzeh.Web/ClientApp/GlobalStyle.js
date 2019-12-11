@@ -2,9 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 
 import 'modern-normalize/modern-normalize.css';
 
-import woff2 from '../../assets/fonts/open-sans-v16-latin-regular.woff2';
-import woff from '../../assets/fonts/open-sans-v16-latin-regular.woff';
-import { PRIMARY } from './variables';
+import { PRIMARY } from './utils/style/variables';
+import woff2 from '../wwwroot/fonts/open-sans-v16-latin-regular.woff2';
+import woff from '../wwwroot/fonts/open-sans-v16-latin-regular.woff';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -23,10 +23,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: Open Sans, Segoe UI, Tahoma, sans-serif !important;
     background: ${PRIMARY.background};
     color: ${PRIMARY.colour};
-    line-height: 1.8em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
     word-wrap: break-word;
+    padding: 0;
+    margin: 0;
 
     #root {
       position: absolute;

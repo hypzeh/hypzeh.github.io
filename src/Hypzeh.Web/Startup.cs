@@ -1,11 +1,22 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace Hypzeh.Web
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
+        public IConfiguration Configuration { get; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public static void ConfigureServices(IServiceCollection services)
         {
             services.AddSpaStaticFiles(configuration =>
             {
@@ -13,14 +24,13 @@ namespace Hypzeh.Web
             });
         }
 
-        public void Configure(IApplicationBuilder app)
+        public static void Configure(IApplicationBuilder app)
         {
-            app.UseHttpsRedirection();
-            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseSpaStaticFiles();
-            app.UseSpa(configuration =>
+            app.UseSpa(spa =>
             {
-                configuration.Options.SourcePath = ".";
+                spa.Options.SourcePath = ".";
             });
         }
     }

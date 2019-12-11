@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-const root = document.createElement('div');
-root.setAttribute('id', 'root');
-document.body.append(root);
+const MOUNT_NODE = document.getElementById('app');
 
-ReactDOM.render(<App />, root);
+ReactDOM.render(<App />, MOUNT_NODE);

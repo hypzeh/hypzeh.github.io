@@ -265,5 +265,6 @@ __pycache__/
 
 # React build outputs
 **/wwwroot/*
+!**/wwwroot/fonts/
 !**/wwwroot/404.html
 !**/wwwroot/CNAME

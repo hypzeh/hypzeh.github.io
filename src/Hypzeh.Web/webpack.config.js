@@ -6,13 +6,14 @@ const { HashedModuleIdsPlugin } = require('webpack');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = (env, argv) => {
   const { mode } = argv;
 
   return {
-    entry: path.resolve(__dirname, 'ClientApp', 'index.jsx'),
+    entry: ['react-hot-loader/patch', './ClientApp/index.jsx'],
     output: {
       filename: '[name].[hash].js',
       chunkFilename: '[name].[chunkhash].chunk.js',
@@ -21,26 +22,34 @@ module.exports = (env, argv) => {
     },
     resolve: {
       extensions: ['.js', '.jsx'],
+      alias: {
+        'react-dom': '@hot-loader/react-dom',
+      },
     },
     optimization: {
       minimize: mode !== 'development',
       minimizer: [
         new TerserPlugin({
           terserOptions: {
-            warnings: false,
             compress: {
+              ecma: 5,
+              warnings: false,
               comparisons: false,
+              inline: 2,
             },
-            parse: {},
-            mangle: true,
+            parse: {
+              ecma: 8,
+            },
+            mangle: { safari10: true },
             output: {
+              ecma: 5,
+              safari10: true,
               comments: false,
-              /* eslint-disable camelcase */
               ascii_only: true,
-              /* eslint-enable camelcase */
             },
           },
           parallel: true,
+          sourceMap: false,
           cache: true,
         }),
       ],
@@ -49,19 +58,35 @@ module.exports = (env, argv) => {
         minSize: 30000,
         minChunks: 1,
         maxAsyncRequests: 5,
-        maxInitialRequests: 3,
+        maxInitialRequests: 20,
         name: true,
         cacheGroups: {
-          commons: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendor',
+          default: false,
+          vendors: false,
+          framework: {
+            name: 'framework',
             chunks: 'all',
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            priority: 40,
           },
-          main: {
+          lib: {
+            test(module) {
+              return module.size() > 160000;
+            },
+            priority: 30,
+            minChunks: 1,
+            reuseExistingChunk: true,
+          },
+          commons: {
+            name: 'commons',
             chunks: 'all',
+            priority: 20,
+          },
+          shared: {
+            name: false,
+            priority: 10,
             minChunks: 2,
             reuseExistingChunk: true,
-            enforce: true,
           },
         },
       },
@@ -70,88 +95,77 @@ module.exports = (env, argv) => {
     devServer: {
       contentBase: path.join(__dirname, 'wwwroot'),
       historyApiFallback: true,
+      port: 8080,
       compress: true,
       quiet: true,
       hot: true,
-      port: 8080,
     },
     module: {
       rules: [
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: [
-            'react-hot-loader/webpack',
-            'babel-loader?cacheDirectory=true',
-          ],
+          use: 'babel-loader?cacheDirectory=true',
         },
         {
           test: /\.css$/,
           use: [
+            'cache-loader',
             ExtractCssChunks.loader,
             'css-loader',
             'clean-css-loader',
           ],
         },
         {
-          test: /\.svg$/,
+          test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
           use: [
-            'babel-loader',
-            {
-              loader: 'react-svg-loader',
-              options: {
-                jsx: true,
-                svgo: {
-                  plugins: [
-                    { removeStyleElement: false },
-                  ],
-                },
-              },
-            },
-          ],
-        },
-        {
-          test: /\.(jpe?g|png|webp|gif|ico)$/i,
-          use: [
+            'cache-loader',
             {
               loader: 'url-loader',
               options: {
                 limit: 8192,
-                name: '[name]-[hash:8].[ext]',
-                outputPath: 'images/',
+                fallback: 'file-loader?name="[path][name].[ext]"',
               },
             },
             {
-              loader: 'image-webpack-loader',
+              loader: 'img-loader',
               options: {
-                mozjpeg: {
-                  progressive: true,
-                },
-                pngquant: {
-                  speed: 5,
-                },
+                plugins: mode === 'production' && [
+                  require('imagemin-mozjpeg')({
+                    progressive: true,
+                  }),
+                  require('imagemin-pngquant')({
+                    floyd: 0.5,
+                    speed: 5,
+                  }),
+                  require('imagemin-webp'),
+                  require('imagemin-svgo'),
+                ],
               },
             },
           ],
         },
         {
           test: /\.(woff2|woff)$/,
-          use: [{
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
+          use: [
+            'cache-loader',
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts/',
+              },
             },
-          }],
+          ],
         },
       ],
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve('ClientApp/template.html'),
+        template: path.resolve(__dirname, 'ClientApp/template.html'),
         filename: 'index.html',
-        favicon: path.resolve('ClientApp/assets/img/favicon.png'),
-        output: path.resolve('wwwroot'),
+        output: path.resolve(__dirname, 'wwwroot'),
+        favicon: path.resolve(__dirname, 'ClientApp/assets/images/favicon.png'),
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -182,7 +196,6 @@ module.exports = (env, argv) => {
         hashDigest: 'hex',
         hashDigestLength: 20,
       }),
-      /* eslint-disable camelcase */
       new WebpackPwaManifest({
         name: 'Nick Smirnoff',
         short_name: 'NS',
@@ -197,13 +210,13 @@ module.exports = (env, argv) => {
           },
         ],
       }),
-      /* eslint-enable camelcase */
       new GenerateSW({
         swDest: 'sw.js',
         importWorkboxFrom: 'local',
         clientsClaim: true,
         skipWaiting: true,
       }),
+      new HardSourceWebpackPlugin(),
       new FriendlyErrorsWebpackPlugin(),
     ],
   };
