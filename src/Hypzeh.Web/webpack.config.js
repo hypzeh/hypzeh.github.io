@@ -162,10 +162,10 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'ClientApp/template.html'),
+        template: path.resolve('ClientApp/template.html'),
         filename: 'index.html',
-        output: path.resolve(__dirname, 'wwwroot'),
-        favicon: path.resolve(__dirname, 'ClientApp/assets/images/favicon.png'),
+        favicon: path.resolve('ClientApp/assets/images/favicon.png'),
+        output: path.resolve('wwwroot'),
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -204,7 +204,7 @@ module.exports = (env, argv) => {
         background_color: '#212121',
         icons: [
           {
-            src: path.resolve('ClientApp/assets/img/favicon.png'),
+            src: path.resolve('ClientApp/assets/images/favicon.png'),
             sizes: [36, 48, 72, 96, 144, 192, 512],
             ios: true,
           },
