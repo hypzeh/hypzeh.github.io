@@ -7,10 +7,11 @@ import styled from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import history from './lib/history';
 import sw from './lib/service-worker';
-import ProjectNavbar from './components/layout/ProjectNavbar';
+import Navbar from './components/layout/Navbar';
+import Main from './components/layout/Main';
+import AppRouter from './components/routers/AppRouter';
 
 const Wrapper = styled.div`
-  border: 1px solid red;
   flex: 1 1 auto;
   display: flex;
   flex-direction: row;
@@ -28,7 +29,10 @@ const App = () => {
       <Helmet titleTemplate="%s / Nick Smirnoff" defaultTitle="Nick Smirnoff" />
       <GlobalStyle />
       <Router history={history}>
-        <ProjectNavbar projects={[]} />
+        <Navbar />
+        <Main>
+          <AppRouter />
+        </Main>
       </Router>
     </Wrapper>
   );

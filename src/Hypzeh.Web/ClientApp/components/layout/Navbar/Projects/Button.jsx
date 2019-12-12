@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { lighten, darken } from 'polished';
 import { NavLink } from 'react-router-dom';
 
-import { PRIMARY, SECONDARY } from '../../../utils/style/variables';
+import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
+import { ViewContext, viewActions } from '../../../../contexts/view';
 import NSLogo from './ns.svg';
 
 const propTypes = {
@@ -19,6 +20,7 @@ const Wrapper = styled(NavLink)`
   border-color: transparent;
   width: 4.5rem;
   height: 4rem;
+  min-height: 4rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -48,11 +50,13 @@ const Icon = styled.img`
   height: 3.5rem;
 `;
 
-const ProjectLink = ({ to, isActive, onActive }) => {
+const Button = ({ to, isActive, onActive }) => {
+  const [, viewDispatch] = useContext(ViewContext);
   const handleClick = () => {
     if (!isActive) {
       onActive();
     }
+    viewDispatch(viewActions.showPagesPanel());
   };
 
   return (
@@ -62,6 +66,6 @@ const ProjectLink = ({ to, isActive, onActive }) => {
   );
 };
 
-ProjectLink.propTypes = propTypes;
+Button.propTypes = propTypes;
 
-export default ProjectLink;
+export default Button;

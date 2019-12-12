@@ -27,7 +27,7 @@ const ProgressLine = styled.div`
     content: '';
     width: 100%;
     background: white;
-    animation: ${progress} 2s infinite;
+    animation: 2s ease infinite ${progress};
   }
 `;
 

@@ -1,11 +1,9 @@
-import { PANEL_CLOSE, PANEL_OPEN, PANEL_TOGGLE } from './view-types';
+import { SHOW_PAGES_PANEL, HIDE_PAGES_PANEL } from './view-types';
 
-const closePanel = () => ({ type: PANEL_CLOSE });
-const openPanel = () => ({ type: PANEL_OPEN });
-const togglePanel = () => ({ type: PANEL_TOGGLE });
+const showPagesPanel = () => ({ type: SHOW_PAGES_PANEL });
+const hidePagesPanel = () => ({ type: HIDE_PAGES_PANEL });
 
 export default {
-  closePanel,
-  openPanel,
-  togglePanel,
+  showPagesPanel,
+  hidePagesPanel,
 };

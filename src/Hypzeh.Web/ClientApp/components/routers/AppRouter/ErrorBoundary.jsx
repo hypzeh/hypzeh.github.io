@@ -1,13 +1,8 @@
 import React from 'react';
-
-import types from '../../../../types';
+import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: types.children,
-};
-
-const defaultProps = {
-  children: null,
+  children: PropTypes.node.isRequired,
 };
 
 class ErrorBoundary extends React.Component {
@@ -35,7 +30,6 @@ class ErrorBoundary extends React.Component {
   render() {
     const { children } = this.props;
     const { hasError, error } = this.state;
-
     if (!hasError) return children;
 
     return (
@@ -48,6 +42,5 @@ class ErrorBoundary extends React.Component {
 }
 
 ErrorBoundary.propTypes = propTypes;
-ErrorBoundary.defaultProps = defaultProps;
 
 export default ErrorBoundary;

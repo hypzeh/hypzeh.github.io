@@ -3,17 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
-import types from '../../../types';
-import { Scroller } from '../../shared';
+import Scroller from '../../shared/Scroller';
 
 const propTypes = {
-  children: types.children,
-  title: PropTypes.string,
-};
-
-const defaultProps = {
-  children: null,
-  title: '',
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 const Wrapper = styled.div`
@@ -21,7 +15,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  z-index: 100;
 `;
 
 const Page = ({ children, title }) => (
@@ -34,6 +27,5 @@ const Page = ({ children, title }) => (
 );
 
 Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
 
 export default Page;

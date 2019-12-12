@@ -1,5 +1,5 @@
-const isPanelOpen = false;
-
-export default {
-  isPanelOpen,
+const state = {
+  isPagesPanelVisible: false,
 };
+
+export default state;

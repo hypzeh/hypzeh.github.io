@@ -2,7 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import types from '../../types';
+const propTypes = {
+  children: PropTypes.node.isRequired,
+  width: PropTypes.string,
+  overflow: PropTypes.string,
+};
+const defaultProps = {
+  width: 'auto',
+  overflow: 'auto',
+};
 
 const Wrapper = styled.div`
   width: ${(props) => props.width};
@@ -16,24 +24,13 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   overflow-x: hidden;
-  overflow-y: ${(props) => props.overflow};
+  overflow-y: ${({ overflow }) => overflow};
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  z-index: 100;
 `;
-
-const propTypes = {
-  children: types.children,
-  width: PropTypes.string,
-  overflow: PropTypes.string,
-};
-
-const defaultProps = {
-  children: null,
-  width: 'auto',
-  overflow: 'auto',
-};
 
 const Scroller = ({ children, width, overflow }) => (
   <Wrapper width={width}>

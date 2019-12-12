@@ -1,14 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import types from '../../../types';
-
 const propTypes = {
-  children: types.children,
-};
-
-const defaultProps = {
-  children: null,
+  children: PropTypes.node.isRequired,
 };
 
 const Wrapper = styled.main`
@@ -19,7 +14,6 @@ const Wrapper = styled.main`
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
-  z-index: 200;
 `;
 
 const Main = ({ children }) => (
@@ -29,6 +23,5 @@ const Main = ({ children }) => (
 );
 
 Main.propTypes = propTypes;
-Main.defaultProps = defaultProps;
 
 export default Main;

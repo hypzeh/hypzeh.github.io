@@ -1,3 +1,2 @@
-export const PANEL_CLOSE = 'PANEL_CLOSE';
-export const PANEL_OPEN = 'PANEL_OPEN';
-export const PANEL_TOGGLE = 'PANEL_TOGGLE';
+export const SHOW_PAGES_PANEL = 'PANEL_CLOSE';
+export const HIDE_PAGES_PANEL = 'PANEL_OPEN';
