@@ -6,12 +6,11 @@ import { NavLink } from 'react-router-dom';
 
 import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
 import { ViewContext, viewActions } from '../../../../contexts/view';
+import { NavigationContext } from '../../../../contexts/navigation';
 import NSLogo from './ns.svg';
 
 const propTypes = {
   to: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
-  onActive: PropTypes.func.isRequired,
 };
 
 const Wrapper = styled(NavLink)`
@@ -50,17 +49,16 @@ const Icon = styled.img`
   height: 3.5rem;
 `;
 
-const Button = ({ to, isActive, onActive }) => {
+const Button = ({ to }) => {
   const [, viewDispatch] = useContext(ViewContext);
+  const [{ activeProject }] = useContext(NavigationContext);
+
   const handleClick = () => {
-    if (!isActive) {
-      onActive();
-    }
     viewDispatch(viewActions.showPagesPanel());
   };
 
   return (
-    <Wrapper to={to} onClick={handleClick} isActive={() => isActive}>
+    <Wrapper to={to} onClick={handleClick} isActive={() => activeProject.path === to}>
       <Icon src={NSLogo} alt="" />
     </Wrapper>
   );

@@ -1,15 +1,11 @@
 import React, { useReducer } from 'react';
+import PropTypes from 'prop-types';
 
-import types from '../../types';
 import reducer from './view-reducer';
 import state from './view-state';
 
 const propTypes = {
-  children: types.children,
-};
-
-const defaultProps = {
-  children: null,
+  children: PropTypes.node.isRequired,
 };
 
 const ViewContext = React.createContext(state);
@@ -25,6 +21,5 @@ const ViewProvider = ({ children }) => {
 };
 
 ViewProvider.propTypes = propTypes;
-ViewProvider.defaultProps = defaultProps;
 
 export { ViewContext, ViewProvider };

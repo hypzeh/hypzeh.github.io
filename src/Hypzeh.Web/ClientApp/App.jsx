@@ -9,7 +9,7 @@ import history from './lib/history';
 import sw from './lib/service-worker';
 import Navbar from './components/layout/Navbar';
 import Main from './components/layout/Main';
-import AppRouter from './components/routers/AppRouter';
+import Routing from './components/layout/Routing';
 
 const Wrapper = styled.div`
   flex: 1 1 auto;
@@ -31,7 +31,7 @@ const App = () => {
       <Router history={history}>
         <Navbar />
         <Main>
-          <AppRouter />
+          <Routing />
         </Main>
       </Router>
     </Wrapper>

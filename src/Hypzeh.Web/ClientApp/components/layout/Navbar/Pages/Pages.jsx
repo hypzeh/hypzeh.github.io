@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { TERTIARY } from '../../../../utils/style/variables';
 import media, { breakpoints } from '../../../../utils/style/media';
 import { ViewContext, viewActions } from '../../../../contexts/view';
+import { NavigationContext } from '../../../../contexts/navigation';
 import { useWindowSize } from '../../../../hooks';
 import Scroller from '../../../shared/Scroller';
 import Separator from '../../../shared/Separator';
@@ -37,8 +38,9 @@ const ExternalLinks = styled.div`
   flex-direction: column;
 `;
 
-const PageNavbar = () => {
+const Pages = () => {
   const [{ isPagesPanelVisible }, viewDispatch] = useContext(ViewContext);
+  const [{ activeProject }] = useContext(NavigationContext);
   const size = useWindowSize();
 
   if (isPagesPanelVisible && size.width > breakpoints.medium) {
@@ -52,13 +54,17 @@ const PageNavbar = () => {
       )}
       <Wrapper isVisible={isPagesPanelVisible}>
         <Scroller width="15rem">
-          <PageLinks />
+          <PageLinks>
+            {activeProject.pages && activeProject.pages.map((page) => (<div key={page.path}>{page.name}</div>))}
+          </PageLinks>
           <Separator />
-          <ExternalLinks />
+          <ExternalLinks>
+            {activeProject.links && activeProject.links.map((page) => (<div key={page.path}>{page.name}</div>))}
+          </ExternalLinks>
         </Scroller>
       </Wrapper>
     </>
   );
 };
 
-export default PageNavbar;
+export default Pages;
