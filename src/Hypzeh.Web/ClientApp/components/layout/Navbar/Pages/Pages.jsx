@@ -9,6 +9,8 @@ import { useWindowSize } from '../../../../hooks';
 import Scroller from '../../../shared/Scroller';
 import Separator from '../../../shared/Separator';
 import Backdrop from '../../../shared/Backdrop';
+import InternalLink from './InternalLink';
+import ExternalLink from './ExternalLink';
 
 const Wrapper = styled.div`
   flex-shrink: 0;
@@ -55,11 +57,15 @@ const Pages = () => {
       <Wrapper isVisible={isPagesPanelVisible}>
         <Scroller width="15rem">
           <PageLinks>
-            {activeProject.pages && activeProject.pages.map((page) => (<div key={page.path}>{page.name}</div>))}
+            {activeProject.pages && activeProject.pages.map(({ name, path }) => (
+              <InternalLink key={path} to={path} name={name} />
+            ))}
           </PageLinks>
           <Separator />
           <ExternalLinks>
-            {activeProject.links && activeProject.links.map((page) => (<div key={page.path}>{page.name}</div>))}
+            {activeProject.links && activeProject.links.map(({ name, path }) => (
+              <ExternalLink key={path} to={path} name={name} />
+            ))}
           </ExternalLinks>
         </Scroller>
       </Wrapper>

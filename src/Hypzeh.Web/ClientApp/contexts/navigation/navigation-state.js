@@ -5,10 +5,13 @@ const state = {
       path: '/',
       pages: [
         { name: 'Home', path: '/' },
-        { name: 'About Me', path: '/about' },
+        { name: 'About Me', path: '/about-me' },
       ],
       links: [
         { name: 'Github', path: 'https://github.com/hypzeh' },
+        { name: 'LinkedIn', path: 'https://www.linkedin.com/in/nick-smirnoff' },
+        { name: 'Twitter', path: 'https://twitter.com/Hypzeh' },
+        { name: 'Email', path: 'mailto:nick.smirnoff@live.co.uk' },
       ],
     },
     {

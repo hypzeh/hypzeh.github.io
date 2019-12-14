@@ -1,85 +1,12 @@
 import React from 'react';
 
+import Title from '../../../shared/Title';
+import Greeting from './Greeting';
+
 const Home = () => (
   <div>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
-    <h1>Home</h1>
+    <Title text="Home" />
+    <Greeting />
   </div>
 );
 
