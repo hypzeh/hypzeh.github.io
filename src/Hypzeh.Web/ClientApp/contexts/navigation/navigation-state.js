@@ -20,11 +20,12 @@ const state = {
       icon: 'smallify',
       path: '/project/smallify',
       pages: [
-        { name: 'Smallify', path: '/project/smallify' },
+        { name: 'Overview', path: '/project/smallify' },
         { name: 'Screenshots', path: '/project/smallify/screenshots' },
       ],
       links: [
         { name: 'Github', path: 'https://github.com/hypzeh/smallify' },
+        { name: 'Download', path: 'https://github.com/hypzeh/smallify/releases/latest' },
       ],
     },
   ],

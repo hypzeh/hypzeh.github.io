@@ -9,10 +9,10 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Overview = () => (
+const Screenshots = () => (
   <Wrapper>
-    <Title text="Smallify" />
+    <Title text="Screenshots" />
   </Wrapper>
 );
 
-export default Overview;
+export default Screenshots;

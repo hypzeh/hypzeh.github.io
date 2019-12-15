@@ -6,6 +6,7 @@ import Loader from '../../shared/Loader';
 import Page from '../../layout/Page';
 
 const Overview = lazy(() => import(/* webpackChunkName: "smallify-overview" */ './Overview'));
+const Screenshots = lazy(() => import(/* webpackChunkName: "smallify-screenshots" */ './Screenshots'));
 
 const NSRouter = () => {
   const { path } = useRouteMatch();
@@ -18,8 +19,14 @@ const NSRouter = () => {
     <Suspense fallback={<Loader />}>
       <Switch>
         <Route exact path={`${path}`}>
-          <Page title="Smallify">
+          <Page title="Smallify - Overview">
             <Overview />
+          </Page>
+        </Route>
+
+        <Route exact path={`${path}/screenshots`}>
+          <Page title="Smallify - Screenshots">
+            <Screenshots />
           </Page>
         </Route>
 
