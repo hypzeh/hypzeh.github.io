@@ -8,7 +8,6 @@ import GlobalStyle from './GlobalStyle';
 import history from './lib/history';
 import sw from './lib/service-worker';
 import Navbar from './components/layout/Navbar';
-import Main from './components/layout/Main';
 import Routing from './components/layout/Routing';
 
 const Wrapper = styled.div`
@@ -19,6 +18,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: stretch;
   min-height: 0;
+  overflow: hidden;
 `;
 
 const App = () => {
@@ -30,9 +30,7 @@ const App = () => {
       <GlobalStyle />
       <Router history={history}>
         <Navbar />
-        <Main>
-          <Routing />
-        </Main>
+        <Routing />
       </Router>
     </Wrapper>
   );

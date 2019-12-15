@@ -9,13 +9,14 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 `;
 
 const Highlight = styled.strong`
   color: ${PRIMARY.highlight};
 `;
 
-const Greeting = () => (
+const Introduction = () => (
   <Wrapper>
     <h2>
       {'I\'m '}
@@ -28,4 +29,4 @@ const Greeting = () => (
   </Wrapper>
 );
 
-export default Greeting;
+export default Introduction;

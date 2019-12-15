@@ -7,10 +7,11 @@ import { NavLink } from 'react-router-dom';
 import { PRIMARY, SECONDARY } from '../../../../utils/style/variables';
 import { ViewContext, viewActions } from '../../../../contexts/view';
 import { NavigationContext } from '../../../../contexts/navigation';
-import NSLogo from './ns.svg';
+import Icon from '../../../shared/Icon';
 
 const propTypes = {
   to: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
 };
 
 const Wrapper = styled(NavLink)`
@@ -44,12 +45,12 @@ const Wrapper = styled(NavLink)`
   }
 `;
 
-const Icon = styled.img`
-  width: 4rem;
-  height: 3.5rem;
+const Content = styled.div`
+  margin-right: .5rem;
+  padding: .5rem;
 `;
 
-const Button = ({ to }) => {
+const Button = ({ to, icon }) => {
   const [, viewDispatch] = useContext(ViewContext);
   const [{ activeProject }] = useContext(NavigationContext);
 
@@ -59,7 +60,9 @@ const Button = ({ to }) => {
 
   return (
     <Wrapper to={to} onClick={handleClick} isActive={() => activeProject.path === to}>
-      <Icon src={NSLogo} alt="" />
+      <Content>
+        <Icon name={icon} />
+      </Content>
     </Wrapper>
   );
 };

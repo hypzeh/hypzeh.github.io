@@ -1,13 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 
+import greeting from './greeting';
 import Title from '../../../shared/Title';
-import Greeting from './Greeting';
+import Introduction from './Introduction';
+
+const Wrapper = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
 
 const Home = () => (
-  <div>
-    <Title text="Home" />
-    <Greeting />
-  </div>
+  <Wrapper>
+    <Title text={greeting} />
+    <Introduction />
+  </Wrapper>
 );
 
 export default Home;

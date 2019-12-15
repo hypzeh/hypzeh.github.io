@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Title from '../../../shared/Title';
+
 const AboutMe = () => (
   <div>
-    <h1>About Me</h1>
+    <Title text="ABOUT ME" />
   </div>
 );
 

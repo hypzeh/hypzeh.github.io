@@ -22,12 +22,12 @@ const Projects = () => {
   return (
     <Wrapper>
       <Scroller width="5.625rem" overflow="scroll">
-        <Button to="/" />
+        <Button to="/" icon="ns" />
         <Separator />
         {projects
-          .filter((project) => project.path !== '/')
-          .map((project) => (
-            <Button key={project.path} to={project.path} />
+          .filter(({ path }) => path !== '/')
+          .map(({ path, icon }) => (
+            <Button key={path} to={path} icon={icon} />
           ))}
       </Scroller>
     </Wrapper>

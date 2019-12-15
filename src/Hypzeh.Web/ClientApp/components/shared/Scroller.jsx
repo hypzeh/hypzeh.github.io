@@ -8,12 +8,12 @@ const propTypes = {
   overflow: PropTypes.string,
 };
 const defaultProps = {
-  width: 'auto',
+  width: null,
   overflow: 'auto',
 };
 
 const Wrapper = styled.div`
-  width: ${(props) => props.width};
+  width: ${({ width }) => (width || '100%')};
   contain: layout paint style;
   position: relative;
   display: flex;

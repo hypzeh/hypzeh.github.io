@@ -10,11 +10,16 @@ const propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
+  min-height: 0;
   flex: 1 1 auto;
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 const Page = ({ children, title }) => (

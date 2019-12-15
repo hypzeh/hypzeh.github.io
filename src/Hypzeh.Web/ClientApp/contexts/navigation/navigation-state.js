@@ -2,6 +2,7 @@ const state = {
   projects: [
     {
       name: 'Nick Smirnoff',
+      icon: 'ns',
       path: '/',
       pages: [
         { name: 'Home', path: '/' },
@@ -16,6 +17,7 @@ const state = {
     },
     {
       name: 'Smallify',
+      icon: 'smallify',
       path: '/project/smallify',
       pages: [
         { name: 'Smallify', path: '/project/smallify' },
