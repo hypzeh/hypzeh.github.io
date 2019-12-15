@@ -7,6 +7,7 @@ import Page from '../../layout/Page';
 
 const Overview = lazy(() => import(/* webpackChunkName: "smallify-overview" */ './Overview'));
 const Screenshots = lazy(() => import(/* webpackChunkName: "smallify-screenshots" */ './Screenshots'));
+const NotFound = lazy(() => import(/* webpackChunkName: "not-found" */ '../../layout/Routing/NotFound'));
 
 const NSRouter = () => {
   const { path } = useRouteMatch();
@@ -32,7 +33,7 @@ const NSRouter = () => {
 
         <Route>
           <Page title="Page Not Found">
-            <h1>Page Not Found.</h1>
+            <NotFound />
           </Page>
         </Route>
       </Switch>

@@ -7,6 +7,7 @@ import Page from '../../layout/Page';
 
 const Home = lazy(() => import(/* webpackChunkName: "ns-home" */ './Home'));
 const AboutMe = lazy(() => import(/* webpackChunkName: "ns-about-me" */ './AboutMe'));
+const NotFound = lazy(() => import(/* webpackChunkName: "not-found" */ '../../layout/Routing/NotFound'));
 
 const NSRouter = () => {
   const { path } = useRouteMatch();
@@ -32,7 +33,7 @@ const NSRouter = () => {
 
         <Route>
           <Page title="Page Not Found">
-            <h1>Page Not Found.</h1>
+            <NotFound />
           </Page>
         </Route>
       </Switch>
