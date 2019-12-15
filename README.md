@@ -1,15 +1,16 @@
-![hypzeh.github.io](docs/.assets/project-title.png)
+# Nick Smirnoff
+
 [![Build Status](https://nick-smirnoff.visualstudio.com/hypzeh.github.io/_apis/build/status/hypzeh.github.io-CI?branchName=master-react)](https://nick-smirnoff.visualstudio.com/hypzeh.github.io/_build/latest?definitionId=17&branchName=master-react)
 
----
-
 _Personal website built with ASP.NET Core and React._
+
+![Nick Smirnoff](docs/.assets/project-title.png)
 
 ## Getting Started
 
 ### Prerequisites
 
-- [.NET Core](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [.NET Core](https://dotnet.microsoft.com/download/dotnet-core/)
 - [Node.js](https://nodejs.org/en/download/)
 
 ### Quick Start
