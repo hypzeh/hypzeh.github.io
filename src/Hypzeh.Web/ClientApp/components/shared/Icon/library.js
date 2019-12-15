@@ -10,6 +10,7 @@ const getByName = (name) => {
       return smallify;
 
     default:
+      // eslint-disable-next-line no-console
       console.error(`Icon '${name}' does not exist.`);
       return '';
   }
