@@ -6,6 +6,7 @@ import { NavigationContext } from '../../../../contexts/navigation';
 import Scroller from '../../../shared/Scroller';
 import Separator from '../../../shared/Separator';
 import Button from './Button';
+import Emoji from './Emoji';
 
 const Wrapper = styled.div`
   width: 4.5rem;
@@ -29,6 +30,7 @@ const Projects = () => {
           .map(({ path, icon }) => (
             <Button key={path} to={path} icon={icon} />
           ))}
+        <Emoji />
       </Scroller>
     </Wrapper>
   );
