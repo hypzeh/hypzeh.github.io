@@ -21,7 +21,6 @@ const state = {
       path: '/project/smallify',
       pages: [
         { name: 'Overview', path: '/project/smallify' },
-        { name: 'Screenshots', path: '/project/smallify/screenshots' },
       ],
       links: [
         { name: 'Github', path: 'https://github.com/hypzeh/smallify' },
