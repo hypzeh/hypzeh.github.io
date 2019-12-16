@@ -24,7 +24,7 @@ const Introduction = () => (
       .
     </h2>
     <h2>
-      {'I\'m a full-stack developer.'}
+      {'I\'m a full stack developer.'}
     </h2>
   </Wrapper>
 );

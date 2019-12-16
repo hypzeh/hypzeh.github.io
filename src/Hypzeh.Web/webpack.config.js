@@ -117,30 +117,46 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
+          test: /\.(jpe?g|png|gif)$/,
           use: [
-            'cache-loader',
             {
               loader: 'url-loader',
               options: {
                 limit: 8192,
-                fallback: 'file-loader?name="[path][name].[ext]"',
+                name: '[name].[hash:8].[ext]',
+                outputPath: 'images/',
               },
             },
             {
-              loader: 'img-loader',
+              loader: 'image-webpack-loader',
               options: {
-                plugins: mode === 'production' && [
-                  require('imagemin-mozjpeg')({
-                    progressive: true,
-                  }),
-                  require('imagemin-pngquant')({
-                    floyd: 0.5,
-                    speed: 5,
-                  }),
-                  require('imagemin-webp'),
-                  require('imagemin-svgo'),
-                ],
+                mozjpeg: {
+                  progressive: true,
+                },
+                gifsicle: {
+                  interlaced: false,
+                },
+                optipng: {
+                  optimizationLevel: 7,
+                },
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4,
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: 'svg-url-loader',
+              options: {
+                limit: 8192,
+                name: '[name].[hash:8].[ext]',
+                outputPath: 'images/',
+                noquotes: true,
               },
             },
           ],

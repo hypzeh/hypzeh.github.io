@@ -1,11 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Title from '../../../shared/Title';
+import Summary from './Summary';
+
+const Wrapper = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
 
 const AboutMe = () => (
-  <div>
+  <Wrapper>
     <Title text="ABOUT ME" />
-  </div>
+    <Summary />
+  </Wrapper>
 );
 
 export default AboutMe;
