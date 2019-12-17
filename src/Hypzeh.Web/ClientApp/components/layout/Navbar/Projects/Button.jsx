@@ -21,6 +21,7 @@ const Wrapper = styled(NavLink)`
   width: 4.5rem;
   height: 4rem;
   min-height: 4rem;
+  max-height: 4rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -46,7 +47,6 @@ const Wrapper = styled(NavLink)`
 `;
 
 const Content = styled.div`
-  margin-right: .5rem;
   padding: .5rem;
 `;
 

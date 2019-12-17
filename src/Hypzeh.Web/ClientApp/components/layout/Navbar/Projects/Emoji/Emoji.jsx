@@ -5,6 +5,7 @@ import library from './library';
 
 const Wrapper = styled.div`
   margin-top: auto;
+  height: 4rem;
   text-align: center;
   font-size: 3em;
   user-select: none;

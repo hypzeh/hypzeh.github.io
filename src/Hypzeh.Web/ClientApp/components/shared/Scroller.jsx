@@ -9,7 +9,7 @@ const propTypes = {
 };
 const defaultProps = {
   width: null,
-  overflow: 'auto',
+  overflow: null,
 };
 
 const Wrapper = styled.div`
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   overflow-x: hidden;
-  overflow-y: ${({ overflow }) => overflow};
+  overflow-y: ${({ overflow }) => (overflow || 'auto')};
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
