@@ -31,10 +31,12 @@ const Command = styled.div`
 `;
 
 const Value = styled.pre`
+  white-space: pre-wrap;
   margin: 0;
 `;
 
 const Link = styled.a`
+  white-space: pre-wrap;
   color: ${PRIMARY.highlight};
 `;
 

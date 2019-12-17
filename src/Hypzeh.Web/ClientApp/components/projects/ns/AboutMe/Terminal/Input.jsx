@@ -32,6 +32,8 @@ const Input = React.forwardRef(({ onSubmit }, ref) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (command.length === 0) return;
+
     onSubmit(command);
     setCommand('');
   };
