@@ -24,6 +24,10 @@ display: flex;
     &:focus {
       outline: none;
     }
+
+    &::-ms-clear {
+      display: none;
+    }
   }
 `;
 

@@ -11,7 +11,7 @@ const state = {
       links: [
         { name: 'Github', path: 'https://github.com/hypzeh' },
         { name: 'LinkedIn', path: 'https://www.linkedin.com/in/nick-smirnoff' },
-        { name: 'Twitter', path: 'https://twitter.com/Hypzeh' },
+        { name: 'Twitter', path: 'https://twitter.com/hypzeh' },
         { name: 'Email', path: 'mailto:nick.smirnoff@live.co.uk' },
       ],
     },

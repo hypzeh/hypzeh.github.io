@@ -1,6 +1,8 @@
 import React, { useState, useEffect, createRef } from 'react';
 import styled from 'styled-components';
+import { darken } from 'polished';
 
+import { PRIMARY } from '../../../../../utils/style/variables';
 import Scroller from '../../../../shared/Scroller';
 import commands from './commands';
 import Output from './Output';
@@ -13,6 +15,23 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+
+  div::-webkit-scrollbar {
+    min-width: 5px;
+    max-width: 5px;
+  }
+    
+  div::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  div::-webkit-scrollbar-thumb {
+    background: ${PRIMARY.highlight};
+  }
+
+  div::-webkit-scrollbar-thumb:hover {
+    background-color: ${darken(0.25, PRIMARY.highlight)};
+  }
 `;
 
 const Header = styled.div`
