@@ -18,8 +18,6 @@ const Wrapper = styled.main`
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
-  overflow-x: hidden;
-  overflow-y: auto;
 `;
 
 const Page = ({ children, title }) => (

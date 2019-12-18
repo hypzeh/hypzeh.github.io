@@ -7,9 +7,9 @@ import Terminal from './Terminal';
 
 const Wrapper = styled.div`
   flex-grow: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const AboutMe = () => (

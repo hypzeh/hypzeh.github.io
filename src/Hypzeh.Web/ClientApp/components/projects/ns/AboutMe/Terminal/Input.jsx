@@ -58,6 +58,7 @@ const Input = React.forwardRef(({ onSubmit }, ref) => {
           maxLength={25}
           spellCheck={false}
           value={command}
+          aria-label="command-input"
           onChange={handleChange}
         />
       </code>

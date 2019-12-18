@@ -18,7 +18,6 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: stretch;
   min-height: 0;
-  overflow: hidden;
 `;
 
 const App = () => {

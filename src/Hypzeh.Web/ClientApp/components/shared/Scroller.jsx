@@ -14,10 +14,10 @@ const defaultProps = {
 
 const Wrapper = styled.div`
   width: ${({ width }) => (width || '100%')};
+  height: 100%;
   contain: layout paint style;
   position: relative;
   display: flex;
-  height: 100%;
   flex: 1 1 auto;
   min-height: 0;
 `;

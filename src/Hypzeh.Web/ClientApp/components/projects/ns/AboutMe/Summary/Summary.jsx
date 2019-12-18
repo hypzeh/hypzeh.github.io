@@ -7,6 +7,7 @@ import profile from './assets/profile.jpg';
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Image = styled.img`

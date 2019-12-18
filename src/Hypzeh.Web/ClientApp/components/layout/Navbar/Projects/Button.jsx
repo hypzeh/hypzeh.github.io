@@ -47,6 +47,7 @@ const Wrapper = styled(NavLink)`
 `;
 
 const Content = styled.div`
+  margin-right: .5rem;
   padding: .5rem;
 `;
 
