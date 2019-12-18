@@ -11,8 +11,8 @@ const Wrapper = styled.section`
 `;
 
 const Image = styled.img`
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
   border: 3px solid ${PRIMARY.highlight};
   border-radius: 50%;
   margin: 0 1rem;

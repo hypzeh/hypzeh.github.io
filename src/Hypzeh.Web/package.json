@@ -61,6 +61,7 @@
     "react-helmet": "^5.2.1",
     "react-hot-loader": "^4.12.18",
     "react-router-dom": "^5.1.2",
+    "shortid": "^2.2.15",
     "styled-components": "^4.4.1"
   }
 }

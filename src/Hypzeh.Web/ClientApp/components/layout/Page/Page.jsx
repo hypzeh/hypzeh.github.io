@@ -23,7 +23,7 @@ const Wrapper = styled.main`
 const Page = ({ children, title }) => (
   <Wrapper>
     <Helmet title={title} />
-    <Scroller>
+    <Scroller padding="0 1rem">
       {children}
     </Scroller>
   </Wrapper>

@@ -1,4 +1,7 @@
+import shortid from 'shortid';
+
 const createOutput = (command, value, link) => ({
+  id: shortid.generate(),
   command,
   value,
   link,

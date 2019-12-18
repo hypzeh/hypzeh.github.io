@@ -5,10 +5,12 @@ import styled from 'styled-components';
 const propTypes = {
   children: PropTypes.node.isRequired,
   width: PropTypes.string,
+  padding: PropTypes.string,
   overflow: PropTypes.string,
 };
 const defaultProps = {
   width: null,
+  padding: null,
   overflow: null,
 };
 
@@ -25,6 +27,7 @@ const Wrapper = styled.div`
 const Content = styled.div`
   overflow-x: hidden;
   overflow-y: ${({ overflow }) => (overflow || 'auto')};
+  padding: ${({ padding }) => (padding || '0')};
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -32,9 +35,14 @@ const Content = styled.div`
   z-index: 100;
 `;
 
-const Scroller = ({ children, width, overflow }) => (
+const Scroller = ({
+  children,
+  width,
+  padding,
+  overflow,
+}) => (
   <Wrapper width={width}>
-    <Content overflow={overflow}>
+    <Content overflow={overflow} padding={padding}>
       {children}
     </Content>
   </Wrapper>

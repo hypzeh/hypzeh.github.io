@@ -7,24 +7,16 @@ import Output from './Output';
 import Input from './Input';
 
 const Wrapper = styled.section`
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 `;
 
-const Container = styled.div`
-  height: 100%;
-  max-width: 75rem;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-`;
-
 const Header = styled.div`
   width: 100%;
   min-height: 1rem;
+  max-width: 75rem;
   background-color: #cccccc;
   border-radius: .5rem .5rem 0 0;
 `;
@@ -33,6 +25,7 @@ const Content = styled.div`
   flex-grow: 1;
   width: 100%;
   height: 100%;
+  max-width: 75rem;
   max-height: 25rem;
   background-color: #383737;
   border-radius: 0 0 .5rem .5rem;
@@ -56,21 +49,19 @@ const Terminal = () => {
 
   return (
     <Wrapper onClick={() => input.current.focus()}>
-      <Container>
-        <Header />
-        <Content>
-          <Scroller>
-            <Output output={commands.createOutput(undefined, 'NS-CLI [Version 1.0.0-beta]\nType \'help\' for a list of commands.')} />
-            {print.map((output) => (
-              <Output
-                key={`${output.timestamp}`}
-                output={output}
-              />
-            ))}
-            <Input ref={input} onSubmit={handleSubmit} />
-          </Scroller>
-        </Content>
-      </Container>
+      <Header />
+      <Content>
+        <Scroller>
+          <Output output={commands.createOutput(undefined, 'NS-CLI [Version 1.0.0-beta]\nType \'help\' for a list of commands.')} />
+          {print.map((output) => (
+            <Output
+              key={output.id}
+              output={output}
+            />
+          ))}
+          <Input ref={input} onSubmit={handleSubmit} />
+        </Scroller>
+      </Content>
     </Wrapper>
   );
 };
