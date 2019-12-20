@@ -1,20 +1,11 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import media from '../../../../../utils/style/media';
+import { slideLeft, slideRight } from '../../../../../utils/style/animations';
 import ButtonLink from '../../../../shared/ButtonLink';
 import DefaultPlayer from './assets/default-player.png';
 import AuthenticationSettings from './assets/authentication-settings.png';
-
-const slideRight = keyframes`
-  0% { left: -100%; }
-  100% { left: 0; }
-`;
-
-const slideLeft = keyframes`
-  0% { right: -100%; }
-  100% { right: 0; }
-`;
 
 const Wrapper = styled.div`
   display: flex;

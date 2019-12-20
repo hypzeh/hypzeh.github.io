@@ -1,17 +1,8 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import { PRIMARY } from '../../../../utils/style/variables';
-
-const slideRight = keyframes`
-  0% { left: -100%; }
-  100% { left: 0; }
-`;
-
-const slideLeft = keyframes`
-  0% { right: -100%; }
-  100% { right: 0; }
-`;
+import { slideLeft, slideRight } from '../../../../utils/style/animations';
 
 const Wrapper = styled.div`
   display: flex;

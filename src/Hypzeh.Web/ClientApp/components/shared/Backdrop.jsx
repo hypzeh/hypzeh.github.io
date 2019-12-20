@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+
+import { fadeIn } from '../../utils/style/animations';
 
 const propTypes = {
   onClick: PropTypes.func.isRequired,
 };
-
-const fade = keyframes`
-  0% { opacity: 0; }
-  100% { opacity: .5; }
-`;
 
 const Wrapper = styled.div`
   position: fixed;
@@ -17,8 +14,8 @@ const Wrapper = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: black;
-  animation: .5s ease 1 ${fade};
+  background-color: rgba(0,0,0,.5);
+  animation: .5s ease 1 ${fadeIn};
   animation-fill-mode: forwards;
   z-index: -1;
 `;

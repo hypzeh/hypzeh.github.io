@@ -1,15 +1,11 @@
 import React, { useState, useEffect, createRef } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
+import { slideDown } from '../../../../../utils/style/animations';
 import Scroller from '../../../../shared/Scroller';
 import commands from './commands';
 import Output from './Output';
 import Input from './Input';
-
-const slideDown = keyframes`
-  0% { top: -10rem; }
-  100% { top: 0; }
-`;
 
 const Wrapper = styled.div`
   position: relative;
