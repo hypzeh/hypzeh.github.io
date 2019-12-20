@@ -24,7 +24,7 @@ const state = {
       ],
       links: [
         { name: 'Github', path: 'https://github.com/hypzeh/smallify' },
-        { name: 'Download', path: 'https://github.com/hypzeh/smallify/releases/latest' },
+        { name: 'Releases', path: 'https://github.com/hypzeh/smallify/releases' },
       ],
     },
   ],

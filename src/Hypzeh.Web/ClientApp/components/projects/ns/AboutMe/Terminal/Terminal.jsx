@@ -6,30 +6,24 @@ import commands from './commands';
 import Output from './Output';
 import Input from './Input';
 
-const Wrapper = styled.section`
-  margin: 1rem 0;
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: stretch;
 `;
 
 const Header = styled.div`
-  width: 100%;
   min-height: 1rem;
-  max-width: 75rem;
   background-color: #cccccc;
   border-radius: .5rem .5rem 0 0;
 `;
 
 const Content = styled.div`
-  flex-grow: 1;
-  width: 100%;
-  height: 100%;
-  max-width: 75rem;
+  flex: 1 0 auto;
+  display: flex;
   max-height: 25rem;
   background-color: #383737;
   border-radius: 0 0 .5rem .5rem;
-  overflow: hidden;
+  overflow-y: auto;
 `;
 
 const Terminal = () => {

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { PRIMARY } from '../../../../../utils/style/variables';
 import profile from './assets/profile.jpg';
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 import { PRIMARY } from '../../../../utils/style/variables';
 
-const Wrapper = styled.section`
-  flex-grow: 1;
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

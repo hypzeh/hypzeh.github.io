@@ -36,6 +36,7 @@ const Value = styled.pre`
 `;
 
 const Link = styled.a`
+  font-family: monospace;
   white-space: pre-wrap;
   color: ${PRIMARY.highlight};
 `;

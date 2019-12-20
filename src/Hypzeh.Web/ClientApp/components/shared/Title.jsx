@@ -32,7 +32,9 @@ const Wrapper = styled.h1`
 `;
 
 const Title = ({ text }) => (
-  <Wrapper>{text}</Wrapper>
+  <Wrapper>
+    {text}
+  </Wrapper>
 );
 
 Title.propTypes = propTypes;
