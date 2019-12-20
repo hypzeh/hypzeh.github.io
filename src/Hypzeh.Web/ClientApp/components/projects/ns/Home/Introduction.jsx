@@ -1,7 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { PRIMARY } from '../../../../utils/style/variables';
+
+const slideRight = keyframes`
+  0% { left: -100%; }
+  100% { left: 0; }
+`;
+
+const slideLeft = keyframes`
+  0% { right: -100%; }
+  100% { right: 0; }
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,20 +21,30 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
+const Name = styled.h2`
+  position: relative;
+  animation: .5s ease 1 ${slideRight};
+`;
+
+const Title = styled.h2`
+  position: relative;
+  animation: .5s ease 1 ${slideLeft};
+`;
+
 const Highlight = styled.strong`
   color: ${PRIMARY.highlight};
 `;
 
 const Introduction = () => (
   <Wrapper>
-    <h2>
+    <Name>
       {'I\'m '}
       <Highlight>Nick Smirnoff</Highlight>
       .
-    </h2>
-    <h2>
+    </Name>
+    <Title>
       {'I\'m a full stack developer.'}
-    </h2>
+    </Title>
   </Wrapper>
 );
 

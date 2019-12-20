@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Title from '../../../shared/Title';
 import Section from '../../../shared/Section';
-import Summary from './Summary';
 import Terminal from './Terminal';
 
 const Wrapper = styled.div`
@@ -15,9 +14,6 @@ const Wrapper = styled.div`
 const AboutMe = () => (
   <Wrapper>
     <Title text="ABOUT ME" />
-    <Section>
-      <Summary />
-    </Section>
     <Section>
       <Terminal />
     </Section>

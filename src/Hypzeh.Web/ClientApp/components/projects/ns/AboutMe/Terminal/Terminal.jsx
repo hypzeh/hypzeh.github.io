@@ -1,14 +1,21 @@
 import React, { useState, useEffect, createRef } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import Scroller from '../../../../shared/Scroller';
 import commands from './commands';
 import Output from './Output';
 import Input from './Input';
 
+const slideDown = keyframes`
+  0% { top: -10rem; }
+  100% { top: 0; }
+`;
+
 const Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
+  animation: .5s ease 1 ${slideDown};
 `;
 
 const Header = styled.div`

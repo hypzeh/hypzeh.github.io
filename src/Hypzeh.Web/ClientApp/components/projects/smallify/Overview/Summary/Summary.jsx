@@ -1,10 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import media from '../../../../../utils/style/media';
 import ButtonLink from '../../../../shared/ButtonLink';
 import DefaultPlayer from './assets/default-player.png';
 import AuthenticationSettings from './assets/authentication-settings.png';
+
+const slideRight = keyframes`
+  0% { left: -100%; }
+  100% { left: 0; }
+`;
+
+const slideLeft = keyframes`
+  0% { right: -100%; }
+  100% { right: 0; }
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,9 +23,11 @@ const Wrapper = styled.div`
 `;
 
 const Screenshot = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
+  animation: .5s ease 1 ${({ reverse }) => (reverse ? slideLeft : slideRight)};
 
   ${media.huge`
     flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
@@ -62,7 +74,7 @@ const Summary = () => (
           and control playback with a Spotify premium account.
         </p>
         <ButtonLink
-          to="https://developer.spotify.com/documentation/general/guides/authorization-guide/#authorization-code-flow"
+          to="https://github.com/hypzeh/smallify"
           text="View project"
         />
       </Description>
