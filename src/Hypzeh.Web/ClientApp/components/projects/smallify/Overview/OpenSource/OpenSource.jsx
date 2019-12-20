@@ -13,7 +13,7 @@ const OpenSource = () => (
   <Wrapper>
     <h2>Open source</h2>
     <p>
-      Smallify is open source.
+      Smallify is open source, pull requests are welcome!
     </p>
     <ButtonLink to="https://github.com/hypzeh/smallify" text="Fork on GitHub" />
   </Wrapper>

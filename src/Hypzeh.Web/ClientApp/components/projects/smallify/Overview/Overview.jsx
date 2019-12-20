@@ -5,7 +5,6 @@ import Title from '../../../shared/Title';
 import Section from '../../../shared/Section';
 import Download from './Download';
 import Summary from './Summary';
-import Gallery from './Gallery';
 import OpenSource from './OpenSource';
 
 const Wrapper = styled.div`
@@ -22,9 +21,6 @@ const Overview = () => (
     </Section>
     <Section>
       <Summary />
-    </Section>
-    <Section>
-      <Gallery />
     </Section>
     <Section>
       <OpenSource />

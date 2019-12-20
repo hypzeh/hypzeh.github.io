@@ -19,11 +19,11 @@ const Padding = styled.div`
   margin: 0 auto;
 
   ${media.large`
-    width: 820px;
+    width: 800px;
   `}
 
   ${media.huge`
-    width: 1080px;
+    width: 1050px;
   `}
 `;
 

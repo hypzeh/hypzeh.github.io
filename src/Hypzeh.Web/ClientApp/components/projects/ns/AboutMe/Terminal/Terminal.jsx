@@ -24,6 +24,8 @@ const Content = styled.div`
   background-color: #383737;
   border-radius: 0 0 .5rem .5rem;
   overflow-y: auto;
+  box-shadow: 0 1rem 1.5rem rgba(0,0,0,0.5);
+  margin-bottom: 2rem;
 `;
 
 const Terminal = () => {
