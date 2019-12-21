@@ -1,6 +1,6 @@
 # Nick Smirnoff
 
-[![Build Status](https://nick-smirnoff.visualstudio.com/hypzeh.github.io/_apis/build/status/hypzeh.github.io-CI?branchName=master-react)](https://nick-smirnoff.visualstudio.com/hypzeh.github.io/_build/latest?definitionId=17&branchName=master-react)
+[![Build Status](https://dev.azure.com/nick-smirnoff/hypzeh.github.io/_apis/build/status/hypzeh.hypzeh.github.io?branchName=master-react)](https://dev.azure.com/nick-smirnoff/hypzeh.github.io/_build/latest?definitionId=21&branchName=master-react)
 
 _Personal website built with ASP.NET Core and React._
 
