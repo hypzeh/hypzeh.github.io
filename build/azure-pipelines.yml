@@ -1,0 +1,41 @@
+trigger:
+  - master-react
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  solution: '**/*.sln'
+  project: './src/Hypzeh.Web/'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET Core 3.1'
+  inputs:
+    packageType: 'sdk'
+    version: '3.1.x'
+
+- task: NuGetToolInstaller@1
+  displayName: 'Install NuGet tool'
+
+- task: NuGetCommand@2
+  displayName: 'Restore solution'
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish web application'
+  inputs:
+    command: 'publish'
+    projects: '$(webApplication)'
+    arguments: '--nologo --no-restore --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: false
+    modifyOutputPath: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Save build artifacts'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'drop'

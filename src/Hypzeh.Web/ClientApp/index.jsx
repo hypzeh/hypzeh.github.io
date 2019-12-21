@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+import RootProvider from './contexts/RootProvider';
+import App from './App';
 
-const root = document.createElement('div');
-root.setAttribute('id', 'root');
-document.body.append(root);
+const ELEMENT = (
+  <RootProvider>
+    <App />
+  </RootProvider>
+);
+const MOUNT_NODE = document.getElementById('app');
 
-ReactDOM.render(<App />, root);
+ReactDOM.render(ELEMENT, MOUNT_NODE);
