@@ -8,8 +8,7 @@
     <Company>Smiosoft</Company>
     <Product>Hypzeh</Product>
     <IsPackable>false</IsPackable>
-    <SpaRoot>$(MSBuildProjectDirectory)</SpaRoot>
-    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,21 +17,21 @@
 
   <ItemGroup>
     <None Include="wwwroot\**" />
-    <None Remove="$(SpaRoot)node_modules\**" />
+    <None Remove="node_modules\**" />
   </ItemGroup>
 
-  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('node_modules') ">
     <Exec Command="node --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
     </Exec>
     <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
     <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec Command="npm install" />
   </Target>
 
   <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+    <Exec Command="npm install" />
+    <Exec Command="npm run build" />
 
     <ItemGroup>
       <DistFiles Include="wwwroot\**" CopyToPublishDirectory="Always" />
