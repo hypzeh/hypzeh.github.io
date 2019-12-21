@@ -35,7 +35,7 @@
     <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
 
     <ItemGroup>
-      <DistFiles Include="$(SpaRoot)wwwroot\**" CopyToPublishDirectory="Always" />
+      <DistFiles Include="wwwroot\**" CopyToPublishDirectory="Always" />
       <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
