@@ -195,7 +195,7 @@ module.exports = (env = {}) => {
       new WebpackPwaManifest({
         name: 'Nick Smirnoff',
         short_name: 'NS',
-        description: 'I’m Nick Smirnoff — a developer from the UK, focusing all his efforts on creating useful software products and slaying dragons.',
+        description: 'A developer from the UK, focusing all his efforts on creating useful software products and slaying dragons.',
         theme_color: '#212121',
         background_color: '#212121',
         icons: [
