@@ -3,36 +3,54 @@ import PropTypes from 'prop-types';
 
 import Styles from './SplashScreen.styles';
 import BaseLoader from './BaseLoader';
+import Status from './Status';
 import Button from '~components/shared/Button';
-import SplashScreenError from './SplashScreenError';
+import SplashScreenError from './errors/SplashScreenError';
+import DefaultSplashScreenError from './errors/DefaultSplashScreenError';
 
 const propTypes = {
-  task: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
+  task: PropTypes.func.isRequired,
   onComplete: PropTypes.func.isRequired,
   onError: PropTypes.func,
 };
 
 const defaultProps = {
-  onError: (error) => (error instanceof SplashScreenError) && error.handle(),
+  onError: (error) => ((error instanceof SplashScreenError) && error.handle()) || (new DefaultSplashScreenError().handle()),
 };
 
 const SplashScreen = ({
-  task,
   title,
+  task,
   onComplete,
   onError,
 }) => {
   const [showLoader, setShowLoader] = useState(true);
-  const [status, setStatus] = useState({ message: '<MESSAGE>' });
+  const [status, setStatus] = useState({ message: 'Initialising...' });
   const [actions, setActions] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await task();
+      } catch (error) {
+        const { type, message, actionHandlers } = onError(error);
+        setActions(actionHandlers);
+        setStatus({ type, message });
+        setShowLoader(false);
+        return;
+      }
+      onComplete();
+    })();
+  }, [task, onComplete, onError]);
 
   return (
     <BaseLoader showLoader={showLoader} title={title}>
+      <Status type={status.type} message={status.message} />
       {actions.length > 0 && (
         <Styles.Actions>
           {actions.map(({ text, onClick }) => (
-            <Button key={text.key || text} text={text} onClick={onClick} />
+            <Button key={text} text={text} onClick={onClick} />
           ))}
         </Styles.Actions>
       )}
