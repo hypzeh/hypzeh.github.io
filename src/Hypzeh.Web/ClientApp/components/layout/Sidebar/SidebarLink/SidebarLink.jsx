@@ -10,20 +10,26 @@ import { setSidebarCollapsedState } from '~redux/layout/layout-actions';
 const propTypes = {
   title: PropTypes.string,
   to: PropTypes.string.isRequired,
+  openInNewTab: PropTypes.bool,
   icon: PropTypes.string,
+  iconPrefix: PropTypes.string,
   exact: PropTypes.bool,
 };
 
 const defaultProps = {
   title: null,
+  openInNewTab: false,
   icon: null,
+  iconPrefix: 'fas',
   exact: false,
 };
 
 const SidebarLink = ({
   title,
   to,
+  openInNewTab,
   icon,
+  iconPrefix,
   exact,
 }) => {
   const dispatch = useDispatch();
@@ -36,10 +42,10 @@ const SidebarLink = ({
   };
 
   return (
-    <Styles.Wrapper to={to} onClick={handleClick} exact={exact}>
+    <Styles.Wrapper to={to.startsWith('/') ? to : { pathname: to }} target={openInNewTab ? '_blank' : null} onClick={handleClick} exact={exact}>
       {!!icon && (
         <Styles.Icon>
-          <FontAwesomeIcon icon={icon} />
+          <FontAwesomeIcon icon={{ prefix: iconPrefix, iconName: icon }} />
         </Styles.Icon>
       )}
       <span>{title || '?'}</span>

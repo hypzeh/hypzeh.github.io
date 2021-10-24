@@ -14,6 +14,7 @@ import {
   // D
   // E
   faEllipsisV,
+  faEnvelope,
   faExclamationCircle,
   // F
   faFile,
@@ -55,6 +56,38 @@ import {
   // Z
 } from '@fortawesome/free-solid-svg-icons';
 
+import {
+  // A
+  // B
+  // C
+  // D
+  // E
+  // F
+  // G
+  faGithub,
+  // H
+  // I
+  // J
+  // K
+  // L
+  faLinkedin,
+  // M
+  // N
+  // O
+  // P
+  // Q
+  // R
+  // S
+  // T
+  faTwitter,
+  // U
+  // V
+  // W
+  // X
+  // Y
+  // Z
+} from '@fortawesome/free-brands-svg-icons';
+
 library.add(
   // A
   faAddressBook,
@@ -70,6 +103,7 @@ library.add(
   // D
   // E
   faEllipsisV,
+  faEnvelope,
   faExclamationCircle,
   // F
   faFile,
@@ -77,6 +111,7 @@ library.add(
   faFrown,
   // G
   faGhost,
+  faGithub,
   // H
   faHandshake,
   faHashtag,
@@ -86,6 +121,7 @@ library.add(
   // K
   // L
   faLanguage,
+  faLinkedin,
   // M
   faMehBlank,
   // N
@@ -99,6 +135,7 @@ library.add(
   faSignOutAlt,
   // T
   faTimes,
+  faTwitter,
   // U
   faUser,
   faUserCheck,

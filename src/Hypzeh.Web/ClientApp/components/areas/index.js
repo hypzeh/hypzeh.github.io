@@ -3,8 +3,7 @@ import { lazy } from 'react';
 export default ([
   {
     id: 'area~home',
-    url: '/',
-    disableExactMatch: true,
+    urls: ['/', '/about-me'],
     component: () => lazy(() => import(/* webpackChunkName: "ns~area~home" */ './home/Router')),
   },
   {
