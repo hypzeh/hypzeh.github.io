@@ -1,0 +1,10 @@
+export const VULCAN = '#36393f';
+export const EBONY = '#2f3136';
+export const WHITE = '#fff';
+export const BLACK = '#000';
+export const GRAY = '#828282';
+export const LIGHT_GRAY = '#d2d2d2';
+export const YELLOW = '#faff00';
+export const CINNABAR = '#ea4139';
+export const DANGER = '#da3633';
+export const TRANSPARENT = 'transparent';
