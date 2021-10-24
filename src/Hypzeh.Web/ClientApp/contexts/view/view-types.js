@@ -1,2 +1,0 @@
-export const SHOW_PAGES_PANEL = 'PANEL_CLOSE';
-export const HIDE_PAGES_PANEL = 'PANEL_OPEN';
