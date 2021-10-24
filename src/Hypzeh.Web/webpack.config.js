@@ -1,44 +1,55 @@
 const path = require('path');
+const crypto = require('crypto');
+const dotenv = require('dotenv');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const { HashedModuleIdsPlugin } = require('webpack');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const { GenerateSW } = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
-module.exports = (env, argv) => {
-  const { mode } = argv;
+dotenv.config();
+
+module.exports = (env = {}) => {
+  if (!process.env.NODE_ENV) {
+    process.env.NODE_ENV = env.production ? 'production' : 'development';
+  }
+  const isDevelopment = process.env.NODE_ENV !== 'production';
 
   return {
-    entry: ['react-hot-loader/patch', './ClientApp/index.jsx'],
+    mode: isDevelopment ? 'development' : 'production',
+    entry: './ClientApp/index.jsx',
     output: {
-      filename: '[name].[hash].js',
-      chunkFilename: '[name].[chunkhash].chunk.js',
       path: path.resolve(__dirname, 'wwwroot'),
+      filename: !isDevelopment ? '[name].[chunkhash].js' : '[name].js',
+      chunkFilename: !isDevelopment ? '[name].[chunkhash].chunk.js' : '[name].chunk.js',
       publicPath: '/',
     },
     resolve: {
-      extensions: ['.js', '.jsx'],
       alias: {
-        'react-dom': '@hot-loader/react-dom',
+        '~assets': path.resolve(__dirname, 'ClientApp/assets/'),
+        '~components': path.resolve(__dirname, 'ClientApp/components/'),
+        '~redux': path.resolve(__dirname, 'ClientApp/redux/'),
+        '~style': path.resolve(__dirname, 'ClientApp/style/'),
+        '~utils': path.resolve(__dirname, 'ClientApp/utils/'),
       },
+      extensions: ['.js', '.jsx'],
     },
     optimization: {
-      minimize: mode !== 'development',
+      minimize: !isDevelopment,
       minimizer: [
         new TerserPlugin({
           terserOptions: {
+            parse: {
+              ecma: 8,
+            },
             compress: {
               ecma: 5,
               warnings: false,
               comparisons: false,
               inline: 2,
-            },
-            parse: {
-              ecma: 8,
             },
             mangle: { safari10: true },
             output: {
@@ -55,23 +66,30 @@ module.exports = (env, argv) => {
       ],
       splitChunks: {
         chunks: 'all',
-        minSize: 30000,
-        minChunks: 1,
-        maxAsyncRequests: 5,
-        maxInitialRequests: 20,
-        name: true,
         cacheGroups: {
           default: false,
-          vendors: false,
+          defaultVendors: false,
           framework: {
-            name: 'framework',
             chunks: 'all',
-            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'framework',
+            test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
             priority: 40,
+            enforce: true,
           },
           lib: {
             test(module) {
-              return module.size() > 160000;
+              return (module.size() > 160000 && /node_modules[/\\]/.test(module.identifier())
+              );
+            },
+            name(module) {
+              const hash = crypto.createHash('sha1');
+              if (module.type === 'css/extract-css-chunks') {
+                module.updateHash(hash);
+              } else if (!module.libIdent) {
+                throw new Error(`Encountered unknown module type: ${module.type}.`);
+              }
+
+              return hash.digest('hex').slice(0, 8);
             },
             priority: 30,
             minChunks: 1,
@@ -79,26 +97,36 @@ module.exports = (env, argv) => {
           },
           commons: {
             name: 'commons',
-            chunks: 'all',
+            minChunks: 2,
             priority: 20,
           },
           shared: {
-            name: false,
+            name(module, chunks) {
+              return crypto
+                .createHash('sha1')
+                .update(chunks.reduce((acc, chunk) => acc + chunk.name, ''))
+                .digest('hex') + (module.type === 'css/extract-css-chunks' ? '_CSS' : '');
+            },
             priority: 10,
             minChunks: 2,
             reuseExistingChunk: true,
           },
         },
+        maxInitialRequests: 25,
+        minSize: 20000,
       },
-      runtimeChunk: true,
     },
     devServer: {
-      contentBase: path.join(__dirname, 'wwwroot'),
+      open: true,
       historyApiFallback: true,
-      port: 8080,
+      port: 5001,
       compress: true,
       quiet: true,
       hot: true,
+      http2: true,
+      https: true,
+      pfx: path.resolve(require('os').homedir(), '.aspnet/https/smiosoft.development.pfx'),
+      pfxPassphrase: process.env.PFX_CERTIFICATE_PASSWORD || (console.error('No certificate password in environment variables.')),
     },
     module: {
       rules: [
@@ -110,77 +138,35 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           use: [
-            'cache-loader',
             ExtractCssChunks.loader,
             'css-loader',
             'clean-css-loader',
           ],
         },
         {
-          test: /\.(jpe?g|png|gif)$/,
+          test: /\.(jpe?g|png|webp|gif|svg|ico)$/i,
           use: [
-            {
-              loader: 'url-loader',
-              options: {
-                limit: 8192,
-                name: '[name].[hash:8].[ext]',
-                outputPath: 'images/',
-              },
-            },
-            {
-              loader: 'image-webpack-loader',
-              options: {
-                mozjpeg: {
-                  progressive: true,
-                },
-                gifsicle: {
-                  interlaced: false,
-                },
-                optipng: {
-                  optimizationLevel: 7,
-                },
-                pngquant: {
-                  speed: 5,
-                },
-              },
-            },
-          ],
-        },
-        {
-          test: /\.svg$/,
-          use: [
-            {
-              loader: 'svg-url-loader',
-              options: {
-                limit: 8192,
-                name: '[name].[hash:8].[ext]',
-                outputPath: 'images/',
-                noquotes: true,
-              },
-            },
-          ],
-        },
-        {
-          test: /\.(woff2|woff)$/,
-          use: [
-            'cache-loader',
             {
               loader: 'file-loader',
               options: {
-                name: '[name].[ext]',
-                outputPath: 'fonts/',
+                outputPath: 'public',
               },
             },
+          ],
+        },
+        {
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          use: [
+            'file-loader',
           ],
         },
       ],
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve('ClientApp/template.html'),
+        template: './ClientApp/index.template.html',
         filename: 'index.html',
-        favicon: path.resolve('ClientApp/assets/images/favicon.png'),
-        output: path.resolve('wwwroot'),
+        favicon: './ClientApp/assets/images/favicon.png',
         minify: {
           removeComments: true,
           collapseWhitespace: true,
@@ -203,13 +189,8 @@ module.exports = (env, argv) => {
         },
       ),
       new ScriptExtHtmlWebpackPlugin({
-        prefetch: /\.js$/,
+        prefetch: [/\.js$/],
         defaultAttribute: 'async',
-      }),
-      new HashedModuleIdsPlugin({
-        hashFunction: 'sha256',
-        hashDigest: 'hex',
-        hashDigestLength: 20,
       }),
       new WebpackPwaManifest({
         name: 'Nick Smirnoff',
@@ -227,12 +208,9 @@ module.exports = (env, argv) => {
       }),
       new GenerateSW({
         swDest: 'sw.js',
-        importWorkboxFrom: 'local',
-        clientsClaim: true,
-        skipWaiting: true,
       }),
-      new HardSourceWebpackPlugin(),
       new FriendlyErrorsWebpackPlugin(),
-    ],
+      isDevelopment && new ReactRefreshWebpackPlugin(),
+    ].filter(Boolean),
   };
 };
