@@ -1,7 +1,16 @@
+import NSLogo from '~components/shared/icons/NSLogo';
+import SmallifyLogo from '~components/shared/icons/SmallifyLogo';
+
 export default ([
   {
     id: 'home',
-    url: '/',
-    icon: 'handshake',
+    to: '/',
+    iconComponent: NSLogo,
+  },
+  { id: 'seperator-1' },
+  {
+    id: 'smallify',
+    to: '/smallify',
+    iconComponent: SmallifyLogo,
   },
 ]);

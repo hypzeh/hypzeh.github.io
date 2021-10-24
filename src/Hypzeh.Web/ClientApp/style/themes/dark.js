@@ -52,26 +52,27 @@ const COLOURS = {
   // J
   // K
   // L
+  loader_background_colour: WHITE,
   // M
   // N
-  navbar_background_colour: '#1E1E1E',
-  navbar_link_background_colour_active: '#2F3136',
+  navbar_background_colour: '#1e1e1e',
+  navbar_link_background_colour_active: EBONY,
   navbar_link_background_colour_hover: '#614092',
   navbar_link_border_colour_active: '#7f58b8',
-  navbar_link_colour: '#fff',
+  navbar_link_colour: WHITE,
   navbar_link_colour_active: '#7f58b8',
-  navbar_link_colour_hover: '#fff',
+  navbar_link_colour_hover: WHITE,
   // O
   // P
   // Q
   // R
   // S
-  sidebar_background_colour: '#2F3136',
+  sidebar_background_colour: EBONY,
   sidebar_link_background_colour_active: '#7f58b8',
   sidebar_link_background_colour_hover: '#614092',
-  sidebar_link_colour: '#fff',
-  sidebar_link_colour_active: '#fff',
-  sidebar_link_colour_hover: '#fff',
+  sidebar_link_colour: WHITE,
+  sidebar_link_colour_active: WHITE,
+  sidebar_link_colour_hover: WHITE,
   sidebar_separator_colour: '#7f58b8',
   splash_screen_background_colour: EBONY,
   splash_screen_colour: WHITE,

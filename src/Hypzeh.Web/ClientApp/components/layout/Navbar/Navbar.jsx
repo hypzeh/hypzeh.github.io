@@ -15,7 +15,14 @@ const Navbar = () => {
     <Styles.Wrapper>
       <Scroller>
         <Styles.Links>
-          {areas.map((area) => (<NavbarLink key={area.id} to={area.url} icon={area.icon} />))}
+          {areas.map((area) => (area.id.startsWith('seperator')
+            ? (<Styles.Seperator />)
+            : (
+              <NavbarLink key={area.id} to={area.to}>
+                <area.iconComponent size={50} />
+              </NavbarLink>
+            )
+          ))}
         </Styles.Links>
       </Scroller>
     </Styles.Wrapper>

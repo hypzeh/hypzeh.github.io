@@ -3,18 +3,17 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Styles from './NavbarLink.styles';
-import NSLogo from '~components/shared/NSLogo';
+import areas from '~components/areas';
+import commonPropTypes from '~utils/common-prop-types';
 import { getSidebar } from '~redux/layout/layout-selectors';
 import { setSidebarCollapsedState } from '~redux/layout/layout-actions';
 
 const propTypes = {
+  children: commonPropTypes.CHILDREN.isRequired,
   to: PropTypes.string.isRequired,
 };
 
-const defaultProps = {
-};
-
-const NavbarLink = ({ to }) => {
+const NavbarLink = ({ children, to }) => {
   const dispatch = useDispatch();
   const sidebar = useSelector(getSidebar);
 
@@ -24,14 +23,23 @@ const NavbarLink = ({ to }) => {
     dispatch(setSidebarCollapsedState(false));
   };
 
+  const handleIsActive = (match, location) => {
+    if (!match) return false;
+
+    if (to === '/') {
+      return (areas[0]?.urls || []).includes(location.pathname);
+    }
+
+    return true;
+  };
+
   return (
-    <Styles.Wrapper to={to} onClick={handleClick}>
-      <NSLogo size={50} />
+    <Styles.Wrapper to={to} onClick={handleClick} isActive={handleIsActive}>
+      {children}
     </Styles.Wrapper>
   );
 };
 
 NavbarLink.propTypes = propTypes;
-NavbarLink.defaultProps = defaultProps;
 
 export default NavbarLink;

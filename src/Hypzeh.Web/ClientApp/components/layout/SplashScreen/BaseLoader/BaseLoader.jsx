@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Styles from './BaseLoader.styles';
-import NSLogo from '~components/shared/NSLogo';
+import NSLogo from '~components/shared/icons/NSLogo';
 import commonPropTypes from '~utils/common-prop-types';
 
 const propTypes = {

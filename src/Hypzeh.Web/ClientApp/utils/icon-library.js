@@ -39,6 +39,7 @@ import {
   faPlusCircle,
   // Q
   // R
+  faRocket,
   // S
   faSearch,
   faSignOutAlt,
@@ -130,6 +131,7 @@ library.add(
   faPlusCircle,
   // Q
   // R
+  faRocket,
   // S
   faSearch,
   faSignOutAlt,

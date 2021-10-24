@@ -11,11 +11,17 @@ const Wrapper = styled.nav`
   overflow: hidden;
 `;
 
+const Seperator = styled.hr`
+  width: calc(100% - .5rem);
+  margin: .2rem 0;
+`;
+
 const Links = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  align-items: center;
 `;
 
-export default { Wrapper, Links };
+export default { Wrapper, Seperator, Links };
