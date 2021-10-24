@@ -26,7 +26,7 @@ const SplashScreen = ({
   onError,
 }) => {
   const [showLoader, setShowLoader] = useState(true);
-  const [status, setStatus] = useState({ message: 'Initialising...' });
+  const [status, setStatus] = useState({ variant: null, message: 'Initialising...' });
   const [actions, setActions] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const SplashScreen = ({
       } catch (error) {
         const { type, message, actionHandlers } = onError(error);
         setActions(actionHandlers);
-        setStatus({ type, message });
+        setStatus({ variant: type.toUpperCase(), message });
         setShowLoader(false);
         return;
       }
@@ -46,7 +46,7 @@ const SplashScreen = ({
 
   return (
     <BaseLoader showLoader={showLoader} title={title}>
-      <Status type={status.type} message={status.message} />
+      <Status variant={status.variant} message={status.message} />
       {actions.length > 0 && (
         <Styles.Actions>
           {actions.map(({ text, onClick }) => (

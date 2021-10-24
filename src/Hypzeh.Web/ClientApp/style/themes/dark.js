@@ -61,6 +61,9 @@ const COLOURS = {
   // S
   splash_screen_background_colour: EBONY,
   splash_screen_colour: WHITE,
+  splash_screen_status_error_colour: DANGER,
+  splash_screen_status_standard_colour: WHITE,
+  splash_screen_status_warning_colour: DANGER,
   // T
   // U
   // V

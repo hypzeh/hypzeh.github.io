@@ -2,18 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Styles from './Status.styles';
+import variants from './variants';
 
 const propTypes = {
-  type: PropTypes.string,
+  variant: PropTypes.oneOf(Object.values(variants)),
   message: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
-  type: 'standard',
+  variant: variants.STANDARD,
 };
 
-const Status = ({ type, message }) => (
-  <Styles.Wrapper type={type}>
+const Status = ({ variant, message }) => (
+  <Styles.Wrapper variant={variant}>
     <span>{message}</span>
   </Styles.Wrapper>
 );
