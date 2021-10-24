@@ -8,6 +8,8 @@ const SplashScreen = React.lazy(() => import(/* webpackChunkName: "ns~splashscre
 const AppRouter = React.lazy(() => import(/* webpackChunkName: "mediator~approuter" */ './components/routing/AppRouter'));
 const Navbar = React.lazy(() => import(/* webpackChunkName: "mediator~navbar" */ './components/layout/Navbar'));
 
+import(/* webpackChunkName: "mediator~icons" */ './utils/icon-library');
+
 const App = () => {
   const name = 'Nick Smirnoff';
   const [showSplashScreen, setShowSplashScreen] = useState(true);

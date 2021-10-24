@@ -3,19 +3,18 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Styles from './NavbarLink.styles';
+import NSLogo from '~components/shared/NSLogo';
 import { getSidebar } from '~redux/layout/layout-selectors';
 import { setSidebarCollapsedState } from '~redux/layout/layout-actions';
 
 const propTypes = {
   to: PropTypes.string.isRequired,
-  icon: PropTypes.string,
 };
 
 const defaultProps = {
-  icon: 'hashtag',
 };
 
-const NavbarLink = ({ to, icon }) => {
+const NavbarLink = ({ to }) => {
   const dispatch = useDispatch();
   const sidebar = useSelector(getSidebar);
 
@@ -27,7 +26,7 @@ const NavbarLink = ({ to, icon }) => {
 
   return (
     <Styles.Wrapper to={to} onClick={handleClick}>
-      <h1>{'<I>'}</h1>
+      <NSLogo size={50} />
     </Styles.Wrapper>
   );
 };
