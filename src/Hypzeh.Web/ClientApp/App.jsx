@@ -6,6 +6,7 @@ import startup from './utils/pipelines/startup-pipeline';
 
 const SplashScreen = React.lazy(() => import(/* webpackChunkName: "ns~splashscreen" */ './components/layout/SplashScreen'));
 const AppRouter = React.lazy(() => import(/* webpackChunkName: "mediator~approuter" */ './components/routing/AppRouter'));
+const Navbar = React.lazy(() => import(/* webpackChunkName: "mediator~navbar" */ './components/layout/Navbar'));
 
 const App = () => {
   const name = 'Nick Smirnoff';
@@ -19,6 +20,7 @@ const App = () => {
         : (
           <>
             <Styles.Content>
+              <Navbar />
               <AppRouter />
             </Styles.Content>
           </>
