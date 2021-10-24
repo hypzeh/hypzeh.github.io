@@ -5,6 +5,7 @@ import Styles from './App.styles';
 import startup from './utils/pipelines/startup-pipeline';
 
 const SplashScreen = React.lazy(() => import(/* webpackChunkName: "ns~splashscreen" */ './components/layout/SplashScreen'));
+const AppRouter = React.lazy(() => import(/* webpackChunkName: "mediator~approuter" */ './components/routing/AppRouter'));
 
 const App = () => {
   const name = 'Nick Smirnoff';
@@ -15,7 +16,13 @@ const App = () => {
       <Helmet titleTemplate={`%s / ${name}`} defaultTitle={name} />
       {showSplashScreen
         ? (<SplashScreen title={name} task={startup} onComplete={() => setShowSplashScreen(false)} />)
-        : (<h1>TEST</h1>)}
+        : (
+          <>
+            <Styles.Content>
+              <AppRouter />
+            </Styles.Content>
+          </>
+        )}
     </Styles.Wrapper>
   );
 };
