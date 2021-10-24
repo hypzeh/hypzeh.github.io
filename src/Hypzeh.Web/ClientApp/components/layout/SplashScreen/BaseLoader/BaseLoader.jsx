@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Styles from './BaseLoader.styles';
-import SmiosoftLogo from '~components/shared/SmiosoftLogo';
+import NSLogo from '~components/shared/NSLogo';
 import commonPropTypes from '~utils/common-prop-types';
 
 const propTypes = {
@@ -31,7 +31,7 @@ const BaseLoader = ({
   <Styles.Wrapper className={className} theme={theme}>
     <Styles.Content>
       <Styles.Logo>
-        <SmiosoftLogo size={80} fill="inherit" />
+        <NSLogo size={80} fill="inherit" />
         <h3>{title}</h3>
       </Styles.Logo>
       {showLoader && (<Styles.Loader theme={theme} />)}
