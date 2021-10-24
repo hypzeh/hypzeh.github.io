@@ -11,14 +11,21 @@ const propTypes = {
   title: PropTypes.string,
   to: PropTypes.string.isRequired,
   icon: PropTypes.string,
+  exact: PropTypes.bool,
 };
 
 const defaultProps = {
   title: null,
   icon: null,
+  exact: false,
 };
 
-const SidebarLink = ({ title, to, icon }) => {
+const SidebarLink = ({
+  title,
+  to,
+  icon,
+  exact,
+}) => {
   const dispatch = useDispatch();
   const sidebar = useSelector(getSidebar);
 
@@ -29,7 +36,7 @@ const SidebarLink = ({ title, to, icon }) => {
   };
 
   return (
-    <Styles.Wrapper to={to} onClick={handleClick}>
+    <Styles.Wrapper to={to} onClick={handleClick} exact={exact}>
       {!!icon && (
         <Styles.Icon>
           <FontAwesomeIcon icon={icon} />

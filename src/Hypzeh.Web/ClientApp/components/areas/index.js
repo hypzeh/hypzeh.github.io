@@ -4,6 +4,7 @@ export default ([
   {
     id: 'area~home',
     url: '/',
+    disableExactMatch: true,
     component: () => lazy(() => import(/* webpackChunkName: "ns~area~home" */ './home/Router')),
   },
   {
