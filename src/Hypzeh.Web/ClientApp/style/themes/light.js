@@ -69,8 +69,6 @@ const COLOURS = {
   sidebar_link_background_colour_active: '#7f58b8',
   sidebar_link_background_colour_hover: '#614092',
   sidebar_link_colour: BLACK,
-  sidebar_link_colour_active: WHITE,
-  sidebar_link_colour_hover: WHITE,
   sidebar_separator_colour: '#7f58b8',
   splash_screen_background_colour: WHITE,
   splash_screen_colour: BLACK,

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten, darken } from 'polished';
 import { NavLink as BaseNavLink } from 'react-router-dom';
 
 const Wrapper = styled(BaseNavLink)`
@@ -22,12 +23,12 @@ const Wrapper = styled(BaseNavLink)`
   }
 
   &.active {
-    background-color: ${({ theme }) => theme.colours.navbar_link_background_colour_active};
+    background-color: ${({ theme }) => darken(0.2, theme.colours.navbar_link_background_colour_active)};
     color: ${({ theme }) => theme.colours.navbar_link_colour_active};
-    border-left-color: ${({ theme }) => theme.colours.navbar_link_border_colour_active};
+    border-left-color: ${({ theme }) => lighten(0.15, theme.colours.navbar_link_border_colour_active)};
 
     &:hover {
-      color: ${({ theme }) => theme.colours.navbar_link_colour_active};
+      color: ${({ theme }) => darken(0.2, theme.colours.navbar_link_colour_active)};
     }
   }
 `;

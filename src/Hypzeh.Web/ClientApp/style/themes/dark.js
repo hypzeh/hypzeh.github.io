@@ -1,5 +1,4 @@
 import {
-  VULCAN,
   EBONY,
   WHITE,
   BLACK,
@@ -10,6 +9,16 @@ import {
   DANGER,
   TRANSPARENT,
 } from '../colours';
+import random from '~utils/random';
+
+const HIGHLIGHT = random.fromList([
+  '#EB156C',
+  '#D615EB',
+  '#1571EB',
+  '#15E9EB',
+  '#16EB15',
+  '#EBD515',
+]);
 
 const COLOURS = {
   // Ordered by component
@@ -44,7 +53,7 @@ const COLOURS = {
   // E
   // F
   // G
-  global_background_primary: VULCAN,
+  global_background_primary: '#212121',
   global_content_primary: WHITE,
   global_danger: DANGER,
   // H
@@ -55,25 +64,23 @@ const COLOURS = {
   loader_background_colour: WHITE,
   // M
   // N
-  navbar_background_colour: '#1e1e1e',
-  navbar_link_background_colour_active: EBONY,
-  navbar_link_background_colour_hover: '#614092',
-  navbar_link_border_colour_active: '#7f58b8',
+  navbar_background_colour: '#424242',
+  navbar_link_background_colour_active: HIGHLIGHT,
+  navbar_link_background_colour_hover: HIGHLIGHT,
+  navbar_link_border_colour_active: HIGHLIGHT,
   navbar_link_colour: WHITE,
-  navbar_link_colour_active: '#7f58b8',
+  navbar_link_colour_active: HIGHLIGHT,
   navbar_link_colour_hover: WHITE,
   // O
   // P
   // Q
   // R
   // S
-  sidebar_background_colour: EBONY,
-  sidebar_link_background_colour_active: '#7f58b8',
-  sidebar_link_background_colour_hover: '#614092',
+  sidebar_background_colour: '#323232',
+  sidebar_link_background_colour_active: HIGHLIGHT,
+  sidebar_link_background_colour_hover: HIGHLIGHT,
   sidebar_link_colour: WHITE,
-  sidebar_link_colour_active: WHITE,
-  sidebar_link_colour_hover: WHITE,
-  sidebar_separator_colour: '#7f58b8',
+  sidebar_separator_colour: HIGHLIGHT,
   splash_screen_background_colour: EBONY,
   splash_screen_colour: WHITE,
   splash_screen_status_error_colour: DANGER,

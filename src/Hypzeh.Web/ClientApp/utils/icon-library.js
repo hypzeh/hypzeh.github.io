@@ -1,55 +1,28 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   // A
-  faAddressBook,
-  faAdjust,
   // B
-  faBars,
   // C
-  faCheck,
-  faChevronLeft,
-  faChevronRight,
-  faChevronCircleRight,
-  faComment,
   // D
   // E
-  faEllipsisV,
   faEnvelope,
-  faExclamationCircle,
   // F
-  faFile,
-  faFileUpload,
-  faFrown,
   // G
-  faGhost,
   // H
-  faHandshake,
-  faHashtag,
-  faHome,
   // I
   // J
   // K
   // L
-  faLanguage,
   // M
-  faMehBlank,
   // N
   // O
   // P
-  faPlusCircle,
   // Q
   // R
   faRocket,
   // S
-  faSearch,
-  faSignOutAlt,
   // T
-  faTimes,
   // U
-  faUser,
-  faUserCheck,
-  faUserCircle,
-  faUserPlus,
   // V
   // W
   // X
@@ -91,58 +64,31 @@ import {
 
 library.add(
   // A
-  faAddressBook,
-  faAdjust,
   // B
-  faBars,
   // C
-  faCheck,
-  faChevronLeft,
-  faChevronRight,
-  faChevronCircleRight,
-  faComment,
   // D
   // E
-  faEllipsisV,
   faEnvelope,
-  faExclamationCircle,
   // F
-  faFile,
-  faFileUpload,
-  faFrown,
   // G
-  faGhost,
   faGithub,
   // H
-  faHandshake,
-  faHashtag,
-  faHome,
   // I
   // J
   // K
   // L
-  faLanguage,
   faLinkedin,
   // M
-  faMehBlank,
   // N
   // O
   // P
-  faPlusCircle,
   // Q
   // R
   faRocket,
   // S
-  faSearch,
-  faSignOutAlt,
   // T
-  faTimes,
   faTwitter,
   // U
-  faUser,
-  faUserCheck,
-  faUserCircle,
-  faUserPlus,
   // V
   // W
   // X

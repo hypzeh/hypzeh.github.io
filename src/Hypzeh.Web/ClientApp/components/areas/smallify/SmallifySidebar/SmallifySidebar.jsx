@@ -9,7 +9,7 @@ import Sidebar, {
 const SmallifySidebar = () => (
   <Sidebar>
     <SidebarContent>
-      <SidebarLink title="Overview" to="/smallify" icon="hashtag" exact />
+      <SidebarLink title="Overview" to="/smallify" exact />
     </SidebarContent>
     <SidebarFooter>
       <SidebarLink title="Releases" to="https://github.com/hypzeh/smallify/releases" openInNewTab icon="rocket" />

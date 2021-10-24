@@ -11,6 +11,9 @@ const Wrapper = styled.div`
   top: 0;
   bottom: 0;
   background-color: ${({ theme }) => theme.colours.sidebar_background_colour};
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: ${({ theme }) => theme.colours.sidebar_background_colour};
   min-width: 15rem;
   z-index: 10;
   overflow: hidden;
