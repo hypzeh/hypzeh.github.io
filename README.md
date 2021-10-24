@@ -1,6 +1,6 @@
 # Nick Smirnoff
 
-_Personal website built with ASP.NET Core and React._
+_Personal website._
 
 ![Nick Smirnoff](docs/.assets/project-title.png)
 
