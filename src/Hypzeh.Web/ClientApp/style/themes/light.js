@@ -46,6 +46,7 @@ const COLOURS = {
   global_content_primary: BLACK,
   global_danger: DANGER,
   // H
+  home_introduction_colour_highlight: '#7f58b8',
   // I
   // J
   // K

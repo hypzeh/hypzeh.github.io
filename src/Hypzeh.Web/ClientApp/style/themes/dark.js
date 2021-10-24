@@ -57,6 +57,7 @@ const COLOURS = {
   global_content_primary: WHITE,
   global_danger: DANGER,
   // H
+  home_introduction_colour_highlight: HIGHLIGHT,
   // I
   // J
   // K
