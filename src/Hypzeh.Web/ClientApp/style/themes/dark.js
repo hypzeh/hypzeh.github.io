@@ -88,6 +88,8 @@ const COLOURS = {
   splash_screen_status_standard_colour: WHITE,
   splash_screen_status_warning_colour: DANGER,
   // T
+  terminal_input_colour: WHITE,
+  terminal_output_colour_highlight: HIGHLIGHT,
   // U
   // V
   // W

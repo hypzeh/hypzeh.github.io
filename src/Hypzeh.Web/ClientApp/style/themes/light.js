@@ -77,6 +77,8 @@ const COLOURS = {
   splash_screen_status_standard_colour: BLACK,
   splash_screen_status_warning_colour: DANGER,
   // T
+  terminal_input_colour: BLACK,
+  terminal_output_colour_highlight: '#7f58b8',
   // U
   // V
   // W
