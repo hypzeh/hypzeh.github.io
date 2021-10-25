@@ -19,19 +19,31 @@
     }
   },
   "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {}
+    },
     "react": {
-      "version": "16.12"
+      "version": "detect"
     }
   },
   "rules": {
     "linebreak-style": [
       "error",
       "windows"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 150
+      }
     ]
   },
   "overrides": [
     {
-      "files": ["webpack.config.js"],
+      "files": [
+        "webpack.config.js"
+      ],
       "rules": {
         "global-require": "off"
       }

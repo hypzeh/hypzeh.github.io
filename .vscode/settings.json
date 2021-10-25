@@ -1,0 +1,19 @@
+{
+	"terminal.integrated.cwd": "${cwd}\\src\\Hypzeh.Web",
+	"eslint.workingDirectories": [
+		{
+			"directory": "src\\Hypzeh.Web",
+			"changeProcessCWD": true
+		}
+	],
+	"markdown.extension.toc.levels": "2..2",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.format.enable": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	}
+}

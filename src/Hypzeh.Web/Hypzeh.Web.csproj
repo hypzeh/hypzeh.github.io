@@ -1,26 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <PackageId>Hypzeh.Web</PackageId>
-    <Version>1.0.0</Version>
+    <Version>0.0.0</Version>
     <Authors>Nick Smirnoff</Authors>
     <Company>Smiosoft</Company>
     <Product>Hypzeh</Product>
-    <IsPackable>false</IsPackable>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
     <DefaultItemExcludes>$(DefaultItemExcludes);node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.3" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="wwwroot\**" />
-    <None Remove="node_modules\**" />
-  </ItemGroup>
-
-  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('node_modules') ">
+  <Target Name="EnsureNodeInstall" BeforeTargets="Build" Condition="!Exists('node_modules')">
     <Exec Command="node --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
     </Exec>
@@ -29,18 +26,7 @@
     <Exec Command="npm install" />
   </Target>
 
-  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
-    <Exec Command="npm install" />
+  <Target Name="WebpackBuild" BeforeTargets="Build">
     <Exec Command="npm run build" />
-
-    <ItemGroup>
-      <DistFiles Include="wwwroot\**" CopyToPublishDirectory="Always" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      </ResolvedFileToPublish>
-    </ItemGroup>
   </Target>
-
 </Project>

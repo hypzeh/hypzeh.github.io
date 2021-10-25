@@ -1,38 +1,34 @@
-import React from 'react';
-import { hot } from 'react-hot-loader/root';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Router } from 'react-router-dom';
-import styled from 'styled-components';
 
-import GlobalStyle from './GlobalStyle';
-import history from './lib/history';
-import sw from './lib/service-worker';
-import Navbar from './components/layout/Navbar';
-import Routing from './components/layout/Routing';
+import Styles from './App.styles';
+import startup from './utils/pipelines/startup-pipeline';
 
-const Wrapper = styled.div`
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  min-height: 0;
-`;
+const SplashScreen = React.lazy(() => import(/* webpackChunkName: "ns~splashscreen" */ './components/layout/SplashScreen'));
+const AppRouter = React.lazy(() => import(/* webpackChunkName: "mediator~approuter" */ './components/routing/AppRouter'));
+const Navbar = React.lazy(() => import(/* webpackChunkName: "mediator~navbar" */ './components/layout/Navbar'));
+
+import(/* webpackChunkName: "mediator~icons" */ './utils/icon-library');
 
 const App = () => {
-  sw.register();
+  const name = 'Nick Smirnoff';
+  const [showSplashScreen, setShowSplashScreen] = useState(true);
 
   return (
-    <Wrapper>
-      <Helmet titleTemplate="%s / Nick Smirnoff" defaultTitle="Nick Smirnoff" />
-      <GlobalStyle />
-      <Router history={history}>
-        <Navbar />
-        <Routing />
-      </Router>
-    </Wrapper>
+    <Styles.Wrapper>
+      <Helmet titleTemplate={`%s / ${name}`} defaultTitle={name} />
+      {showSplashScreen
+        ? (<SplashScreen title={name} task={startup} onComplete={() => setShowSplashScreen(false)} />)
+        : (
+          <>
+            <Styles.Content>
+              <Navbar />
+              <AppRouter />
+            </Styles.Content>
+          </>
+        )}
+    </Styles.Wrapper>
   );
 };
 
-export default hot(App);
+export default App;

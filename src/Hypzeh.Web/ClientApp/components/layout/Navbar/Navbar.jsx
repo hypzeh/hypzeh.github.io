@@ -1,21 +1,32 @@
 import React from 'react';
-import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
-import Projects from './Projects';
-import Pages from './Pages';
+import Styles from './Navbar.styles';
+import areas from './areas';
+import NavbarLink from './NavbarLink';
+import Scroller from '~components/layout/Scroller';
+import { isNavbarEnabled } from '~redux/layout/layout-selectors';
 
-const Wrapper = styled.nav`
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  z-index: 999;
-`;
+const Navbar = () => {
+  const isEnabled = useSelector(isNavbarEnabled);
+  if (!isEnabled) return null;
 
-const Navbar = () => (
-  <Wrapper>
-    <Projects />
-    <Pages />
-  </Wrapper>
-);
+  return (
+    <Styles.Wrapper>
+      <Scroller>
+        <Styles.Links>
+          {areas.map((area) => (area.id.startsWith('seperator')
+            ? (<Styles.Seperator key={area.id} />)
+            : (
+              <NavbarLink key={area.id} to={area.to}>
+                <area.iconComponent size={50} />
+              </NavbarLink>
+            )
+          ))}
+        </Styles.Links>
+      </Scroller>
+    </Styles.Wrapper>
+  );
+};
 
 export default Navbar;
